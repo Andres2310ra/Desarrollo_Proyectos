@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ing">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra Papel o Tijera</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js"></script>
+    <script>
+        function bienvenida() {
+            Swal.fire(
+                '¡Bienvenido al juego!',
+                "Gana el jugador que tenga mayor numero de rondas.\n" +
+                "Para ganar cada ronda debes obtener 3 puntos.",
+                'success'
+            )
+        }
+        document.addEventListener('DOMContentLoaded', bienvenida);
+    </script>
+    <link rel="stylesheet" href="Juego_+Piedra+Papel+Tijera.css">
+</head>
+
+<body>
+
+    <div class="contenedor">
+        <div class="texto">
+            <h1>Piedra Papel o Tijera</h1>
+            <p>Quita el estrés, distráete, juega un rato, haz otra cosa, no todo es trabajo.</p>
+        </div>
+
+        <div class="juego">
+
+            <div class="rondas">
+                <p>Rondas Ganadas: <span id="ganadasSpan">0</span></p>
+                <p>Rondas Perdidas: <span id="perdidasSpan">0</span></p>
+            </div>
+
+            <div class="puntos">
+                <p class="pun_gan">Puntos Ganados: <span id="ganadasSpan_Pun">0</span></p>
+                <p class="pun_per">Puntos Perdidos: <span id="perdidasSpan_Pun">0</span></p>
+            </div>
+
+            <div class="botones">
+                <div>
+                    <button id="startButton" onclick="toggleButtons()">Start 🎮</button>
+                </div>
+
+                <div class="botones_juego" id="buttonContainer">
+                    <div>
+                        <button onclick="juego(1)">Piedra 🪨</button>
+                    </div>
+                    <div>
+                        <button onclick="juego(2)">Papel 🧻</button>
+                    </div>
+                    <div>
+                        <button onclick="juego(3)">Tijera ✂️</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="pie_pagina">
+        <footer>
+            <p>© 2023 Todos los derechos reservados</p>
+            <ul>
+                <li><a href=“/contacto”>Contacto</a></li>
+                <li><a href=“/politica-de-privacidad”>Política de privacidad</a></li>
+                <li><a href=“/terminos-y-condiciones”>Términos y condiciones</a></li>
+            </ul>
+        </footer>
+    </div>
+
+
+    <script src="Juego_+Piedra+Papel+Tijera.js"></script>
+
+</body>
+
+</html>

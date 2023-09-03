@@ -1,0 +1,157 @@
+/* Este es el archivo CSS para el juego de Piedra Papel o Tijera */
+
+body{
+  background: linear-gradient(#006466ff, #065a60ff, #0b525bff, #144552ff, #1b3a4bff, #212f45ff, #272640ff, #312244ff, #3e1f47ff, #4d194dff);
+}
+
+/* Estos son los estilos generales para toda la página */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+/* Este es el estilo para el contenedor principal */
+.contenedor {
+  width: 80%;
+  max-width: 800px;
+  margin: 30px auto;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-bottom: 3px solid #fff;
+  box-shadow: 1px 3px 60px 1px white;
+}
+
+/* Este es el estilo para el texto de bienvenida */
+.texto {
+  text-align: center;
+}
+
+.texto h1 {
+  font-size: 36px;
+  color: #202020;
+}
+
+.texto p {
+  font-size: 18px;
+  color: #606060;
+  font-weight: 400;
+}
+
+/* Este es el estilo para el juego */
+.juego {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Este es el estilo para las rondas */
+.rondas {
+  width: 40%;
+}
+
+.rondas p {
+  font-size: 24px;
+  color: #202020;
+}
+
+.rondas span {
+  font-weight: bold;
+}
+
+/* Este es el estilo para los puntos */
+.puntos {
+  width: 40%;
+}
+
+.puntos p {
+  font-size: 24px;
+}
+
+.pun_gan {
+  color: green;
+}
+
+.pun_per {
+  color: red;
+}
+
+.puntos span {
+  font-weight: bold;
+}
+
+/* Este es el estilo para los botones */
+button{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.botones {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.botones div {
+  margin-top: 10px;
+}
+
+.botones button {
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.botones_juego{
+  display: none;
+}
+
+.botones_juego button {
+  background-color: #202020;
+  color: white;
+}
+
+#startButton {
+  background-color: green;
+  color: white;
+}
+
+/* **Este es el estilo para el pie de página** */
+.pie_pagina {
+ width: 100%;
+ background-color:#202020; 
+ color:white; 
+ padding-top :10px; 
+ padding-bottom :10px; 
+ text-align :center; 
+ margin-top :20px; 
+}
+
+footer p{
+ font-size :18px; 
+}
+
+footer ul{
+ list-style-type :none; 
+}
+
+footer li{
+ display :inline-block; 
+ margin-left :10px; 
+ margin-right :10px; 
+}
+
+footer a{
+ color:white; 
+ text-decoration :none; 
+}
+
+footer a:hover{
+ text-decoration :underline; 
+}
