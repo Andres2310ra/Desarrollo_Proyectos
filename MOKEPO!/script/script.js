@@ -13,6 +13,8 @@ function seleccionarMascotaJugador() {
         alert('Seleccionaste a Capipepo')
     } else if (inputRatigueya.checked) {
         alert('Seleccionaste a Ratigueya')
-    } else { alert('Selecciona una mascota') }
+    } else { 
+        alert('Selecciona una mascota') 
+    }
 }
 window.addEventListener('load', iniciarJuego)
