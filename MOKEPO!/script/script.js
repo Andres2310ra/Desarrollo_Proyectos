@@ -11,9 +11,9 @@ function seleccionarMascotaJugador() {
     if (inputHipodoge.checked) {
         spanMascotaJugador.innerHTML="hipodoge"
     } else if (inputCapipepo.checked) {
-        spanMascotaJugador.innerHTML="hipodoge"
+        spanMascotaJugador.innerHTML="capipepo"
     } else if (inputRatigueya.checked) {
-        spanMascotaJugador.innerHTML="hipodoge"
+        spanMascotaJugador.innerHTML="ratigueya"
     } else { 
         alert('Debes seleccionar una mascota') 
     }
