@@ -51,17 +51,17 @@ function ataqueEnemigo(){
 }
 
 function ataqueFuego() {
-    ataqueJugador = "PRUEBA_1 " + ataqueEnemigo()
+    ataqueJugador = "Fuego " + ataqueEnemigo()
     alert(ataqueJugador)
 }
 
 function ataqueAgua() {
-    ataqueJugador = "PRUEBA_2 " + ataqueEnemigo()
+    ataqueJugador = "Agua " + ataqueEnemigo()
     alert(ataqueJugador)
 }
 
 function ataqueTierra() {
-    ataqueJugador = "PRUEBA_3 " + ataqueEnemigo()
+    ataqueJugador = "Tierra " + ataqueEnemigo()
     alert(ataqueJugador)
 }
 
