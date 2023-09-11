@@ -1,5 +1,5 @@
-let ataqueJugador=''
-let ataqueEnemigo=''
+let ataqueJugador = ''
+let ataqueEnemigo = ''
 
 function iniciarJuego() {
     let botonMascotaJugador = document.getElementById('boton-mascota')
@@ -45,25 +45,30 @@ function seleccionarMascotaEnemigo() {
     return mascotaEnemigo[mascotaAleatoria]
 }
 
-function seleccionarAtaqueEnemigo(){
+function seleccionarAtaqueEnemigo() {
     let ataqueMascota = ['Fuego', 'Agua', 'Tierra']
     let ataqueAleatorio = aleatorio(0, 2)
-    return ataqueMascota[ataqueAleatorio]
+    return ataqueMascota[ataqueAleatorio], mensajeJuego()
 }
 
 function ataqueFuego() {
     ataqueJugador = "Fuego"
-    ataqueEnemigo=seleccionarAtaqueEnemigo()
+    ataqueEnemigo = seleccionarAtaqueEnemigo()
 }
 
 function ataqueAgua() {
     ataqueJugador = "Agua"
-    ataqueEnemigo=seleccionarAtaqueEnemigo()
+    ataqueEnemigo = seleccionarAtaqueEnemigo()
 }
 
 function ataqueTierra() {
     ataqueJugador = "Tierra"
-    ataqueEnemigo=seleccionarAtaqueEnemigo()
+    ataqueEnemigo = seleccionarAtaqueEnemigo()
+}
+
+function mensajeJuego() {
+    let mensaje = document.createElement('p')
+    mensaje.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ', la mascota del enemigo atacó con ' + ataqueEnemigo + ' GANASTE 🎉'
 }
 
 window.addEventListener('load', iniciarJuego)
