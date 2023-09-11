@@ -46,9 +46,9 @@ function seleccionarMascotaEnemigo() {
 }
 
 function seleccionarAtaqueEnemigo(){
-    let mascotaAtaque = ['Fuego', 'Agua', 'Tierra']
+    let ataqueEnemigo = ['Fuego', 'Agua', 'Tierra']
     let ataqueAleatorio = aleatorio(0, 2)
-    return mascotaAtaque[ataqueAleatorio]
+    return ataqueEnemigo[ataqueAleatorio]
 }
 
 function ataqueFuego() {
