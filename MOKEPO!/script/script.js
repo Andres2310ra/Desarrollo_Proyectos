@@ -30,7 +30,7 @@ function aleatorio(min, max) {
 function seleccionarMascotaEnemigo() {
     let mascotaEnemigo = ['Hipodoge', 'Capipepo', 'Ratigueya']
     let mascotaAleatoria=aleatorio(0,2)
-    mascotaEnemigo[mascotaAleatoria]
+    return mascotaEnemigo[mascotaAleatoria]
 }
 
 window.addEventListener('load', iniciarJuego)
