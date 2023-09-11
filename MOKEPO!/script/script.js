@@ -1,5 +1,5 @@
-let ataqueJugador = ''
-let ataqueEnemigo = ''
+let ataqueJugador
+let ataqueEnemigo
 
 function iniciarJuego() {
     let botonMascotaJugador = document.getElementById('boton-mascota')
