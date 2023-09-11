@@ -44,18 +44,24 @@ function seleccionarMascotaEnemigo() {
     return mascotaEnemigo[mascotaAleatoria]
 }
 
+function ataqueEnemigo(){
+    let mascotaAtaque = ['Fuego', 'Agua', 'Tierra']
+    let ataqueAleatorio = aleatorio(0, 2)
+    return mascotaAtaque[ataqueAleatorio]
+}
+
 function ataqueFuego() {
-    ataqueJugador = "PRUEBA_1"
+    ataqueJugador = "PRUEBA_1" + ataqueEnemigo()
     alert(ataqueJugador)
 }
 
 function ataqueAgua() {
-    ataqueJugador = "PRUEBA_2"
+    ataqueJugador = "PRUEBA_2" + ataqueEnemigo()
     alert(ataqueJugador)
 }
 
 function ataqueTierra() {
-    ataqueJugador = "PRUEBA_3"
+    ataqueJugador = "PRUEBA_3" + ataqueEnemigo()
     alert(ataqueJugador)
 }
 
