@@ -52,17 +52,17 @@ function seleccionarAtaqueEnemigo(){
 }
 
 function ataqueFuego() {
-    ataqueJugador = "Fuego "
+    ataqueJugador = "Fuego"
     ataqueEnemigo
 }
 
 function ataqueAgua() {
-    ataqueJugador = "Agua "
+    ataqueJugador = "Agua"
     ataqueEnemigo
 }
 
 function ataqueTierra() {
-    ataqueJugador = "Tierra "
+    ataqueJugador = "Tierra"
     ataqueEnemigo
 }
 
