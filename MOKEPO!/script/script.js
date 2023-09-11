@@ -1,5 +1,5 @@
-let ataqueJugador=''
-let ataqueEnemigo=''
+let ataqueJugador
+let ataqueEnemigo
 
 function iniciarJuego() {
     let botonMascotaJugador = document.getElementById('boton-mascota')
@@ -48,7 +48,7 @@ function seleccionarMascotaEnemigo() {
 function seleccionarAtaqueEnemigo(){
     let ataqueEnemigo = ['Fuego', 'Agua', 'Tierra']
     let ataqueAleatorio = aleatorio(0, 2)
-    return ataqueEnemigo[ataqueAleatorio]
+    ataqueEnemigo[ataqueAleatorio]
 }
 
 function ataqueFuego() {
