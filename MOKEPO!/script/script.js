@@ -10,15 +10,16 @@ function seleccionarMascotaJugador() {
 
     if (inputHipodoge.checked) {
         spanMascotaJugador.innerHTML = "Hipodoge"
+        seleccionarMascotaEnemigo()
     } else if (inputCapipepo.checked) {
         spanMascotaJugador.innerHTML = "Capipepo"
+        seleccionarMascotaEnemigo()
     } else if (inputRatigueya.checked) {
         spanMascotaJugador.innerHTML = "Ratigueya"
+        seleccionarMascotaEnemigo()
     } else {
         alert('Debes seleccionar una mascota')
     }
-
-    seleccionarMascotaEnemigo()
 }
 
 function aleatorio(min, max) {
