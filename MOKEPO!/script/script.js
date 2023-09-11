@@ -1,15 +1,17 @@
-let ataqueJugador
+let ataqueJugador=""
 
 function iniciarJuego() {
     let botonMascotaJugador = document.getElementById('boton-mascota')
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
 
-    let botonFuego=document.getElementById('btn-fuego')
-    botonFuego.addEventListener('click',ataqueFuego)
-    let botonAgua=document.getElementById('btn-agua')
-    botonAgua=addEventListener('click',ataqueAgua)
-    let botonTierra=document.getElementById('btn-tierra')
-    botonTierra.addEventListener('click',ataqueTierra)
+    let botonFuego = document.getElementById('btn-fuego')
+    botonFuego.addEventListener('click', ataqueFuego)
+
+    let botonAgua = document.getElementById('btn-agua')
+    botonAgua = addEventListener('click', ataqueAgua)
+
+    let botonTierra = document.getElementById('btn-tierra')
+    botonTierra.addEventListener('click', ataqueTierra)
 }
 function seleccionarMascotaJugador() {
     let inputHipodoge = document.getElementById('hipodoge')
@@ -20,13 +22,13 @@ function seleccionarMascotaJugador() {
 
     if (inputHipodoge.checked) {
         spanMascotaJugador.innerHTML = "Hipodoge"
-        spanMascotaEnemigo.innerHTML=seleccionarMascotaEnemigo()
+        spanMascotaEnemigo.innerHTML = seleccionarMascotaEnemigo()
     } else if (inputCapipepo.checked) {
         spanMascotaJugador.innerHTML = "Capipepo"
-        spanMascotaEnemigo.innerHTML=seleccionarMascotaEnemigo()
+        spanMascotaEnemigo.innerHTML = seleccionarMascotaEnemigo()
     } else if (inputRatigueya.checked) {
         spanMascotaJugador.innerHTML = "Ratigueya"
-        spanMascotaEnemigo.innerHTML=seleccionarMascotaEnemigo()
+        spanMascotaEnemigo.innerHTML = seleccionarMascotaEnemigo()
     } else {
         alert('Debes seleccionar una mascota')
     }
@@ -38,23 +40,23 @@ function aleatorio(min, max) {
 
 function seleccionarMascotaEnemigo() {
     let mascotaEnemigo = ['Hipodoge', 'Capipepo', 'Ratigueya']
-    let mascotaAleatoria=aleatorio(0,2)
+    let mascotaAleatoria = aleatorio(0, 2)
     return mascotaEnemigo[mascotaAleatoria]
 }
 
-function ataqueFuego(){
-    ataqueJugador="PRUEBA_1"
-    aleatorio(ataqueJugador)
+function ataqueFuego() {
+    ataqueJugador = "PRUEBA_1"
+    alert(ataqueJugador)
 }
 
-function ataqueAgua(){
-    ataqueJugador="PRUEBA_2"
-    aleatorio(ataqueJugador)
+function ataqueAgua() {
+    ataqueJugador = "PRUEBA_2"
+    alert(ataqueJugador)
 }
 
-function ataqueTierra(){
-    ataqueJugador="PRUEBA_3"
-    aleatorio(ataqueJugador)
+function ataqueTierra() {
+    ataqueJugador = "PRUEBA_3"
+    alert(ataqueJugador)
 }
 
 window.addEventListener('load', iniciarJuego)
