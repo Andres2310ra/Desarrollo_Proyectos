@@ -40,7 +40,7 @@ function aleatorio(min, max) {
 }
 
 function seleccionarMascotaEnemigo() {
-    let mascotaEnemigo = ['Hipodoge', 'Capipepo', 'Ratigueya']
+    let mascotaEnemigo = ['Carlitos', 'Chamuko', 'Angelina']
     let mascotaAleatoria = aleatorio(0, 2)
     return mascotaEnemigo[mascotaAleatoria]
 }
