@@ -7,16 +7,17 @@ function seleccionarMascotaJugador() {
     let inputCapipepo = document.getElementById('capipepo')
     let inputRatigueya = document.getElementById('ratigueya')
     let spanMascotaJugador = document.getElementById('mascota-jugador')
+    let spanMascotaEnemigo = document.getElementById('mascota-enemigo')
 
     if (inputHipodoge.checked) {
         spanMascotaJugador.innerHTML = "Hipodoge"
-        seleccionarMascotaEnemigo()
+        spanMascotaEnemigo.innerHTML=seleccionarMascotaEnemigo()
     } else if (inputCapipepo.checked) {
         spanMascotaJugador.innerHTML = "Capipepo"
-        seleccionarMascotaEnemigo()
+        spanMascotaEnemigo.innerHTML=seleccionarMascotaEnemigo()
     } else if (inputRatigueya.checked) {
         spanMascotaJugador.innerHTML = "Ratigueya"
-        seleccionarMascotaEnemigo()
+        spanMascotaEnemigo.innerHTML=seleccionarMascotaEnemigo()
     } else {
         alert('Debes seleccionar una mascota')
     }
@@ -27,11 +28,9 @@ function aleatorio(min, max) {
 }
 
 function seleccionarMascotaEnemigo() {
-    spanMascotaEnemigo = document.getElementById('mascota-enemigo')
     let mascotaEnemigo = ['Hipodoge', 'Capipepo', 'Ratigueya']
     let mascotaAleatoria=aleatorio(0,2)
-    spanMascotaEnemigo.innerHTML=mascotaEnemigo[mascotaAleatoria]
-
+    mascotaEnemigo[mascotaAleatoria]
 }
 
 window.addEventListener('load', iniciarJuego)
