@@ -48,25 +48,22 @@ function seleccionarMascotaEnemigo() {
 function seleccionarAtaqueEnemigo(){
     let ataqueEnemigo = ['Fuego', 'Agua', 'Tierra']
     let ataqueAleatorio = aleatorio(0, 2)
-    ataqueEnemigo[ataqueAleatorio]
+    return ataqueEnemigo[ataqueAleatorio]
 }
 
 function ataqueFuego() {
     ataqueJugador = "Fuego "
-    ataqueEnemigo=seleccionarAtaqueEnemigo()
-    alert(ataqueJugador + ataqueEnemigo)
+    ataqueEnemigo
 }
 
 function ataqueAgua() {
     ataqueJugador = "Agua "
-    ataqueEnemigo=seleccionarAtaqueEnemigo()
-    alert(ataqueJugador + ataqueEnemigo)
+    ataqueEnemigo
 }
 
 function ataqueTierra() {
     ataqueJugador = "Tierra "
-    ataqueEnemigo=seleccionarAtaqueEnemigo()
-    alert(ataqueJugador + ataqueEnemigo)
+    ataqueEnemigo
 }
 
 window.addEventListener('load', iniciarJuego)
