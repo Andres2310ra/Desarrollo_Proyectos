@@ -1,5 +1,5 @@
-let ataqueJugador=''
-let ataqueEnemigo=''
+let ataqueJugador = ''
+let ataqueEnemigo = ''
 
 function iniciarJuego() {
     let botonMascotaJugador = document.getElementById('boton-mascota')
@@ -48,7 +48,7 @@ function seleccionarMascotaEnemigo() {
 function seleccionarAtaqueEnemigo() {
     let ataqueMascota = ['Fuego', 'Agua', 'Tierra']
     let ataqueAleatorio = aleatorio(0, 2)
-    return ataqueMascota[ataqueAleatorio]
+    return ataqueMascota[ataqueAleatorio], mensajeJuego()
 }
 
 function ataqueFuego() {
@@ -68,7 +68,7 @@ function ataqueTierra() {
 
 function mensajeJuego() {
     let mensaje = document.createElement('p')
-    let sectionMensaje=document.getElementById('mensajes')
+    let sectionMensaje = document.getElementById('mensajes')
     mensaje.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ', la mascota del enemigo atacó con ' + ataqueEnemigo + ' GANASTE 🎉'
 
     sectionMensaje.appendChild(mensaje)
