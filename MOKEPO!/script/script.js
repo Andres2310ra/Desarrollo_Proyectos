@@ -22,13 +22,13 @@ function seleccionarMascotaJugador() {
     let spanMascotaEnemigo = document.getElementById('mascota-enemigo')
 
     if (inputHipodoge.checked) {
-        spanMascotaJugador.innerHTML = "Hipodoge"
+        spanMascotaJugador.innerHTML = "Carlitos"
         spanMascotaEnemigo.innerHTML = seleccionarMascotaEnemigo()
     } else if (inputCapipepo.checked) {
-        spanMascotaJugador.innerHTML = "Capipepo"
+        spanMascotaJugador.innerHTML = "Chamuko"
         spanMascotaEnemigo.innerHTML = seleccionarMascotaEnemigo()
     } else if (inputRatigueya.checked) {
-        spanMascotaJugador.innerHTML = "Ratigueya"
+        spanMascotaJugador.innerHTML = "Angelina"
         spanMascotaEnemigo.innerHTML = seleccionarMascotaEnemigo()
     } else {
         alert('Debes seleccionar una mascota')
