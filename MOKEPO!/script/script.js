@@ -69,7 +69,7 @@ function ataqueTierra() {
 function mensajeJuego() {
     let mensaje = document.createElement('p')
     let sectionMensaje = document.getElementById('mensajes')
-    mensaje.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ', la mascota del enemigo atacó con ' + ataqueEnemigo + ' GANASTE 🎉'
+    mensaje.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ', la mascota del enemigo atacó con ' + ataqueEnemigo + ' Pendiente 🎉'
 
     sectionMensaje.appendChild(mensaje)
 }
