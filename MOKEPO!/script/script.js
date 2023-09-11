@@ -1,4 +1,5 @@
 let ataqueJugador
+let ataqueEnemigo
 
 function iniciarJuego() {
     let botonMascotaJugador = document.getElementById('boton-mascota')
@@ -44,25 +45,28 @@ function seleccionarMascotaEnemigo() {
     return mascotaEnemigo[mascotaAleatoria]
 }
 
-function ataqueEnemigo(){
+function seleccionarAtaqueEnemigo(){
     let mascotaAtaque = ['Fuego', 'Agua', 'Tierra']
     let ataqueAleatorio = aleatorio(0, 2)
     return mascotaAtaque[ataqueAleatorio]
 }
 
 function ataqueFuego() {
-    ataqueJugador = "Fuego " + ataqueEnemigo()
-    alert(ataqueJugador)
+    ataqueJugador = "Fuego "
+    ataqueEnemigo=seleccionarAtaqueEnemigo()
+    alert(ataqueJugador + ataqueEnemigo)
 }
 
 function ataqueAgua() {
-    ataqueJugador = "Agua " + ataqueEnemigo()
-    alert(ataqueJugador)
+    ataqueJugador = "Agua "
+    ataqueEnemigo=seleccionarAtaqueEnemigo()
+    alert(ataqueJugador + ataqueEnemigo)
 }
 
 function ataqueTierra() {
-    ataqueJugador = "Tierra " + ataqueEnemigo()
-    alert(ataqueJugador)
+    ataqueJugador = "Tierra "
+    ataqueEnemigo=seleccionarAtaqueEnemigo()
+    alert(ataqueJugador + ataqueEnemigo)
 }
 
 window.addEventListener('load', iniciarJuego)
