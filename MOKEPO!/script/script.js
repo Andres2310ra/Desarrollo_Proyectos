@@ -53,17 +53,17 @@ function seleccionarAtaqueEnemigo(){
 
 function ataqueFuego() {
     ataqueJugador = "Fuego"
-    ataqueEnemigo
+    seleccionarAtaqueEnemigo()
 }
 
 function ataqueAgua() {
     ataqueJugador = "Agua"
-    ataqueEnemigo
+    seleccionarAtaqueEnemigo()
 }
 
 function ataqueTierra() {
     ataqueJugador = "Tierra"
-    ataqueEnemigo
+    seleccionarAtaqueEnemigo()
 }
 
 window.addEventListener('load', iniciarJuego)
