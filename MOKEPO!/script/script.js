@@ -1,4 +1,4 @@
-let ataqueJugador=""
+let ataqueJugador
 
 function iniciarJuego() {
     let botonMascotaJugador = document.getElementById('boton-mascota')
