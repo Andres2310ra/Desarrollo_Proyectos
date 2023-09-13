@@ -6,6 +6,12 @@ let spanMascotaJugador = ''
 let spanMascotaEnemigo = ''
 
 function iniciarJuego() {
+    let sectionSeleccionarAtaque=document.getElementById('seleccionar-ataque')
+    sectionSeleccionarAtaque.style.display='none'
+
+    let sectionReiniciar=document.getElementById('reiniciar')
+    sectionReiniciar.style.display='none'
+    
     let botonMascotaJugador = document.getElementById('boton-mascota')
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
 
@@ -31,12 +37,33 @@ function seleccionarMascotaJugador() {
     if (inputHipodoge.checked) {
         spanMascotaJugador.innerHTML = "Carlitos"
         spanMascotaEnemigo.innerHTML = seleccionarMascotaEnemigo()
+
+        let sectionSeleccionarAtaque=document.getElementById('seleccionar-ataque')
+        sectionSeleccionarAtaque.style.display='block'
+
+        let sectionSeleccionarMascota=document.getElementById('seleccionar-mascota')
+        sectionSeleccionarMascota.style.display='none'
+
     } else if (inputCapipepo.checked) {
         spanMascotaJugador.innerHTML = "Chamuko"
         spanMascotaEnemigo.innerHTML = seleccionarMascotaEnemigo()
+
+        let sectionSeleccionarAtaque=document.getElementById('seleccionar-ataque')
+        sectionSeleccionarAtaque.style.display='block'
+
+        let sectionSeleccionarMascota=document.getElementById('seleccionar-mascota')
+        sectionSeleccionarMascota.style.display='none'
+
     } else if (inputRatigueya.checked) {
         spanMascotaJugador.innerHTML = "Angelina"
         spanMascotaEnemigo.innerHTML = seleccionarMascotaEnemigo()
+
+        let sectionSeleccionarAtaque=document.getElementById('seleccionar-ataque')
+        sectionSeleccionarAtaque.style.display='block'
+
+        let sectionSeleccionarMascota=document.getElementById('seleccionar-mascota')
+        sectionSeleccionarMascota.style.display='none'
+
     } else {
         Swal.fire(
             'Selecciona una Mascota',
@@ -131,6 +158,9 @@ function combate() {
             let botonTierra = document.getElementById('btn-tierra')
             botonTierra.disabled=true
 
+            let sectionReiniciar=document.getElementById('reiniciar')
+            sectionReiniciar.style.display='block'
+
         } else if (vidasEnemigo == 0) {
             Swal.fire(
                 '¡Buen Trabajo!',
@@ -147,6 +177,9 @@ function combate() {
         
             let botonTierra = document.getElementById('btn-tierra')
             botonTierra.disabled=true
+
+            let sectionReiniciar=document.getElementById('reiniciar')
+            sectionReiniciar.style.display='block'
         }
 
 }
