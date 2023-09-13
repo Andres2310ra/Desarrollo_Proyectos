@@ -19,7 +19,7 @@ function iniciarJuego() {
     botonTierra.addEventListener('click', ataqueTierra)
 
     let reiniciar = document.getElementById('btn-reiniciar')
-    reiniciar.addEventListener('click', reiniciarJuego())
+    reiniciar.addEventListener('click', reiniciarJuego)
 }
 function seleccionarMascotaJugador() {
     let inputHipodoge = document.getElementById('hipodoge')
@@ -87,8 +87,6 @@ function combate() {
     let spanVidasEnemigo = document.getElementById('vidas-enemigo')
     let vida = '❤️'
 
-    if (vidasJugador > 0 && vidasEnemigo > 0) {
-
         if (ataqueJugador == "Fuego" && ataqueEnemigo == "Tierra" || ataqueJugador == "Agua" && ataqueEnemigo == "Fuego" || ataqueJugador == "Tierra" && ataqueEnemigo == "Agua") {
             mensajeJuego(" - Ganaste 🎉")
             vidasEnemigo--
@@ -123,6 +121,16 @@ function combate() {
                 'error'
             )
             spanVidasJugador.innerHTML = 0
+
+            let botonFuego = document.getElementById('btn-fuego')
+            botonFuego.disabled=true
+        
+            let botonAgua = document.getElementById('btn-agua')
+            botonAgua.disabled=true
+        
+            let botonTierra = document.getElementById('btn-tierra')
+            botonTierra.disabled=true
+
         } else if (vidasEnemigo == 0) {
             Swal.fire(
                 '¡Buen Trabajo!',
@@ -130,9 +138,16 @@ function combate() {
                 'success'
             )
             spanVidasEnemigo.innerHTML = 0
-        }
 
-    }
+            let botonFuego = document.getElementById('btn-fuego')
+            botonFuego.disabled=true
+        
+            let botonAgua = document.getElementById('btn-agua')
+            botonAgua.disabled=true
+        
+            let botonTierra = document.getElementById('btn-tierra')
+            botonTierra.disabled=true
+        }
 
 }
 
