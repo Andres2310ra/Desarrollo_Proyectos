@@ -54,40 +54,40 @@ function seleccionarAtaqueEnemigo() {
 function ataqueFuego() {
     ataqueJugador = "Fuego"
     ataqueEnemigo = seleccionarAtaqueEnemigo()
-    mensajeJuego()
+    combate()
 }
 
 function ataqueAgua() {
     ataqueJugador = "Agua"
     ataqueEnemigo = seleccionarAtaqueEnemigo()
-    mensajeJuego()
+    combate()
 }
 
 function ataqueTierra() {
     ataqueJugador = "Tierra"
     ataqueEnemigo = seleccionarAtaqueEnemigo()
-    mensajeJuego()
+    combate()
 }
 
 function combate() {
     if (ataqueJugador == "Fuego" && ataqueEnemigo == "Tierra" || ataqueJugador == "Agua" && ataqueEnemigo == "Fuego" || ataqueJugador == "Tierra" && ataqueEnemigo == "Agua") {
 
-        mensajeJuego("Ganaste 🎉")
+        mensajeJuego(" - Ganaste 🎉")
 
     } else if (ataqueJugador == ataqueEnemigo) {
 
-        mensajeJuego("Sin daños 😮")
+        mensajeJuego(" - Sin daños 😮")
 
     } else {
-        mensajeJuego("Perdiste 🥶")
+        mensajeJuego(" - Perdiste 🥶")
     }
 }
 
-function mensajeJuego(resultadoCombate) {
+function mensajeJuego(resultado) {
     let sectionMensaje = document.getElementById('mensajes')
     let mensaje = document.createElement('p')
 
-    mensaje.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ', la mascota del enemigo atacó con ' + ataqueEnemigo + ' - ' +  resultadoCombate
+    mensaje.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ', la mascota del enemigo atacó con ' + ataqueEnemigo + resultado
 
     sectionMensaje.appendChild(mensaje)
 }
