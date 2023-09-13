@@ -111,9 +111,9 @@ function combate() {
         Swal.fire(
             '¡La Batalla Estuvo Dificil!',
             'Tu Mascota Perdio la Batalla',
-            'success'
+            'error'
         )
-    } else {
+    } else if (vidasEnemigo==0) {
         Swal.fire(
             '¡Buen Trabajo!',
             'Tu Mascota Gano la Batalla',
