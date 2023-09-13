@@ -2,6 +2,8 @@ let ataqueJugador = ''
 let ataqueEnemigo = ''
 let vidasJugador = 3
 let vidasEnemigo = 3
+let spanMascotaJugador = ''
+let spanMascotaEnemigo = ''
 
 function iniciarJuego() {
     let botonMascotaJugador = document.getElementById('boton-mascota')
@@ -20,8 +22,8 @@ function seleccionarMascotaJugador() {
     let inputHipodoge = document.getElementById('hipodoge')
     let inputCapipepo = document.getElementById('capipepo')
     let inputRatigueya = document.getElementById('ratigueya')
-    let spanMascotaJugador = document.getElementById('mascota-jugador')
-    let spanMascotaEnemigo = document.getElementById('mascota-enemigo')
+    spanMascotaJugador = document.getElementById('mascota-jugador')
+    spanMascotaEnemigo = document.getElementById('mascota-enemigo')
 
     if (inputHipodoge.checked) {
         spanMascotaJugador.innerHTML = "Carlitos"
@@ -33,7 +35,11 @@ function seleccionarMascotaJugador() {
         spanMascotaJugador.innerHTML = "Angelina"
         spanMascotaEnemigo.innerHTML = seleccionarMascotaEnemigo()
     } else {
-        alert('Debes seleccionar una mascota')
+        Swal.fire(
+            'Selecciona una Mascota',
+            'Sin Mascota no Puedes Jugar',
+            'warning'
+        )
     }
 }
 
@@ -54,21 +60,27 @@ function seleccionarAtaqueEnemigo() {
 }
 
 function ataqueFuego() {
-    ataqueJugador = "Fuego"
-    ataqueEnemigo = seleccionarAtaqueEnemigo()
-    combate()
+    if (!spanMascotaJugador == '') {
+        ataqueJugador = "Fuego"
+        ataqueEnemigo = seleccionarAtaqueEnemigo()
+        combate()
+    }
 }
 
 function ataqueAgua() {
-    ataqueJugador = "Agua"
-    ataqueEnemigo = seleccionarAtaqueEnemigo()
-    combate()
+    if (!spanMascotaJugador == '') {
+        ataqueJugador = "Agua"
+        ataqueEnemigo = seleccionarAtaqueEnemigo()
+        combate()
+    }
 }
 
 function ataqueTierra() {
-    ataqueJugador = "Tierra"
-    ataqueEnemigo = seleccionarAtaqueEnemigo()
-    combate()
+    if (!spanMascotaJugador == '') {
+        ataqueJugador = "Tierra"
+        ataqueEnemigo = seleccionarAtaqueEnemigo()
+        combate()
+    }
 }
 
 function combate() {
@@ -76,7 +88,7 @@ function combate() {
     let spanVidasEnemigo = document.getElementById('vidas-enemigo')
     let vida = '❤️'
 
-    if (vidasJugador > 0 || vidasEnemigo > 0) {
+    if (vidasJugador > 0 && vidasEnemigo > 0) {
 
         if (ataqueJugador == "Fuego" && ataqueEnemigo == "Tierra" || ataqueJugador == "Agua" && ataqueEnemigo == "Fuego" || ataqueJugador == "Tierra" && ataqueEnemigo == "Agua") {
             mensajeJuego(" - Ganaste 🎉")
@@ -97,28 +109,30 @@ function combate() {
 
         }
 
-    }
+        for (let i = 0; i < vidasJugador; i++) {
+            spanVidasJugador.innerHTML += vida
+        }
 
-    for (let i = 0; i < vidasJugador; i++) {
-        spanVidasJugador.innerHTML += vida
-    }
+        for (let i = 0; i < vidasEnemigo; i++) {
+            spanVidasEnemigo.innerHTML += vida
+        }
 
-    for (let i = 0; i < vidasEnemigo; i++) {
-        spanVidasEnemigo.innerHTML += vida
-    }
+        if (vidasJugador == 0) {
+            Swal.fire(
+                '¡La Batalla Estuvo Dificil!',
+                'Tu Mascota Perdio la Batalla',
+                'error'
+            )
+            spanVidasJugador.innerHTML = 0
+        } else if (vidasEnemigo == 0) {
+            Swal.fire(
+                '¡Buen Trabajo!',
+                'Tu Mascota Gano la Batalla',
+                'success'
+            )
+            spanVidasEnemigo.innerHTML = 0
+        }
 
-    if (vidasJugador == 0) {
-        Swal.fire(
-            '¡La Batalla Estuvo Dificil!',
-            'Tu Mascota Perdio la Batalla',
-            'error'
-        )
-    } else if (vidasEnemigo==0) {
-        Swal.fire(
-            '¡Buen Trabajo!',
-            'Tu Mascota Gano la Batalla',
-            'success'
-        )
     }
 
 }
