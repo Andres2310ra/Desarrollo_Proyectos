@@ -84,9 +84,7 @@ function combate() {
 
     } else if (ataqueJugador == ataqueEnemigo) {
         mensajeJuego(" - Sin daños 😮")
-        vidasJugador++
         spanVidasJugador.innerHTML = ''
-        vidasEnemigo++
         spanVidasEnemigo.innerHTML = ''
 
     } else {
