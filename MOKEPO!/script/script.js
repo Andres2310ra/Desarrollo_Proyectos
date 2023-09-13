@@ -17,6 +17,9 @@ function iniciarJuego() {
 
     let botonTierra = document.getElementById('btn-tierra')
     botonTierra.addEventListener('click', ataqueTierra)
+
+    let reiniciar = document.getElementById('btn-reiniciar')
+    reiniciar.addEventListener('click', reiniciarJuego())
 }
 function seleccionarMascotaJugador() {
     let inputHipodoge = document.getElementById('hipodoge')
@@ -41,10 +44,6 @@ function seleccionarMascotaJugador() {
             'warning'
         )
     }
-}
-
-function aleatorio(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
 function seleccionarMascotaEnemigo() {
@@ -144,6 +143,14 @@ function mensajeJuego(resultado) {
     mensaje.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ', la mascota del enemigo atacó con ' + ataqueEnemigo + resultado
 
     sectionMensaje.appendChild(mensaje)
+}
+
+function reiniciarJuego() {
+    location.reload()
+}
+
+function aleatorio(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
 window.addEventListener('load', iniciarJuego)
