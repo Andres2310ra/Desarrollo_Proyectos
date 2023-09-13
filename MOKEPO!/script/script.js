@@ -71,11 +71,9 @@ function ataqueTierra() {
 
 function combate() {
     if (ataqueJugador == "Fuego" && ataqueEnemigo == "Tierra" || ataqueJugador == "Agua" && ataqueEnemigo == "Fuego" || ataqueJugador == "Tierra" && ataqueEnemigo == "Agua") {
-
         mensajeJuego(" - Ganaste 🎉")
 
     } else if (ataqueJugador == ataqueEnemigo) {
-
         mensajeJuego(" - Sin daños 😮")
 
     } else {
