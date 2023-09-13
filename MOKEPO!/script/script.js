@@ -76,22 +76,26 @@ function combate() {
     let spanVidasEnemigo = document.getElementById('vidas-enemigo')
     let vida = '❤️'
 
-    if (ataqueJugador == "Fuego" && ataqueEnemigo == "Tierra" || ataqueJugador == "Agua" && ataqueEnemigo == "Fuego" || ataqueJugador == "Tierra" && ataqueEnemigo == "Agua") {
-        mensajeJuego(" - Ganaste 🎉")
-        vidasEnemigo--
-        spanVidasEnemigo.innerHTML = ''
-        spanVidasJugador.innerHTML = ''
+    if (vidasJugador > 0 || vidasEnemigo > 0) {
 
-    } else if (ataqueJugador == ataqueEnemigo) {
-        mensajeJuego(" - Sin daños 😮")
-        spanVidasJugador.innerHTML = ''
-        spanVidasEnemigo.innerHTML = ''
+        if (ataqueJugador == "Fuego" && ataqueEnemigo == "Tierra" || ataqueJugador == "Agua" && ataqueEnemigo == "Fuego" || ataqueJugador == "Tierra" && ataqueEnemigo == "Agua") {
+            mensajeJuego(" - Ganaste 🎉")
+            vidasEnemigo--
+            spanVidasEnemigo.innerHTML = ''
+            spanVidasJugador.innerHTML = ''
 
-    } else {
-        mensajeJuego(" - Perdiste 🥶")
-        vidasJugador--
-        spanVidasEnemigo.innerHTML = ''
-        spanVidasJugador.innerHTML = ''
+        } else if (ataqueJugador == ataqueEnemigo) {
+            mensajeJuego(" - Sin daños 😮")
+            spanVidasJugador.innerHTML = ''
+            spanVidasEnemigo.innerHTML = ''
+
+        } else {
+            mensajeJuego(" - Perdiste 🥶")
+            vidasJugador--
+            spanVidasEnemigo.innerHTML = ''
+            spanVidasJugador.innerHTML = ''
+
+        }
 
     }
 
@@ -101,6 +105,20 @@ function combate() {
 
     for (let i = 0; i < vidasEnemigo; i++) {
         spanVidasEnemigo.innerHTML += vida
+    }
+
+    if (vidasJugador == 0) {
+        Swal.fire(
+            '¡La Batalla Estuvo Dificil!',
+            'Tu Mascota Perdio la Batalla',
+            'success'
+        )
+    } else {
+        Swal.fire(
+            '¡Buen Trabajo!',
+            'Tu Mascota Gano la Batalla',
+            'success'
+        )
     }
 
 }
