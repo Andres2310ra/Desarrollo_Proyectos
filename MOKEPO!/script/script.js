@@ -69,10 +69,25 @@ function ataqueTierra() {
     mensajeJuego()
 }
 
-function mensajeJuego() {
-    let mensaje = document.createElement('p')
+function combate() {
+    if (ataqueJugador == "Fuego" && ataqueEnemigo == "Tierra" || ataqueJugador == "Agua" && ataqueEnemigo == "Fuego" || ataqueJugador == "Tierra" && ataqueEnemigo == "Agua") {
+
+        mensajeJuego("Ganaste 🎉")
+
+    } else if (ataqueJugador == ataqueEnemigo) {
+
+        mensajeJuego("Sin daños 😮")
+
+    } else {
+        mensajeJuego("Perdiste 🥶")
+    }
+}
+
+function mensajeJuego(resultadoCombate) {
     let sectionMensaje = document.getElementById('mensajes')
-    mensaje.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ', la mascota del enemigo atacó con ' + ataqueEnemigo + ' Pendiente 🎉'
+    let mensaje = document.createElement('p')
+
+    mensaje.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ', la mascota del enemigo atacó con ' + ataqueEnemigo + ' - ' +  resultadoCombate
 
     sectionMensaje.appendChild(mensaje)
 }
