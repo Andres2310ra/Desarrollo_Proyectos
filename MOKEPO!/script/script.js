@@ -1,5 +1,7 @@
 let ataqueJugador = ''
 let ataqueEnemigo = ''
+let vidasJugador = 3
+let vidasEnemigo = 3
 
 function iniciarJuego() {
     let botonMascotaJugador = document.getElementById('boton-mascota')
@@ -70,15 +72,39 @@ function ataqueTierra() {
 }
 
 function combate() {
+    let spanVidasJugador = document.getElementById('vidas-jugador')
+    let spanVidasEnemigo = document.getElementById('vidas-enemigo')
+    let vida = '❤️'
+
     if (ataqueJugador == "Fuego" && ataqueEnemigo == "Tierra" || ataqueJugador == "Agua" && ataqueEnemigo == "Fuego" || ataqueJugador == "Tierra" && ataqueEnemigo == "Agua") {
         mensajeJuego(" - Ganaste 🎉")
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = ''
+        spanVidasJugador.innerHTML = ''
 
     } else if (ataqueJugador == ataqueEnemigo) {
         mensajeJuego(" - Sin daños 😮")
+        vidasJugador++
+        spanVidasJugador.innerHTML = ''
+        vidasEnemigo++
+        spanVidasEnemigo.innerHTML = ''
 
     } else {
         mensajeJuego(" - Perdiste 🥶")
+        vidasJugador--
+        spanVidasEnemigo.innerHTML = ''
+        spanVidasJugador.innerHTML = ''
+
     }
+
+    for (let i = 0; i < vidasJugador; i++) {
+        spanVidasJugador.innerHTML += vida
+    }
+
+    for (let i = 0; i < vidasEnemigo; i++) {
+        spanVidasEnemigo.innerHTML += vida
+    }
+
 }
 
 function mensajeJuego(resultado) {
