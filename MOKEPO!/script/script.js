@@ -121,9 +121,11 @@ function combate() {
             spanVidasJugador.innerHTML = ''
 
         } else if (ataqueJugador == ataqueEnemigo) {
-            mensajeJuego(" - Sin daños 😮")
+            mensajeJuego(" - Sin daños 😮, Aumento de Vida")
             spanVidasJugador.innerHTML = ''
             spanVidasEnemigo.innerHTML = ''
+            vidasJugador++
+            vidasEnemigo++
 
         } else {
             mensajeJuego(" - Perdiste 🥶")
