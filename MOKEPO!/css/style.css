@@ -1,24 +1,37 @@
 .titulo {
     color: white;
-    width: 310px;
-    height: 50px;
-    background-color: #DC2F02;
+    width: 100%;
+    height: 36px;
+    padding: 10px;
+    background: #DC2F02;
+    text-align: center;
 }
 
-label {
-    background-color: #DC2F02;
-    width: 310px;
-    height: 50px;
+#seleccionar-mascota {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-input {
-    background-color: #DC2F02;
-    width: 310px;
-    height: 50px;
+.tarjetas-juego{
+    display: flex;
 }
 
-button {
-    background-color: #DC2F02;
-    width: 310px;
-    height: 50px;
+.tarjeta-mascota{
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    background: #FFBA08;
+    border: 1px solid #DC2F02;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+input{
+    display: none;
 }
