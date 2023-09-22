@@ -55,6 +55,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .titulo-contenedor {
@@ -71,37 +73,38 @@
   font-family: 'Comic Neue', cursive;
   font-size: calc(2rem + (50 -2) * ((100vw -300px) / (1600 -300)));
 }
-  /* Esta fórmula permite ajustar el tamaño de la fuente según el ancho de la pantalla */
-  /* Fuente mínima =2rem, fuente máxima =50rem, ancho mínimo =300px, ancho máximo =1600px */
-  /* Puedes cambiar estos valores según tus preferencias */
-  /* Fuente original https://css-tricks.com/snippets/css/fluid-typography/ */
 
-  /* Si no quieres usar esta fórmula, puedes usar media queries para cambiar el tamaño de la fuente en diferentes resoluciones */
+/* Esta fórmula permite ajustar el tamaño de la fuente según el ancho de la pantalla */
+/* Fuente mínima =2rem, fuente máxima =50rem, ancho mínimo =300px, ancho máximo =1600px */
+/* Puedes cambiar estos valores según tus preferencias */
+/* Fuente original https://css-tricks.com/snippets/css/fluid-typography/ */
 
-  /* Por ejemplo:*/
+/* Si no quieres usar esta fórmula, puedes usar media queries para cambiar el tamaño de la fuente en diferentes resoluciones */
 
-  @media screen and (max-width:480px) {
-    .titulo h1 {
-      font-size: 2rem;
-      /* Tamaño para pantallas pequeñas */
-    }
+/* Por ejemplo:*/
+
+@media screen and (max-width:480px) {
+  .titulo h1 {
+    font-size: 2rem;
+    /* Tamaño para pantallas pequeñas */
   }
+}
 
-  @media screen and (min-width:481px) and (max-width:780px) {
-    .titulo h1 {
-      font-size: 3rem;
-      /* Tamaño para pantallas medianas */
-    }
+@media screen and (min-width:481px) and (max-width:780px) {
+  .titulo h1 {
+    font-size: 3rem;
+    /* Tamaño para pantallas medianas */
   }
+}
 
-  @media screen and (min-width:781px) {
-    .titulo h1 {
-      font-size: 4rem;
-      /* Tamaño para pantallas grandes */
-    }
+@media screen and (min-width:781px) {
+  .titulo h1 {
+    font-size: 4rem;
+    /* Tamaño para pantallas grandes */
   }
+}
 
-  /* También puedes usar otras unidades relativas como em o rem en lugar de rem */
+/* También puedes usar otras unidades relativas como em o rem en lugar de rem */
 
 
 
@@ -110,14 +113,47 @@
 #seleccionar-mascota {
 
   /* Usamos Flexbox para crear un diseño flexible y responsivo */
-position: relative;
-display: flex;
+
+  position: relative;
+
+  display: flex;
   /* Indicamos que queremos usar Flexbox */
-flex-direction: column;
+
+  flex-direction: column;
   /* Indicamos que queremos que los elementos se ordenen en columnas */
-justify-content: center;
-align-items: center;
-margin: 11% 16px;
+
+  justify-content: center;
+
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 5% 0%;
+}
+
+.tarjeta-contenedor {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 5% 0%;
+  background-color: #000;
+  opacity: 20%;
+}
+
+#seleccionar-mascota h2 {
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-align: center;
+  position: relative;
+  border-bottom:  white solid 2px;
+  padding: 4% 0%;
+  margin: auto;
+  font-size: 138%;
 }
 
 .tarjetas-juego {
@@ -136,8 +172,7 @@
 .tarjeta-mascota {
   width: 25%;
   /* Usamos un porcentaje en lugar de un valor fijo para el ancho */
-  height: auto;
-  /* Usamos auto para que el alto se ajuste al contenido */
+  height: 100%;
   padding: 10px;
   box-sizing: border-box;
   margin: 10px;
