@@ -68,7 +68,7 @@ function seleccionarMascotaJugador() {
         Swal.fire(
             'Selecciona una Mascota',
             'Sin Mascota no Puedes Jugar',
-            'warning'
+            'error'
         )
     }
 }
@@ -124,8 +124,8 @@ function combate() {
             mensajeJuego(" - Sin daños 😮, Aumento de Vida")
             spanVidasJugador.innerHTML = ''
             spanVidasEnemigo.innerHTML = ''
-            vidasJugador++
-            vidasEnemigo++
+            //vidasJugador++
+            //vidasEnemigo++
 
         } else {
             mensajeJuego(" - Perdiste 🥶")
