@@ -75,13 +75,6 @@
 }
 
 /* Esta fórmula permite ajustar el tamaño de la fuente según el ancho de la pantalla */
-/* Fuente mínima =2rem, fuente máxima =50rem, ancho mínimo =300px, ancho máximo =1600px */
-/* Puedes cambiar estos valores según tus preferencias */
-/* Fuente original https://css-tricks.com/snippets/css/fluid-typography/ */
-
-/* Si no quieres usar esta fórmula, puedes usar media queries para cambiar el tamaño de la fuente en diferentes resoluciones */
-
-/* Por ejemplo:*/
 
 @media screen and (max-width:480px) {
   .titulo h1 {
