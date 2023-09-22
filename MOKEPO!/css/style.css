@@ -130,7 +130,7 @@
   height: 100%;
   padding: 10px;
   box-sizing: border-box;
-  margin: 5% 0%;
+  margin: 2% 0%;
 }
 
 .tarjeta-contenedor {
@@ -139,7 +139,7 @@
   height: 100%;
   padding: 10px;
   box-sizing: border-box;
-  margin: 5% 0%;
+  margin: 2% 0%;
   background-color: #000;
   opacity: 20%;
 }
@@ -150,8 +150,8 @@
   color: white;
   text-align: center;
   position: relative;
-  border-bottom:  white solid 2px;
-  padding: 4% 0%;
+  border-bottom: white solid 2px;
+  padding: 2% 0%;
   margin: auto;
   font-size: 138%;
 }
@@ -170,43 +170,68 @@
 }
 
 .tarjeta-mascota {
-  width: 25%;
+  width: 100%;
   /* Usamos un porcentaje en lugar de un valor fijo para el ancho */
-  height: 100%;
+  height: 302px;
   padding: 10px;
   box-sizing: border-box;
   margin: 10px;
-  background: #FFBA08;
-  border: 1px solid #DC2F02;
+  border: 2px solid white;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: right;
 }
 
 input {
   display: none;
 }
 
+#t-1 {
+  background-image: url(../img/targeta_1.jpg);
+  background-size: cover; /* Ajusta la imagen al tamaño de la tarjeta */
+  background-position: center; /* Centra la imagen vertical y horizontalmente */
+}
+
+#t-2 {
+  background-image: url(../img/targeta_2.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+#t-3 {
+  background-image: url(../img/targeta_3.png);
+  background-size: cover;
+  background-position: center;
+}
+
+
 /* Usamos media queries para cambiar el ancho de las tarjetas según la resolución */
 
 @media screen and (max-width:480px) {
   .tarjeta-mascota {
-    width: 80%;
+    width: 60%;
     /* Ancho para pantallas pequeñas */
   }
 }
 
 @media screen and (min-width:481px) and (max-width:780px) {
   .tarjeta-mascota {
-    width: 60%;
+    width: 80%;
     /* Ancho para pantallas medianas */
   }
 }
 
 @media screen and (min-width:781px) {
   .tarjeta-mascota {
-    width: 100%;
+    width: 300px;
     /* Ancho para pantallas grandes */
   }
+}
+
+button{
+  position: relative;
+  width: 100px;
+  height: 50px;
+  background: #008000;  
 }
