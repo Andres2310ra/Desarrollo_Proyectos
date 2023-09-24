@@ -239,7 +239,7 @@ button {
   color: white;
   border-radius: 10px;
   font-size: 15px;
-  cursor: progress;
+  cursor: pointer;
   transition: all 0.3s ease;
   margin: 5px;
 }
