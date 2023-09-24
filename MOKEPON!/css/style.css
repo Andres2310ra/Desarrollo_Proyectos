@@ -210,13 +210,14 @@ input {
 }
 
 button {
-  width: 120px;
-  height: 40px;
+  display: inline-block;
   background-color: #008000;
   border: 2px solid #008000;
+  padding: 10px 20px;
   color: white;
   border-radius: 10px;
   font-size: 15px;
+  cursor: pointer;
 }
 
 #boton-mascota {
@@ -225,6 +226,8 @@ button {
 
 #boton-mascota:hover {
   position: relative;
-  background-color: white;
-  color: #000;
+  background-color: #008000;
+  color: white;
+  transform: scale(1.1);
+
 }
