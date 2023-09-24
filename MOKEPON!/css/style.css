@@ -35,7 +35,7 @@ body {
   height: 70%;
 
   background-color: #000;
-  opacity: 30%;
+  opacity: 40%;
   border-radius: 10px;
 }
 
@@ -100,7 +100,7 @@ body {
   margin: 2% 0%;
 
   background-color: #000;
-  opacity: 25%;
+  opacity: 40%;
   border-radius: 10px;
 
 }
@@ -168,7 +168,6 @@ body {
   position: relative;
   background-color: #008000;
   color: white;
-  opacity: 20%;
   transform: scale(1.1);
 
   border-color: white;
@@ -238,6 +237,7 @@ button {
   font-size: 15px;
   cursor: pointer;
   transition: all 0.3s ease;
+  margin: 5px;
 }
 
 #boton-mascota {
