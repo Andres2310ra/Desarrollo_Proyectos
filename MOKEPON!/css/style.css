@@ -150,13 +150,30 @@ body {
   height: 241px;
   padding: 30px 10px;
   box-sizing: border-box;
-  border: #000 solid 2px;
   border-radius: 10px;
+  
+  background-color: #3b302f;
+  border: 2px solid #007200;
+  outline: 2px solid #006400;
 
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   text-align: right;
+
+  transition: all 0.3s ease;
+}
+
+.tarjeta-mascota:hover {
+  position: relative;
+  background-color: #008000;
+  color: white;
+  opacity: 20%;
+  transform: scale(1.1);
+
+  border-color: white;
+  outline-color: white;
+
 }
 
 input {
@@ -211,23 +228,30 @@ input {
 
 button {
   display: inline-block;
-  background-color: #008000;
-  border: 2px solid #008000;
+  background-color: #3b302f;
+  border: 2px solid #007200;
+  outline: 2px solid #006400;
   padding: 10px 20px;
+  font-family: 'Fredoka', sans-serif;
   color: white;
   border-radius: 10px;
   font-size: 15px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 #boton-mascota {
   position: relative;
+  margin-top: 15px;
 }
 
 #boton-mascota:hover {
   position: relative;
-  background-color: #008000;
+  background-color: #3b302f;
   color: white;
   transform: scale(1.1);
+
+  border-color: white;
+  outline-color: white;
 
 }
