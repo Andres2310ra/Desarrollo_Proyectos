@@ -77,7 +77,7 @@ function styleMascotaJugador() {
         tarjeta1.style.backgroundColor = '#3b302f'
         tarjetaSeleccionada1.innerHTML = ''
 
-    } else if (inputRatigueya.checked){
+    } else if (inputRatigueya.checked) {
         tarjeta3.style.border = '2px solid white'
         tarjeta3.style.outline = '2px solid white'
         tarjeta3.style.backgroundColor = 'transparent'
