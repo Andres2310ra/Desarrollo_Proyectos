@@ -95,7 +95,6 @@ function styleMascotaJugador() {
 
     }
 
-
 }
 
 function seleccionarMascotaJugador() {
