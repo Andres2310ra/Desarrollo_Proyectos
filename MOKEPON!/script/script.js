@@ -49,7 +49,7 @@ function styleMascotaJugador() {
         tarjeta1.style.border = '2px solid white'
         tarjeta1.style.outline = '2px solid white'
         tarjeta1.style.backgroundColor = 'transparent'
-        tarjetaSeleccionada1.innerHTML = ' - Selected'
+        tarjetaSeleccionada1.innerHTML = 'Selected'
 
         tarjeta2.style.border = '2px solid #007200'
         tarjeta2.style.outline = '2px solid #006400'
@@ -65,7 +65,7 @@ function styleMascotaJugador() {
         tarjeta2.style.border = '2px solid white'
         tarjeta2.style.outline = '2px solid white'
         tarjeta2.style.backgroundColor = 'transparent'
-        tarjetaSeleccionada2.innerHTML = ' - Selected'
+        tarjetaSeleccionada2.innerHTML = 'Selected'
 
         tarjeta3.style.border = '2px solid #007200'
         tarjeta3.style.outline = '2px solid #006400'
@@ -81,7 +81,7 @@ function styleMascotaJugador() {
         tarjeta3.style.border = '2px solid white'
         tarjeta3.style.outline = '2px solid white'
         tarjeta3.style.backgroundColor = 'transparent'
-        tarjetaSeleccionada3.innerHTML = ' - Selected'
+        tarjetaSeleccionada3.innerHTML = 'Selected'
 
         tarjeta1.style.border = '2px solid #007200'
         tarjeta1.style.outline = '2px solid #006400'
