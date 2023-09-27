@@ -88,7 +88,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  margin-top: 0%;
+  margin-top: 5px;
 
 }
 
@@ -120,21 +120,21 @@ body {
 }
 
 @media screen and (max-width:480px) {
-  #seleccionar-mascota h2 {
+  h2 {
     font-size: 1rem;
     /* Tamaño para pantallas pequeñas */
   }
 }
 
 @media screen and (min-width:481px) and (max-width:780px) {
-  #seleccionar-mascota h2 {
+  h2 {
     font-size: 1rem;
     /* Tamaño para pantallas medianas */
   }
 }
 
 @media screen and (min-width:781px) {
-  #seleccionar-mascota h2 {
+  h2 {
     font-size: 2rem;
     /* Tamaño para pantallas grandes */
   }
@@ -239,6 +239,7 @@ input {
 }
 
 button {
+  position: relative;
   display: inline-block;
   background-color: #3b302f;
   border: 2px solid #007200;
@@ -250,7 +251,7 @@ button {
   font-size: 15px;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin: 5px;
+  margin: 10px;
 }
 
 #boton-mascota {
@@ -267,4 +268,116 @@ button {
   border-color: white;
   outline-color: white;
 
+}
+
+/* Ataque */
+
+#seleccionar-ataque {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 2% 0%;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 5px;
+
+}
+
+.tarjeta-contenedor {
+  position: absolute;
+
+  width: 75%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 2% 0%;
+
+  background-color: #000;
+  opacity: 50%;
+  border-radius: 10px;
+  border: 3px solid #007200;
+  outline: 3px solid #006400;
+
+}
+
+#seleccionar-ataque h2 {
+  position: relative;
+
+  width: 70%;
+  height: 100%;
+  text-align: center;
+  margin: auto;
+  padding: 2% 0%;
+}
+
+.btn-de-ataque{
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ancho para pantallas pequeñas */
+@media screen and (max-width:480px) {
+  .btn-de-ataque {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ataque{
+  width: 176px;
+  }
+
+}
+
+/* Ancho para pantallas medianas */
+@media screen and (min-width:481px) and (max-width:780px) {
+  .btn-de-ataque {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ataque{
+    width: 240px;
+    }
+
+}
+
+/* Ancho para pantallas grandes */
+@media screen and (min-width:781px) {
+  .btn-de-ataque {
+    display: flex;
+  }
+
+  .ataque{
+    width: 200px;
+    }
+
+}
+
+.mensaje-reiniciar-juego{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 67%;
+  height: 36px;
+  background-color: white;
+  color: #000;
+  border-radius: 10px;
+  border: 2px solid #007200;
+  outline: 2px solid #006400;
+  margin: 10px;
+}
+
+#mensajes{
+  text-align: center;
+  
 }
