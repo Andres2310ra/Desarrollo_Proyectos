@@ -41,33 +41,43 @@
             <input type="radio" name="mascota" id="ratigueya" />
         </div>
 
-        <button id="boton-mascota">Seleccionar</button>
+        <button id="boton-mascota">Continuar</button>
 
     </section>
 
     <section id="seleccionar-ataque">
 
+        <div class="tarjeta-contenedor"></div>
         <h2>Elige tu ataque:</h2>
 
-        <p id="resultado-jugador">Tu mascota <span id="mascota-jugador"></span> tiene <span
-                id="vidas-jugador">❤️❤️❤️</span> vidas</p>
-        <p id="resultado-enemigo">Las mascota <span id="mascota-enemigo"></span> del enemigo tiene <span
-                id="vidas-enemigo">❤️❤️❤️</span> vidas</p>
+        <div class="btn-de-ataque">
+            <button class="ataque" id="btn-fuego">Fuego 🔥</button>
+            <button class="ataque" id="btn-agua">Agua 💧</button>
+            <button class="ataque" id="btn-tierra">Tierra 🌱</button>
+        </div>
 
-        <p>
-            <button id="btn-fuego">Fuego 🔥</button>
-            <button id="btn-agua">Agua 💧</button>
-            <button id="btn-tierra">Tierra 🌱</button>
-        </p>
+        <div id="mensaje-batalla" class="mensaje-reiniciar-juego">
+            <section id="mensajes">
+                <p id="resultado"></p>
+            </section>
+        </div>
+
+        <section id="reiniciar">
+            <button id="btn-reiniciar">Volver a Jugar</button>
+        </section>
+
+        <div>
+            <div id="ataque-jugador"></div>
+            <div id="ataque-enemigo"></div>
+
+            <p id="resultado-jugador">Tu mascota <span id="mascota-jugador"></span> tiene <span
+                    id="vidas-jugador">❤️❤️❤️</span> vidas</p>
+            <p id="resultado-enemigo">Las mascota <span id="mascota-enemigo"></span> del enemigo tiene <span
+                    id="vidas-enemigo">❤️❤️❤️</span> vidas</p>
+        </div>
+
     </section>
 
-    <section id="mensajes">
-
-    </section>
-
-    <section id="reiniciar">
-        <button id="btn-reiniciar">Reiniciar</button>
-    </section>
 </body>
 
 </html>
