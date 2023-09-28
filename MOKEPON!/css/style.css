@@ -163,12 +163,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align:center;
+  text-align: center;
 
   transition: all 0.3s ease;
 }
 
-.tarjeta-mascota p{
+.tarjeta-mascota p {
   padding: 0% 30%;
   box-sizing: border-box;
   margin-bottom: 170px;
@@ -316,7 +316,7 @@ button {
   padding: 2% 0%;
 }
 
-.btn-de-ataque{
+.btn-de-ataque {
   width: 100%;
   height: 100%;
   justify-content: center;
@@ -330,8 +330,8 @@ button {
     flex-direction: column;
   }
 
-  .ataque{
-  width: 176px;
+  .ataque {
+    width: 176px;
   }
 
 }
@@ -343,9 +343,9 @@ button {
     flex-direction: column;
   }
 
-  .ataque{
+  .ataque {
     width: 240px;
-    }
+  }
 
 }
 
@@ -355,13 +355,13 @@ button {
     display: flex;
   }
 
-  .ataque{
+  .ataque {
     width: 200px;
-    }
+  }
 
 }
 
-.mensaje-reiniciar-juego{
+.mensaje-reiniciar-juego {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -377,32 +377,32 @@ button {
   margin: 10px;
 }
 
-#mensajes{
+#mensajes {
   text-align: center;
 }
 
-.ataques-mensajes{
+.ataques-mensajes {
   position: relative;
   display: grid;
   justify-items: center;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   text-align: center;
   grid-template-columns: 70% 70%;
   margin-top: 10px;
 }
 
-#vidas-jugador{
+#vidas-jugador {
   margin-bottom: 10px;
   font-size: 20px;
 }
 
-#vidas-enemigo{
+#vidas-enemigo {
   margin-bottom: 10px;
   font-size: 20px;
 }
 
-#ataque-jugador{
+#ataque-jugador {
   border-radius: 10px;
   background-color: #3b302f;
   border: 2px solid #007200;
@@ -410,7 +410,7 @@ button {
   width: 70px;
 }
 
-#ataque-enemigo{
+#ataque-enemigo {
   border-radius: 10px;
   background-color: #3b302f;
   border: 2px solid #007200;
