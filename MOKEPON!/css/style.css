@@ -389,14 +389,31 @@ button {
   align-items: center;
   text-align: center;
   grid-template-columns: 70% 70%;
-  border-top:  white solid 2px;
   margin-top: 10px;
 }
 
 #vidas-jugador{
   margin-bottom: 10px;
+  font-size: 20px;
 }
 
 #vidas-enemigo{
   margin-bottom: 10px;
+  font-size: 20px;
+}
+
+#ataque-jugador{
+  border-radius: 10px;
+  background-color: #3b302f;
+  border: 2px solid #007200;
+  outline: 2px solid #006400;
+  width: 80px;
+}
+
+#ataque-enemigo{
+  border-radius: 10px;
+  background-color: #3b302f;
+  border: 2px solid #007200;
+  outline: 2px solid #006400;
+  width: 80px;
 }
