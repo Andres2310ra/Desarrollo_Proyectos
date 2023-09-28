@@ -192,20 +192,20 @@ function combate() {
     mensaje.style.display = 'flex'
 
     if (ataqueJugador == "Fuego" && ataqueEnemigo == "Tierra" || ataqueJugador == "Agua" && ataqueEnemigo == "Fuego" || ataqueJugador == "Tierra" && ataqueEnemigo == "Agua") {
-        mensajeJuego("Ganaste 🎉")
+        mensajeJuego("Daño al Enemigo 🎉")
         vidasEnemigo--
         spanVidasEnemigo.innerHTML = ''
         spanVidasJugador.innerHTML = ''
 
     } else if (ataqueJugador == ataqueEnemigo) {
-        mensajeJuego("Sin daños 😮, Aumento de Vida")
+        mensajeJuego("Sin daños 😮, Ataques Igualados")
         spanVidasJugador.innerHTML = ''
         spanVidasEnemigo.innerHTML = ''
         //vidasJugador++
         //vidasEnemigo++
 
     } else {
-        mensajeJuego("Perdiste 🥶")
+        mensajeJuego("Te han hecho Daño 🥶")
         vidasJugador--
         spanVidasEnemigo.innerHTML = ''
         spanVidasJugador.innerHTML = ''
