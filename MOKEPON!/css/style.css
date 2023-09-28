@@ -379,5 +379,14 @@ button {
 
 #mensajes{
   text-align: center;
-  
+}
+
+.ataques-mensajes{
+  position: relative;
+  display: grid;
+  justify-items: center;
+  justify-content:center;
+  align-items: center;
+  text-align: center;
+  grid-template-columns: 100% 100%;
 }
