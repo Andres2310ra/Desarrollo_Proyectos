@@ -226,7 +226,7 @@ function combate() {
             'Tu Mascota Perdio la Batalla',
             'error'
         )
-        spanVidasJugador.innerHTML = 0
+        spanVidasJugador.innerHTML = '💔'
 
         let botonFuego = document.getElementById('btn-fuego')
         botonFuego.disabled = true
@@ -246,7 +246,7 @@ function combate() {
             'Tu Mascota Gano la Batalla',
             'success'
         )
-        spanVidasEnemigo.innerHTML = 0
+        spanVidasEnemigo.innerHTML = '💔'
 
         let botonFuego = document.getElementById('btn-fuego')
         botonFuego.disabled = true
