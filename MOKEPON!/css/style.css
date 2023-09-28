@@ -390,10 +390,13 @@ button {
   text-align: center;
   grid-template-columns: 70% 70%;
   border-top:  white solid 2px;
+  margin-top: 10px;
 }
 
-#ataque-jugador{
-  /* border: 2px solid #007200; */
-  border-radius: 10px;
-  outline: 2px solid #006400;
+#vidas-jugador{
+  margin-bottom: 10px;
+}
+
+#vidas-enemigo{
+  margin-bottom: 10px;
 }
