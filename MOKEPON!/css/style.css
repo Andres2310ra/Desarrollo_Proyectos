@@ -388,5 +388,12 @@ button {
   justify-content:center;
   align-items: center;
   text-align: center;
-  grid-template-columns: 100% 100%;
+  grid-template-columns: 70% 70%;
+  border-top:  white solid 2px;
+}
+
+#ataque-jugador{
+  /* border: 2px solid #007200; */
+  border-radius: 10px;
+  outline: 2px solid #006400;
 }
