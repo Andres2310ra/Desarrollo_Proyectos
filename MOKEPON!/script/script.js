@@ -23,6 +23,7 @@ const sectionMensaje = document.getElementById('resultado')
 const ataqueDelJugador = document.getElementById('ataque-jugador')
 const ataqueDelEnemigo = document.getElementById('ataque-enemigo')
 
+let Mokepones = []
 let ataqueJugador = ''
 let ataqueEnemigo = ''
 let vidasJugador = 3
@@ -36,6 +37,7 @@ class Mokepon {
         this.nombre = nombre
         this.foto = foto
         this.vida = vida
+        this.ataque= []
     }
 }
 
@@ -70,6 +72,10 @@ let monster27 = new Mokepon('Monster 27', '../img/Monster_Mokepon/tarjeta_27.gif
 let monster28 = new Mokepon('Monster 28', '../img/Monster_Mokepon/tarjeta_28.gif', '3')
 let monster29 = new Mokepon('Monster 29', '../img/Monster_Mokepon/tarjeta_29.gif', '3')
 let monster30 = new Mokepon('Monster 30', '../img/Monster_Mokepon/tarjeta_30.gif', '3')
+
+Mokepones.push(monster1, monster2, monster3, monster4, monster5, monster6, monster7, monster8, monster9, monster10, monster11, monster12, monster13, monster14, monster15, monster16, monster17, monster18, monster19, monster20, monster21, monster22, monster23, monster24, monster25, monster26, monster27, monster28, monster29, monster30)
+
+console.log(Mokepones)
 
 
 function iniciarJuego() {
