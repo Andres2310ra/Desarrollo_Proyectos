@@ -194,7 +194,7 @@ input {
 
 
 #t-1 {
-  background-image: url(../img/Monster_Mokepon/tarjeta_1.gif);
+  background-image: url(../img/tarjeta_1.gif);
   background-size: cover;
   background-position: center;
   margin: 10px;
@@ -202,14 +202,14 @@ input {
 }
 
 #t-2 {
-  background-image: url(../img/Tarjetas_Mokepon\ \(1\).gif);
+  background-image: url(../img/tarjeta_2.gif);
   background-size: cover;
   background-position: center;
   margin: 10px;
 }
 
 #t-3 {
-  background-image: url(../img/Tarjetas_Mokepon\ \(2\).gif);
+  background-image: url(../img/tarjeta_3.gif);
   background-size: cover;
   background-position: center;
   margin: 10px;
