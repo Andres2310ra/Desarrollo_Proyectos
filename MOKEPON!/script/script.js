@@ -1,3 +1,33 @@
+let seleccionarMascotaStyle = document.getElementById('seleccionar-mascota')
+let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
+let mensaje = document.getElementById('mensaje-batalla')
+let sectionReiniciar = document.getElementById('reiniciar')
+let botonMascotaJugador = document.getElementById('boton-mascota')
+let botonFuego = document.getElementById('btn-fuego')
+let botonAgua = document.getElementById('btn-agua')
+let botonTierra = document.getElementById('btn-tierra')
+let reiniciar = document.getElementById('btn-reiniciar')
+
+let inputHipodoge = document.getElementById('hipodoge')
+let inputCapipepo = document.getElementById('capipepo')
+let inputRatigueya = document.getElementById('ratigueya')
+
+let tarjeta1 = document.getElementById('t-1')
+let tarjeta2 = document.getElementById('t-2')
+let tarjeta3 = document.getElementById('t-3')
+let tarjetaSeleccionada1 = document.getElementById('t1-select')
+let tarjetaSeleccionada2 = document.getElementById('t2-select')
+let tarjetaSeleccionada3 = document.getElementById('t3-select')
+
+let sectionSeleccionarMascota = document.getElementById('seleccionar-mascota')
+
+let spanVidasJugador = document.getElementById('vidas-jugador')
+let spanVidasEnemigo = document.getElementById('vidas-enemigo')
+
+let sectionMensaje = document.getElementById('resultado')
+let ataqueDelJugador = document.getElementById('ataque-jugador')
+let ataqueDelEnemigo = document.getElementById('ataque-enemigo')
+
 let ataqueJugador = ''
 let ataqueEnemigo = ''
 let vidasJugador = 3
@@ -6,47 +36,18 @@ let spanMascotaJugador = ''
 let spanMascotaEnemigo = ''
 
 function iniciarJuego() {
-    let seleccionarMascotaStyle = document.getElementById('seleccionar-mascota')
     seleccionarMascotaStyle.addEventListener('click', styleMascotaJugador)
-
-    let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
     sectionSeleccionarAtaque.style.display = 'none'
-
-    let mensaje = document.getElementById('mensaje-batalla')
     mensaje.style.display = 'none'
-
-    let sectionReiniciar = document.getElementById('reiniciar')
     sectionReiniciar.style.display = 'none'
-
-    let botonMascotaJugador = document.getElementById('boton-mascota')
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
-
-    let botonFuego = document.getElementById('btn-fuego')
     botonFuego.addEventListener('click', ataqueFuego)
-
-    let botonAgua = document.getElementById('btn-agua')
     botonAgua.addEventListener('click', ataqueAgua)
-
-    let botonTierra = document.getElementById('btn-tierra')
     botonTierra.addEventListener('click', ataqueTierra)
-
-    let reiniciar = document.getElementById('btn-reiniciar')
     reiniciar.addEventListener('click', reiniciarJuego)
 }
 
 function styleMascotaJugador() {
-
-    let inputHipodoge = document.getElementById('hipodoge')
-    let inputCapipepo = document.getElementById('capipepo')
-    let inputRatigueya = document.getElementById('ratigueya')
-
-    let tarjeta1 = document.getElementById('t-1')
-    let tarjeta2 = document.getElementById('t-2')
-    let tarjeta3 = document.getElementById('t-3')
-
-    let tarjetaSeleccionada1 = document.getElementById('t1-select')
-    let tarjetaSeleccionada2 = document.getElementById('t2-select')
-    let tarjetaSeleccionada3 = document.getElementById('t3-select')
 
     if (inputHipodoge.checked) {
         tarjeta1.style.border = '2px solid white'
@@ -95,15 +96,10 @@ function styleMascotaJugador() {
         tarjeta2.style.outline = '2px solid #006400'
         tarjeta2.style.backgroundColor = '#3b302f'
         tarjetaSeleccionada2.innerHTML = ''
-
     }
-
 }
 
 function seleccionarMascotaJugador() {
-    let inputHipodoge = document.getElementById('hipodoge')
-    let inputCapipepo = document.getElementById('capipepo')
-    let inputRatigueya = document.getElementById('ratigueya')
 
     spanMascotaJugador = document.getElementById('mascota-jugador')
     spanMascotaEnemigo = document.getElementById('mascota-enemigo')
@@ -111,31 +107,19 @@ function seleccionarMascotaJugador() {
     if (inputHipodoge.checked) {
         spanMascotaJugador.innerHTML = "Carlitos"
         spanMascotaEnemigo.innerHTML = seleccionarMascotaEnemigo()
-
-        let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
         sectionSeleccionarAtaque.style.display = 'flex'
-
-        let sectionSeleccionarMascota = document.getElementById('seleccionar-mascota')
         sectionSeleccionarMascota.style.display = 'none'
 
     } else if (inputCapipepo.checked) {
         spanMascotaJugador.innerHTML = "Chamuko"
         spanMascotaEnemigo.innerHTML = seleccionarMascotaEnemigo()
-
-        let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
         sectionSeleccionarAtaque.style.display = 'flex'
-
-        let sectionSeleccionarMascota = document.getElementById('seleccionar-mascota')
         sectionSeleccionarMascota.style.display = 'none'
 
     } else if (inputRatigueya.checked) {
         spanMascotaJugador.innerHTML = "Angelina"
         spanMascotaEnemigo.innerHTML = seleccionarMascotaEnemigo()
-
-        let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
         sectionSeleccionarAtaque.style.display = 'flex'
-
-        let sectionSeleccionarMascota = document.getElementById('seleccionar-mascota')
         sectionSeleccionarMascota.style.display = 'none'
 
     } else {
@@ -184,11 +168,8 @@ function ataqueTierra() {
 }
 
 function combate() {
-    let spanVidasJugador = document.getElementById('vidas-jugador')
-    let spanVidasEnemigo = document.getElementById('vidas-enemigo')
     let vida = '❤️'
 
-    let mensaje = document.getElementById('mensaje-batalla')
     mensaje.style.display = 'flex'
 
     if (ataqueJugador == "Fuego" && ataqueEnemigo == "Tierra" || ataqueJugador == "Agua" && ataqueEnemigo == "Fuego" || ataqueJugador == "Tierra" && ataqueEnemigo == "Agua") {
@@ -227,17 +208,9 @@ function combate() {
             'error'
         )
         spanVidasJugador.innerHTML = '☠️'
-
-        let botonFuego = document.getElementById('btn-fuego')
         botonFuego.disabled = true
-
-        let botonAgua = document.getElementById('btn-agua')
         botonAgua.disabled = true
-
-        let botonTierra = document.getElementById('btn-tierra')
         botonTierra.disabled = true
-
-        let sectionReiniciar = document.getElementById('reiniciar')
         sectionReiniciar.style.display = 'block'
 
     } else if (vidasEnemigo == 0) {
@@ -247,33 +220,17 @@ function combate() {
             'success'
         )
         spanVidasEnemigo.innerHTML = '☠️'
-
-        let botonFuego = document.getElementById('btn-fuego')
         botonFuego.disabled = true
-
-        let botonAgua = document.getElementById('btn-agua')
         botonAgua.disabled = true
-
-        let botonTierra = document.getElementById('btn-tierra')
         botonTierra.disabled = true
-
-        let sectionReiniciar = document.getElementById('reiniciar')
         sectionReiniciar.style.display = 'block'
     }
 
 }
 
 function mensajeJuego(resultado) {
-    let sectionMensaje = document.getElementById('resultado')
-    let ataqueDelJugador = document.getElementById('ataque-jugador')
-    let ataqueDelEnemigo = document.getElementById('ataque-enemigo')
-
     let nuevoAtaqueJugador = document.createElement('p')
     let nuevoAtaqueEnemigo = document.createElement('p')
-
-    // let mensaje = document.createElement('p')
-
-    // mensaje.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ', la mascota del enemigo atacó con ' + ataqueEnemigo + resultado
 
     sectionMensaje.innerHTML = resultado
     nuevoAtaqueJugador.innerHTML = ataqueJugador
