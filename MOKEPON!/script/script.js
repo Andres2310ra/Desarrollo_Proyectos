@@ -22,6 +22,7 @@ const spanVidasEnemigo = document.getElementById('vidas-enemigo')
 const sectionMensaje = document.getElementById('resultado')
 const ataqueDelJugador = document.getElementById('ataque-jugador')
 const ataqueDelEnemigo = document.getElementById('ataque-enemigo')
+const contenedorTarjetas=document.getElementById('seleccion-de-mokepon')
 
 let Mokepones = []
 let ataqueJugador = ''
@@ -43,36 +44,36 @@ class Mokepon {
 }
 
 //  Objetos Mokepon 
-let monster1 = new Mokepon('Monster 1', '../img/Monster_Mokepon/tarjeta_1.gif', '3')
-let monster2 = new Mokepon('Monster 2', '../img/Monster_Mokepon/tarjeta_2.gif', '3')
-let monster3 = new Mokepon('Monster 3', '../img/Monster_Mokepon/tarjeta_3.gif', '3')
-let monster4 = new Mokepon('Monster 4', '../img/Monster_Mokepon/tarjeta_4.gif', '3')
-let monster5 = new Mokepon('Monster 5', '../img/Monster_Mokepon/tarjeta_5.gif', '3')
-let monster6 = new Mokepon('Monster 6', '../img/Monster_Mokepon/tarjeta_6.gif', '3')
-let monster7 = new Mokepon('Monster 7', '../img/Monster_Mokepon/tarjeta_7.gif', '3')
-let monster8 = new Mokepon('Monster 8', '../img/Monster_Mokepon/tarjeta_8.gif', '3')
-let monster9 = new Mokepon('Monster 9', '../img/Monster_Mokepon/tarjeta_9.gif', '3')
-let monster10 = new Mokepon('Monster 10', '../img/Monster_Mokepon/tarjeta_10.gif', '3')
-let monster11 = new Mokepon('Monster 11', '../img/Monster_Mokepon/tarjeta_11.gif', '3')
-let monster12 = new Mokepon('Monster 12', '../img/Monster_Mokepon/tarjeta_12.gif', '3')
-let monster13 = new Mokepon('Monster 13', '../img/Monster_Mokepon/tarjeta_13.gif', '3')
-let monster14 = new Mokepon('Monster 14', '../img/Monster_Mokepon/tarjeta_14.gif', '3')
-let monster15 = new Mokepon('Monster 15', '../img/Monster_Mokepon/tarjeta_15.gif', '3')
-let monster16 = new Mokepon('Monster 16', '../img/Monster_Mokepon/tarjeta_16.gif', '3')
-let monster17 = new Mokepon('Monster 17', '../img/Monster_Mokepon/tarjeta_17.gif', '3')
-let monster18 = new Mokepon('Monster 18', '../img/Monster_Mokepon/tarjeta_18.gif', '3')
-let monster19 = new Mokepon('Monster 19', '../img/Monster_Mokepon/tarjeta_19.gif', '3')
-let monster20 = new Mokepon('Monster 20', '../img/Monster_Mokepon/tarjeta_20.gif', '3')
-let monster21 = new Mokepon('Monster 21', '../img/Monster_Mokepon/tarjeta_21.gif', '3')
-let monster22 = new Mokepon('Monster 22', '../img/Monster_Mokepon/tarjeta_22.gif', '3')
-let monster23 = new Mokepon('Monster 23', '../img/Monster_Mokepon/tarjeta_23.gif', '3')
-let monster24 = new Mokepon('Monster 24', '../img/Monster_Mokepon/tarjeta_24.gif', '3')
-let monster25 = new Mokepon('Monster 25', '../img/Monster_Mokepon/tarjeta_25.gif', '3')
-let monster26 = new Mokepon('Monster 26', '../img/Monster_Mokepon/tarjeta_26.gif', '3')
-let monster27 = new Mokepon('Monster 27', '../img/Monster_Mokepon/tarjeta_27.gif', '3')
-let monster28 = new Mokepon('Monster 28', '../img/Monster_Mokepon/tarjeta_28.gif', '3')
-let monster29 = new Mokepon('Monster 29', '../img/Monster_Mokepon/tarjeta_29.gif', '3')
-let monster30 = new Mokepon('Monster 30', '../img/Monster_Mokepon/tarjeta_30.gif', '3')
+let monster1 = new Mokepon('Monster 1', 'img/Monster_Mokepon/tarjeta_1.gif', '3')
+let monster2 = new Mokepon('Monster 2', 'img/Monster_Mokepon/tarjeta_2.gif', '3')
+let monster3 = new Mokepon('Monster 3', 'img/Monster_Mokepon/tarjeta_3.gif', '3')
+let monster4 = new Mokepon('Monster 4', 'img/Monster_Mokepon/tarjeta_4.gif', '3')
+let monster5 = new Mokepon('Monster 5', 'img/Monster_Mokepon/tarjeta_5.gif', '3')
+let monster6 = new Mokepon('Monster 6', 'img/Monster_Mokepon/tarjeta_6.gif', '3')
+let monster7 = new Mokepon('Monster 7', 'img/Monster_Mokepon/tarjeta_7.gif', '3')
+let monster8 = new Mokepon('Monster 8', 'img/Monster_Mokepon/tarjeta_8.gif', '3')
+let monster9 = new Mokepon('Monster 9', 'img/Monster_Mokepon/tarjeta_9.gif', '3')
+let monster10 = new Mokepon('Monster 10', 'img/Monster_Mokepon/tarjeta_10.gif', '3')
+let monster11 = new Mokepon('Monster 11', 'img/Monster_Mokepon/tarjeta_11.gif', '3')
+let monster12 = new Mokepon('Monster 12', 'img/Monster_Mokepon/tarjeta_12.gif', '3')
+let monster13 = new Mokepon('Monster 13', 'img/Monster_Mokepon/tarjeta_13.gif', '3')
+let monster14 = new Mokepon('Monster 14', 'img/Monster_Mokepon/tarjeta_14.gif', '3')
+let monster15 = new Mokepon('Monster 15', 'img/Monster_Mokepon/tarjeta_15.gif', '3')
+let monster16 = new Mokepon('Monster 16', 'img/Monster_Mokepon/tarjeta_16.gif', '3')
+let monster17 = new Mokepon('Monster 17', 'img/Monster_Mokepon/tarjeta_17.gif', '3')
+let monster18 = new Mokepon('Monster 18', 'img/Monster_Mokepon/tarjeta_18.gif', '3')
+let monster19 = new Mokepon('Monster 19', 'img/Monster_Mokepon/tarjeta_19.gif', '3')
+let monster20 = new Mokepon('Monster 20', 'img/Monster_Mokepon/tarjeta_20.gif', '3')
+let monster21 = new Mokepon('Monster 21', 'img/Monster_Mokepon/tarjeta_21.gif', '3')
+let monster22 = new Mokepon('Monster 22', 'img/Monster_Mokepon/tarjeta_22.gif', '3')
+let monster23 = new Mokepon('Monster 23', 'img/Monster_Mokepon/tarjeta_23.gif', '3')
+let monster24 = new Mokepon('Monster 24', 'img/Monster_Mokepon/tarjeta_24.gif', '3')
+let monster25 = new Mokepon('Monster 25', 'img/Monster_Mokepon/tarjeta_25.gif', '3')
+let monster26 = new Mokepon('Monster 26', 'img/Monster_Mokepon/tarjeta_26.gif', '3')
+let monster27 = new Mokepon('Monster 27', 'img/Monster_Mokepon/tarjeta_27.gif', '3')
+let monster28 = new Mokepon('Monster 28', 'img/Monster_Mokepon/tarjeta_28.gif', '3')
+let monster29 = new Mokepon('Monster 29', 'img/Monster_Mokepon/tarjeta_29.gif', '3')
+let monster30 = new Mokepon('Monster 30', 'img/Monster_Mokepon/tarjeta_30.gif', '3')
 
 monster1.ataque.push(
     { nombre: '🔥', id: 'btn-fuego' },
@@ -297,7 +298,17 @@ function iniciarJuego() {
     sectionReiniciar.style.display = 'none'
 
     Mokepones.forEach((Mokepon) => {
-        console.log(Mokepon.nombre)
+        opcionDeMokepones = `
+        
+        <label id="t-1" class="tarjeta-mascota" for=${Mokepon.nombre}>
+        <p>${Mokepon.nombre}<span id="t1-select"></span></p>
+        <img src=${Mokepon.foto} alt=${Mokepon.nombre}>
+    </label>
+    <input type="radio" name="mascota" id=${Mokepon.nombre} />
+
+        `
+        contenedorTarjetas.innerHTML+=opcionDeMokepones
+
     })
 
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
