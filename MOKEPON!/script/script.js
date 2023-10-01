@@ -7,9 +7,6 @@ const botonFuego = document.getElementById('btn-fuego')
 const botonAgua = document.getElementById('btn-agua')
 const botonTierra = document.getElementById('btn-tierra')
 const reiniciar = document.getElementById('btn-reiniciar')
-// const inputMonster1 = document.getElementById('Monster1')
-// const inputMonster2 = document.getElementById('Monster2')
-// const inputMonster3 = document.getElementById('Monster3')
 const sectionSeleccionarMascota = document.getElementById('seleccionar-mascota')
 const spanVidasJugador = document.getElementById('vidas-jugador')
 const spanVidasEnemigo = document.getElementById('vidas-enemigo')
@@ -26,11 +23,6 @@ let vidasJugador = 3
 let vidasEnemigo = 3
 let spanMascotaJugador = ''
 let spanMascotaEnemigo = ''
-// let inputMonster2
-// let inputMonster1
-// let inputMonster3
-let mokeponSeleccionado
-let nombreMokepon
 
 //  Clase Mokepon 
 class Mokepon {
@@ -307,11 +299,6 @@ function iniciarJuego() {
     
     `
         contenedorTarjetas.innerHTML += opcionDeMokepones
-
-        // inputMonster1 = document.getElementById('Monster1')
-        // inputMonster2 = document.getElementById('Monster2')
-        // inputMonster3 = document.getElementById('Monster3')
-
     })
 
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
@@ -327,20 +314,13 @@ function seleccionarMascotaJugador() {
     spanMascotaJugador = document.getElementById('mascota-jugador')
     spanMascotaEnemigo = document.getElementById('mascota-enemigo')
 
-    mokepones.forEach((mokepon)=>{
-
-        const inputMokepon=document.getElementById(mokepon.nombre)
-        const nombre=mokepon.nombre
-
-        if(inputMokepon.checked){
-            mokeponSeleccionado=mokepon
-            nombreMokepon=nombre
-        }
-
+    const mokeponSeleccionado=mokepones.find((mokepon)=>{
+        const input=document.getElementById(mokepon.nombre)
+        return input.checked
     })
 
     if (mokeponSeleccionado) {
-        spanMascotaJugador.innerHTML = nombreMokepon
+        spanMascotaJugador.innerHTML = mokeponSeleccionado.nombre
         spanMascotaEnemigo.innerHTML = seleccionarMascotaEnemigo()
         sectionSeleccionarAtaque.style.display = 'flex'
         sectionSeleccionarMascota.style.display = 'none'
