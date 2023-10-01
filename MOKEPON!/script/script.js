@@ -7,9 +7,9 @@ const botonFuego = document.getElementById('btn-fuego')
 const botonAgua = document.getElementById('btn-agua')
 const botonTierra = document.getElementById('btn-tierra')
 const reiniciar = document.getElementById('btn-reiniciar')
-const inputHipodoge = document.getElementById('hipodoge')
-const inputCapipepo = document.getElementById('capipepo')
-const inputRatigueya = document.getElementById('ratigueya')
+const inputHipodoge = document.getElementById('monster1')
+const inputCapipepo = document.getElementById('monster2')
+const inputRatigueya = document.getElementById('monster3')
 const tarjeta1 = document.getElementById('t-1')
 const tarjetaSeleccionada1 = document.getElementById('t1-select')
 const sectionSeleccionarMascota = document.getElementById('seleccionar-mascota')
@@ -18,7 +18,7 @@ const spanVidasEnemigo = document.getElementById('vidas-enemigo')
 const sectionMensaje = document.getElementById('resultado')
 const ataqueDelJugador = document.getElementById('ataque-jugador')
 const ataqueDelEnemigo = document.getElementById('ataque-enemigo')
-const contenedorTarjetas=document.getElementById('seleccion-de-mokepon')
+const contenedorTarjetas = document.getElementById('seleccion-de-mokepon')
 
 let Mokepones = []
 let ataqueJugador = ''
@@ -40,9 +40,9 @@ class Mokepon {
 }
 
 //  Objetos Mokepon 
-let monster1 = new Mokepon('Monster 1', 'img/Monster_Mokepon/tarjeta_1.gif', '3')
-let monster2 = new Mokepon('Monster 2', 'img/Monster_Mokepon/tarjeta_2.gif', '3')
-let monster3 = new Mokepon('Monster 3', 'img/Monster_Mokepon/tarjeta_3.gif', '3')
+let monster1 = new Mokepon('monster1', 'img/Monster_Mokepon/tarjeta_1.gif', '3')
+let monster2 = new Mokepon('monster2', 'img/Monster_Mokepon/tarjeta_2.gif', '3')
+let monster3 = new Mokepon('monster3', 'img/Monster_Mokepon/tarjeta_3.gif', '3')
 let monster4 = new Mokepon('Monster 4', 'img/Monster_Mokepon/tarjeta_4.gif', '3')
 let monster5 = new Mokepon('Monster 5', 'img/Monster_Mokepon/tarjeta_5.gif', '3')
 let monster6 = new Mokepon('Monster 6', 'img/Monster_Mokepon/tarjeta_6.gif', '3')
@@ -300,34 +300,34 @@ function iniciarJuego() {
         <p>${Mokepon.nombre}<span id="t1-select"></span></p>
         <img src=${Mokepon.foto} alt=${Mokepon.nombre}>
     </label>
-    <input type="radio" name="mascota" id=${Mokepon.nombre} />
+    <input type="radio" name="mascota" id=${Mokepon.nombre}/>
 
         `
-        contenedorTarjetas.innerHTML+=opcionDeMokepones
+        contenedorTarjetas.innerHTML += opcionDeMokepones
 
     })
 
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
-    seleccionarMascotaStyle.addEventListener('click', styleMascotaJugador)
+    // seleccionarMascotaStyle.addEventListener('click', styleMascotaJugador)
     botonFuego.addEventListener('click', ataqueFuego)
     botonAgua.addEventListener('click', ataqueAgua)
     botonTierra.addEventListener('click', ataqueTierra)
     reiniciar.addEventListener('click', reiniciarJuego)
 }
 
-function styleMascotaJugador() {
+// function styleMascotaJugador() {
 
-    Mokepones.forEach((Mokepon)=>{
+//     Mokepones.forEach((Mokepon)=>{
 
-        if (contenedorTarjetas.checked) {
-            tarjeta1.style.border = '2px solid white'
-            tarjeta1.style.outline = '2px solid white'
-            tarjetaSeleccionada1.innerHTML = 'Selected'
-    
-        }
+//         if (contenedorTarjetas.checked) {
+//             tarjeta1.style.border = '2px solid white'
+//             tarjeta1.style.outline = '2px solid white'
+//             tarjetaSeleccionada1.innerHTML = 'Selected'
 
-    })
-}
+//         }
+
+//     })
+// }
 
 function seleccionarMascotaJugador() {
 
@@ -335,19 +335,19 @@ function seleccionarMascotaJugador() {
     spanMascotaEnemigo = document.getElementById('mascota-enemigo')
 
     if (inputHipodoge.checked) {
-        spanMascotaJugador.innerHTML = "Carlitos"
+        spanMascotaJugador.innerHTML = "monster1"
         spanMascotaEnemigo.innerHTML = seleccionarMascotaEnemigo()
         sectionSeleccionarAtaque.style.display = 'flex'
         sectionSeleccionarMascota.style.display = 'none'
 
     } else if (inputCapipepo.checked) {
-        spanMascotaJugador.innerHTML = "Chamuko"
+        spanMascotaJugador.innerHTML = "monster2"
         spanMascotaEnemigo.innerHTML = seleccionarMascotaEnemigo()
         sectionSeleccionarAtaque.style.display = 'flex'
         sectionSeleccionarMascota.style.display = 'none'
 
     } else if (inputRatigueya.checked) {
-        spanMascotaJugador.innerHTML = "Angelina"
+        spanMascotaJugador.innerHTML = "monster3"
         spanMascotaEnemigo.innerHTML = seleccionarMascotaEnemigo()
         sectionSeleccionarAtaque.style.display = 'flex'
         sectionSeleccionarMascota.style.display = 'none'
@@ -362,7 +362,7 @@ function seleccionarMascotaJugador() {
 }
 
 function seleccionarMascotaEnemigo() {
-    let mascotaEnemigo = ['Carlitos', 'Chamuko', 'Angelina']
+    let mascotaEnemigo = ['monster1', 'monster2', 'monster3']
     let mascotaAleatoria = aleatorio(0, 2)
     return mascotaEnemigo[mascotaAleatoria]
 }
