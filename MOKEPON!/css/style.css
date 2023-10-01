@@ -161,7 +161,8 @@ body {
   text-align: center;
   transition: all 0.3s ease;
   position: relative;
-  overflow: hidden
+  overflow: hidden;
+  margin: 10px;
 }
 
 .tarjeta-mascota p {
@@ -172,7 +173,12 @@ body {
   color: #3b302f;
   border-radius: 10px;
   position: absolute;
-  width: 197px;
+  width: 90%;
+}
+
+.tarjeta-mascota span {
+  color: #006400;
+  font-size: 120%;
 }
 
 .tarjeta-mascota img {
@@ -195,13 +201,6 @@ body {
 
 input {
   display: none;
-}
-
-#t-1 {
-  /* background-image: url(../img/tarjeta_1.gif);
-  background-size: cover;
-  background-position: center; */
-  margin: 10px;
 }
 
 /* Usamos media queries para cambiar el ancho de las tarjetas según la resolución */
