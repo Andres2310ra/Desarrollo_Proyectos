@@ -338,7 +338,7 @@ function seleccionarMascotaJugador() {
 
     if (mokeponSeleccionado) {
         spanMascotaJugador.innerHTML = mokeponSeleccionado.nombre
-        spanMascotaEnemigo.innerHTML = seleccionarMascotaEnemigo()
+        spanMascotaEnemigo.innerHTML = seleccionarMascotaEnemigo().nombre
         sectionSeleccionarAtaque.style.display = 'flex'
         sectionSeleccionarMascota.style.display = 'none'
     } else {
@@ -351,9 +351,8 @@ function seleccionarMascotaJugador() {
 }
 
 function seleccionarMascotaEnemigo() {
-    let mascotaEnemigo = ['monster1', 'monster2', 'monster3']
-    let mascotaAleatoria = aleatorio(0, 2)
-    return mascotaEnemigo[mascotaAleatoria]
+    let mascotaAleatoria = aleatorio(0, mokepones.length)
+    return mokepones[mascotaAleatoria]
 }
 
 function seleccionarAtaqueEnemigo() {
