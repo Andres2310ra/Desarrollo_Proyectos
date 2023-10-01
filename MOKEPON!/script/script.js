@@ -7,11 +7,9 @@ const botonFuego = document.getElementById('btn-fuego')
 const botonAgua = document.getElementById('btn-agua')
 const botonTierra = document.getElementById('btn-tierra')
 const reiniciar = document.getElementById('btn-reiniciar')
-const inputHipodoge = document.getElementById('monster1')
-const inputCapipepo = document.getElementById('monster2')
-const inputRatigueya = document.getElementById('monster3')
-const tarjeta1 = document.getElementById('t-1')
-const tarjetaSeleccionada1 = document.getElementById('t1-select')
+// const inputMonster1 = document.getElementById('Monster1')
+// const inputMonster2 = document.getElementById('Monster2')
+// const inputMonster3 = document.getElementById('Monster3')
 const sectionSeleccionarMascota = document.getElementById('seleccionar-mascota')
 const spanVidasJugador = document.getElementById('vidas-jugador')
 const spanVidasEnemigo = document.getElementById('vidas-enemigo')
@@ -20,7 +18,7 @@ const ataqueDelJugador = document.getElementById('ataque-jugador')
 const ataqueDelEnemigo = document.getElementById('ataque-enemigo')
 const contenedorTarjetas = document.getElementById('seleccion-de-mokepon')
 
-let Mokepones = []
+let mokepones = []
 let ataqueJugador = ''
 let ataqueEnemigo = ''
 let opcionDeMokepones
@@ -28,6 +26,11 @@ let vidasJugador = 3
 let vidasEnemigo = 3
 let spanMascotaJugador = ''
 let spanMascotaEnemigo = ''
+// let inputMonster2
+// let inputMonster1
+// let inputMonster3
+let mokeponSeleccionado
+let nombreMokepon
 
 //  Clase Mokepon 
 class Mokepon {
@@ -40,9 +43,9 @@ class Mokepon {
 }
 
 //  Objetos Mokepon 
-let monster1 = new Mokepon('monster1', 'img/Monster_Mokepon/tarjeta_1.gif', '3')
-let monster2 = new Mokepon('monster2', 'img/Monster_Mokepon/tarjeta_2.gif', '3')
-let monster3 = new Mokepon('monster3', 'img/Monster_Mokepon/tarjeta_3.gif', '3')
+let monster1 = new Mokepon('Monster1', 'img/Monster_Mokepon/tarjeta_1.gif', '3')
+let monster2 = new Mokepon('Monster2', 'img/Monster_Mokepon/tarjeta_2.gif', '3')
+let monster3 = new Mokepon('Monster3', 'img/Monster_Mokepon/tarjeta_3.gif', '3')
 let monster4 = new Mokepon('Monster 4', 'img/Monster_Mokepon/tarjeta_4.gif', '3')
 let monster5 = new Mokepon('Monster 5', 'img/Monster_Mokepon/tarjeta_5.gif', '3')
 let monster6 = new Mokepon('Monster 6', 'img/Monster_Mokepon/tarjeta_6.gif', '3')
@@ -284,7 +287,7 @@ monster30.ataque.push(
 
 
 
-Mokepones.push(monster1, monster2, monster3, monster4, monster5, monster6, monster7, monster8, monster9, monster10, monster11, monster12, monster13, monster14, monster15, monster16, monster17, monster18, monster19, monster20, monster21, monster22, monster23, monster24, monster25, monster26, monster27, monster28, monster29, monster30)
+mokepones.push(monster1, monster2, monster3, monster4, monster5, monster6, monster7, monster8, monster9, monster10, monster11, monster12, monster13, monster14, monster15, monster16, monster17, monster18, monster19, monster20, monster21, monster22, monster23, monster24, monster25, monster26, monster27, monster28, monster29, monster30)
 
 
 
@@ -293,17 +296,21 @@ function iniciarJuego() {
     mensaje.style.display = 'none'
     sectionReiniciar.style.display = 'none'
 
-    Mokepones.forEach((Mokepon) => {
+    mokepones.forEach((Mokepon) => {
         opcionDeMokepones = `
         
-        <label id="t-1" class="tarjeta-mascota" for=${Mokepon.nombre}>
+        <label id="t-1" class="tarjeta-mascota" for="${Mokepon.nombre}">
         <p>${Mokepon.nombre}<span id="t1-select"></span></p>
-        <img src=${Mokepon.foto} alt=${Mokepon.nombre}>
+        <img src="${Mokepon.foto}" alt="${Mokepon.nombre}">
     </label>
-    <input type="radio" name="mascota" id=${Mokepon.nombre}/>
-
-        `
+    <input type="radio" name="mascota" id="${Mokepon.nombre}"/>
+    
+    `
         contenedorTarjetas.innerHTML += opcionDeMokepones
+
+        // inputMonster1 = document.getElementById('Monster1')
+        // inputMonster2 = document.getElementById('Monster2')
+        // inputMonster3 = document.getElementById('Monster3')
 
     })
 
@@ -315,43 +322,28 @@ function iniciarJuego() {
     reiniciar.addEventListener('click', reiniciarJuego)
 }
 
-// function styleMascotaJugador() {
-
-//     Mokepones.forEach((Mokepon)=>{
-
-//         if (contenedorTarjetas.checked) {
-//             tarjeta1.style.border = '2px solid white'
-//             tarjeta1.style.outline = '2px solid white'
-//             tarjetaSeleccionada1.innerHTML = 'Selected'
-
-//         }
-
-//     })
-// }
-
 function seleccionarMascotaJugador() {
 
     spanMascotaJugador = document.getElementById('mascota-jugador')
     spanMascotaEnemigo = document.getElementById('mascota-enemigo')
 
-    if (inputHipodoge.checked) {
-        spanMascotaJugador.innerHTML = "monster1"
+    mokepones.forEach((mokepon)=>{
+
+        const inputMokepon=document.getElementById(mokepon.nombre)
+        const nombre=mokepon.nombre
+
+        if(inputMokepon.checked){
+            mokeponSeleccionado=mokepon
+            nombreMokepon=nombre
+        }
+
+    })
+
+    if (mokeponSeleccionado) {
+        spanMascotaJugador.innerHTML = nombreMokepon
         spanMascotaEnemigo.innerHTML = seleccionarMascotaEnemigo()
         sectionSeleccionarAtaque.style.display = 'flex'
         sectionSeleccionarMascota.style.display = 'none'
-
-    } else if (inputCapipepo.checked) {
-        spanMascotaJugador.innerHTML = "monster2"
-        spanMascotaEnemigo.innerHTML = seleccionarMascotaEnemigo()
-        sectionSeleccionarAtaque.style.display = 'flex'
-        sectionSeleccionarMascota.style.display = 'none'
-
-    } else if (inputRatigueya.checked) {
-        spanMascotaJugador.innerHTML = "monster3"
-        spanMascotaEnemigo.innerHTML = seleccionarMascotaEnemigo()
-        sectionSeleccionarAtaque.style.display = 'flex'
-        sectionSeleccionarMascota.style.display = 'none'
-
     } else {
         Swal.fire(
             'Selecciona una Mascota',
