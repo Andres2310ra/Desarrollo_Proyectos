@@ -288,11 +288,10 @@ function iniciarJuego() {
     mensaje.style.display = 'none'
     sectionReiniciar.style.display = 'none'
 
-    mokepones.forEach((Mokepon) => {
+    mokepones.forEach((Mokepon, index) => {
         opcionDeMokepones = `
-        
-        <label id="t-1" class="tarjeta-mascota" for="${Mokepon.nombre}">
-        <p>${Mokepon.nombre}<span id="t1-select"></span></p>
+        <label class="tarjeta-mascota" for="${Mokepon.nombre}">
+        <p>${Mokepon.nombre}<span id="t-select-${index}"></span></p>
         <img src="${Mokepon.foto}" alt="${Mokepon.nombre}">
     </label>
     <input type="radio" name="mascota" id="${Mokepon.nombre}"/>
@@ -302,11 +301,29 @@ function iniciarJuego() {
     })
 
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
-    // seleccionarMascotaStyle.addEventListener('click', styleMascotaJugador)
+    seleccionarMascotaStyle.addEventListener('click', styleMascotaJugador)
     botonFuego.addEventListener('click', ataqueFuego)
     botonAgua.addEventListener('click', ataqueAgua)
     botonTierra.addEventListener('click', ataqueTierra)
     reiniciar.addEventListener('click', reiniciarJuego)
+}
+
+function styleMascotaJugador() {
+
+    const espacio= ' '
+
+    mokepones.forEach((mokepon, index) => {
+
+        const seleccionDeMokepon = document.getElementById(`t-select-${index}`)
+        const input = document.getElementById(mokepon.nombre)
+
+        if (input.checked) {
+            seleccionDeMokepon.innerHTML = espacio + 'Selected'
+        } else {
+            seleccionDeMokepon.innerHTML = ''
+        }
+
+    })
 }
 
 function seleccionarMascotaJugador() {
@@ -314,8 +331,8 @@ function seleccionarMascotaJugador() {
     spanMascotaJugador = document.getElementById('mascota-jugador')
     spanMascotaEnemigo = document.getElementById('mascota-enemigo')
 
-    const mokeponSeleccionado=mokepones.find((mokepon)=>{
-        const input=document.getElementById(mokepon.nombre)
+    const mokeponSeleccionado = mokepones.find((mokepon) => {
+        const input = document.getElementById(mokepon.nombre)
         return input.checked
     })
 
