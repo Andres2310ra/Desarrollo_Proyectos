@@ -11,11 +11,7 @@ const inputHipodoge = document.getElementById('hipodoge')
 const inputCapipepo = document.getElementById('capipepo')
 const inputRatigueya = document.getElementById('ratigueya')
 const tarjeta1 = document.getElementById('t-1')
-const tarjeta2 = document.getElementById('t-2')
-const tarjeta3 = document.getElementById('t-3')
 const tarjetaSeleccionada1 = document.getElementById('t1-select')
-const tarjetaSeleccionada2 = document.getElementById('t2-select')
-const tarjetaSeleccionada3 = document.getElementById('t3-select')
 const sectionSeleccionarMascota = document.getElementById('seleccionar-mascota')
 const spanVidasJugador = document.getElementById('vidas-jugador')
 const spanVidasEnemigo = document.getElementById('vidas-enemigo')
@@ -321,54 +317,16 @@ function iniciarJuego() {
 
 function styleMascotaJugador() {
 
-    if (inputHipodoge.checked) {
-        tarjeta1.style.border = '2px solid white'
-        tarjeta1.style.outline = '2px solid white'
-        tarjeta1.style.backgroundColor = 'transparent'
-        tarjetaSeleccionada1.innerHTML = 'Selected'
+    Mokepones.forEach((Mokepon)=>{
 
-        tarjeta2.style.border = '2px solid #007200'
-        tarjeta2.style.outline = '2px solid #006400'
-        tarjeta2.style.backgroundColor = '#3b302f'
-        tarjetaSeleccionada2.innerHTML = ''
+        if (contenedorTarjetas.checked) {
+            tarjeta1.style.border = '2px solid white'
+            tarjeta1.style.outline = '2px solid white'
+            tarjetaSeleccionada1.innerHTML = 'Selected'
+    
+        }
 
-        tarjeta3.style.border = '2px solid #007200'
-        tarjeta3.style.outline = '2px solid #006400'
-        tarjeta3.style.backgroundColor = '#3b302f'
-        tarjetaSeleccionada3.innerHTML = ''
-
-    } else if (inputCapipepo.checked) {
-        tarjeta2.style.border = '2px solid white'
-        tarjeta2.style.outline = '2px solid white'
-        tarjeta2.style.backgroundColor = 'transparent'
-        tarjetaSeleccionada2.innerHTML = 'Selected'
-
-        tarjeta3.style.border = '2px solid #007200'
-        tarjeta3.style.outline = '2px solid #006400'
-        tarjeta3.style.backgroundColor = '#3b302f'
-        tarjetaSeleccionada3.innerHTML = ''
-
-        tarjeta1.style.border = '2px solid #007200'
-        tarjeta1.style.outline = '2px solid #006400'
-        tarjeta1.style.backgroundColor = '#3b302f'
-        tarjetaSeleccionada1.innerHTML = ''
-
-    } else if (inputRatigueya.checked) {
-        tarjeta3.style.border = '2px solid white'
-        tarjeta3.style.outline = '2px solid white'
-        tarjeta3.style.backgroundColor = 'transparent'
-        tarjetaSeleccionada3.innerHTML = 'Selected'
-
-        tarjeta1.style.border = '2px solid #007200'
-        tarjeta1.style.outline = '2px solid #006400'
-        tarjeta1.style.backgroundColor = '#3b302f'
-        tarjetaSeleccionada1.innerHTML = ''
-
-        tarjeta2.style.border = '2px solid #007200'
-        tarjeta2.style.outline = '2px solid #006400'
-        tarjeta2.style.backgroundColor = '#3b302f'
-        tarjetaSeleccionada2.innerHTML = ''
-    }
+    })
 }
 
 function seleccionarMascotaJugador() {
