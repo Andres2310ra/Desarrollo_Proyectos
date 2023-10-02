@@ -87,7 +87,7 @@ monster3.ataque.push(
     { nombre: '💧', id: 'btn-agua' },
     { nombre: '🌱', id: 'btn-tierra' },
 )
-// monster4.ataque.push(
+monster4.ataque.push(
      { nombre: '🔥', id: 'btn-fuego' },
      { nombre: '🔥', id: 'btn-fuego' },
      { nombre: '🔥', id: 'btn-fuego' },
