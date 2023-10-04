@@ -76,11 +76,11 @@ let monster3 = new Mokepon('Monster3', 'img/Monster_Mokepon/tarjeta_3.gif', '3')
 // let monster30 = new Mokepon('Monster 30', 'img/Monster_Mokepon/tarjeta_30.gif', '3')
 
 monster1.ataque.push(
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
+    { nombre: '🌱', id: 'btn-fuego' },
+    { nombre: '🌱', id: 'btn-fuego' },
+    { nombre: '🌱', id: 'btn-fuego' },
     { nombre: '💧', id: 'btn-agua' },
-    { nombre: '🌱', id: 'btn-tierra' },
+    { nombre: '🔥', id: 'btn-tierra' },
 )
 monster2.ataque.push(
     { nombre: '🔥', id: 'btn-fuego' },
@@ -90,10 +90,10 @@ monster2.ataque.push(
     { nombre: '🌱', id: 'btn-tierra' },
 )
 monster3.ataque.push(
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '💧', id: 'btn-agua' },
+    { nombre: '💧', id: 'btn-fuego' },
+    { nombre: '💧', id: 'btn-fuego' },
+    { nombre: '💧', id: 'btn-fuego' },
+    { nombre: '🔥', id: 'btn-agua' },
     { nombre: '🌱', id: 'btn-tierra' },
 )
 // monster4.ataque.push(
@@ -316,7 +316,7 @@ function iniciarJuego() {
 
 function styleMascotaJugador() {
 
-    const espacio = ' '
+    const espacio = '-'
 
     mokepones.forEach((mokepon, index) => {
 
@@ -417,7 +417,6 @@ function modularAtaques() {
             }
 
             ataqueEnemigo = seleccionarAtaqueEnemigo().nombre
-            console.log(ataquesDelEnemigo)
             combate()
 
         })
@@ -442,6 +441,8 @@ function seleccionarAtaqueEnemigo() {
     } else if (ataqueEnemigoSeleccionado.nombre == '🌱') {
         ataquesDelEnemigo.push('Tierra')
     }
+
+    console.log(ataquesDelEnemigo)
 
     return ataqueEnemigoSeleccionado
 }
@@ -505,9 +506,9 @@ function combate() {
             'error'
         )
         spanVidasJugador.innerHTML = '☠️'
-        botonFuego.disabled = true
-        botonAgua.disabled = true
-        botonTierra.disabled = true
+        // botonFuego.disabled = true
+        // botonAgua.disabled = true
+        // botonTierra.disabled = true
         sectionReiniciar.style.display = 'block'
 
     } else if (vidasEnemigo == 0) {
@@ -517,9 +518,9 @@ function combate() {
             'success'
         )
         spanVidasEnemigo.innerHTML = '☠️'
-        botonFuego.disabled = true
-        botonAgua.disabled = true
-        botonTierra.disabled = true
+        // botonFuego.disabled = true
+        // botonAgua.disabled = true
+        // botonTierra.disabled = true
         sectionReiniciar.style.display = 'block'
     }
 
