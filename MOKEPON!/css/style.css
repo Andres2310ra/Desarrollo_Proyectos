@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@1,700&family=Fredoka:wght@500&family=Roboto:wght@300;500&display=swap');
 
+/* Estilo de la Pagina */
+
 body {
   background-image: url("../img/Fodo_Mokepon.jpg");
   background-size: cover;
@@ -43,34 +45,9 @@ body {
 
 .titulo h1 {
   position: relative;
-
   /*font-size: calc(2rem + (50 -2) * ((100vw -300px) / (1600 -300)));*/
-
   /* Esta fórmula permite ajustar el tamaño de la fuente según el ancho de la pantalla */
 }
-
-@media screen and (max-width:480px) {
-  .titulo h1 {
-    font-size: 1rem;
-    /* Tamaño para pantallas pequeñas */
-  }
-}
-
-@media screen and (min-width:481px) and (max-width:780px) {
-  .titulo h1 {
-    font-size: 2rem;
-    /* Tamaño para pantallas medianas */
-  }
-}
-
-@media screen and (min-width:781px) {
-  .titulo h1 {
-    font-size: 3rem;
-    /* Tamaño para pantallas grandes */
-  }
-}
-
-/* También puedes usar otras unidades relativas como em o rem en lugar de rem */
 
 /* Estilo Tarjeta Mascota */
 
@@ -102,7 +79,6 @@ body {
   border-radius: 10px;
   border: 3px solid #007200;
   outline: 3px solid #006400;
-
 }
 
 #seleccionar-mascota h2 {
@@ -113,27 +89,6 @@ body {
   text-align: center;
   margin: auto;
   padding: 2% 0%;
-}
-
-@media screen and (max-width:480px) {
-  h2 {
-    font-size: 1rem;
-    /* Tamaño para pantallas pequeñas */
-  }
-}
-
-@media screen and (min-width:481px) and (max-width:780px) {
-  h2 {
-    font-size: 1rem;
-    /* Tamaño para pantallas medianas */
-  }
-}
-
-@media screen and (min-width:781px) {
-  h2 {
-    font-size: 2rem;
-    /* Tamaño para pantallas grandes */
-  }
 }
 
 .tarjetas-juego {
@@ -196,35 +151,11 @@ body {
 
   border-color: white;
   outline-color: white;
-
 }
 
-input {
+/* input {
   display: none;
-}
-
-/* Usamos media queries para cambiar el ancho de las tarjetas según la resolución */
-
-/* Ancho para pantallas pequeñas */
-@media screen and (max-width:480px) {
-  .tarjeta-mascota {
-    width: 70%;
-  }
-}
-
-/* Ancho para pantallas medianas */
-@media screen and (min-width:481px) and (max-width:780px) {
-  .tarjeta-mascota {
-    width: 80%;
-  }
-}
-
-/* Ancho para pantallas grandes */
-@media screen and (min-width:781px) {
-  .tarjeta-mascota {
-    width: 24%;
-  }
-}
+} */
 
 button {
   position: relative;
@@ -255,7 +186,10 @@ button {
 
   border-color: white;
   outline-color: white;
+}
 
+.modo-juego{
+  position: relative;
 }
 
 /* Ataque */
@@ -274,7 +208,6 @@ button {
   align-items: center;
 
   margin-top: 5px;
-
 }
 
 .tarjeta-contenedor {
@@ -291,7 +224,6 @@ button {
   border-radius: 10px;
   border: 3px solid #007200;
   outline: 3px solid #006400;
-
 }
 
 #seleccionar-ataque h2 {
@@ -309,44 +241,6 @@ button {
   height: 100%;
   justify-content: center;
   align-items: center;
-}
-
-/* Ancho para pantallas pequeñas */
-@media screen and (max-width:480px) {
-  .btn-de-ataque {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .ataque {
-    width: 176px;
-  }
-
-}
-
-/* Ancho para pantallas medianas */
-@media screen and (min-width:481px) and (max-width:780px) {
-  .btn-de-ataque {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .ataque {
-    width: 240px;
-  }
-
-}
-
-/* Ancho para pantallas grandes */
-@media screen and (min-width:781px) {
-  .btn-de-ataque {
-    display: flex;
-  }
-
-  .ataque {
-    width: 200px;
-  }
-
 }
 
 .mensaje-reiniciar-juego {
@@ -405,3 +299,80 @@ button {
   outline: 2px solid #006400;
   width: 70px;
 }
+
+/* Juego Resposivo */
+
+/* Tamaño para pantallas pequeñas */
+
+@media screen and (max-width:480px) {
+  .titulo h1 {
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  .tarjeta-mascota {
+    width: 70%;
+  }
+
+  .btn-de-ataque {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ataque {
+    width: 176px;
+  }
+}
+
+/* Tamaño para pantallas medianas */
+
+@media screen and (min-width:481px) and (max-width:780px) {
+  .titulo h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  .tarjeta-mascota {
+    width: 80%;
+  }
+
+  .btn-de-ataque {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ataque {
+    width: 240px;
+  }
+}
+
+    /* Tamaño para pantallas grandes */
+
+@media screen and (min-width:781px) {
+  .titulo h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .tarjeta-mascota {
+    width: 24%;
+  }
+
+  .btn-de-ataque {
+    display: flex;
+  }
+
+  .ataque {
+    width: 200px;
+  }
+}
+
