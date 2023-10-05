@@ -90,6 +90,13 @@ monster1.ataque.push(
     { nombre: '💧', id: 'btn-fuego' },
     { nombre: '🔥', id: 'btn-agua' },
     { nombre: '🌱', id: 'btn-tierra' },
+=======
+    { nombre: '🌱', id: 'btn-fuego' },
+    { nombre: '🌱', id: 'btn-fuego' },
+    { nombre: '🌱', id: 'btn-fuego' },
+    { nombre: '💧', id: 'btn-agua' },
+    { nombre: '🔥', id: 'btn-tierra' },
+>>>>>>> b3626331982b0bf97d7f405eef76e1760630465b
 )
 monster2.ataque.push(
     { nombre: '🔥', id: 'btn-fuego' },
