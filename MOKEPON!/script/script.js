@@ -31,7 +31,7 @@ let spanMascotaEnemigo = ''
 let botonFuego
 let botonAgua
 let botonTierra
-let botonesAtaque
+let botonesAtaque=[]
 let modoJuegoPorMuerte
 let modoJuegoPorVictorias
 
@@ -487,7 +487,9 @@ function combate() {
             )
             spanVidasJugador.innerHTML = '☠️'
             sectionReiniciar.style.display = 'block'
-            botonesAtaque.disabled = true
+            botonesAtaque.forEach((boton) => {
+                boton.disabled = true;
+            });
 
         } else if (vidasEnemigo == 0) {
             Swal.fire(
@@ -497,7 +499,9 @@ function combate() {
             )
             spanVidasEnemigo.innerHTML = '☠️'
             sectionReiniciar.style.display = 'block'
-            botonesAtaque.disabled = true
+            botonesAtaque.forEach((boton) => {
+                boton.disabled = true;
+            });
         }
 
     }
