@@ -153,9 +153,9 @@ body {
   outline-color: white;
 }
 
-/* input {
+input {
   display: none;
-} */
+}
 
 button {
   position: relative;
@@ -188,9 +188,31 @@ button {
   outline-color: white;
 }
 
-.modo-juego{
+.modo-juego {
   position: relative;
+  /* width: 80%;
+  height: 100%; */
+  margin-top: 3%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
+
+.modo-juego label {
+  width: 133px;
+  background-color: #006400;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: transparent solid 2px;
+}
+
+.modo-juego input:checked + label {
+  background-color: white;
+  color: #000;
+}
+
 
 /* Ataque */
 
@@ -339,7 +361,7 @@ button {
   }
 
   .tarjeta-mascota {
-    width: 80%;
+    width: 50%;
   }
 
   .btn-de-ataque {
@@ -352,7 +374,7 @@ button {
   }
 }
 
-    /* Tamaño para pantallas grandes */
+/* Tamaño para pantallas grandes */
 
 @media screen and (min-width:781px) {
   .titulo h1 {
@@ -375,4 +397,3 @@ button {
     width: 200px;
   }
 }
-
