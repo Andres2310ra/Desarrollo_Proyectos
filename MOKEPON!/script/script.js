@@ -286,11 +286,7 @@ monster3.ataque.push(
 //      { nombre: '🌱', id: 'btn-tierra' },
 //  )
 
-
-
 mokepones.push(monster1, monster2, monster3/*, monster4, monster5, monster6, monster7, monster8, monster9, monster10, monster11, monster12, monster13, monster14, monster15, monster16, monster17, monster18, monster19, monster20, monster21, monster22, monster23, monster24, monster25, monster26, monster27, monster28, monster29, monster30*/)
-
-
 
 function iniciarJuego() {
     sectionSeleccionarAtaque.style.display = 'none'
@@ -308,7 +304,6 @@ function iniciarJuego() {
     `
         contenedorTarjetas.innerHTML += opcionDeMokepones
     })
-
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
     seleccionarMascotaStyle.addEventListener('click', styleMascotaJugador)
     reiniciar.addEventListener('click', reiniciarJuego)
@@ -328,7 +323,6 @@ function styleMascotaJugador() {
         } else {
             seleccionDeMokepon.innerHTML = ''
         }
-
     })
 }
 
@@ -357,9 +351,7 @@ function seleccionarMascotaJugador() {
             'error'
         )
     }
-
     seleccionarAtaqueJugador(moustruoSeleccionado)
-
 }
 function seleccionarAtaqueJugador(moustruoSeleccionado) {
 
@@ -376,20 +368,9 @@ function seleccionarAtaqueJugador(moustruoSeleccionado) {
         opcionDeAtaques = `<button class="ataque btn-ataques" id="${ataques.id}">${ataques.nombre}</button>`
         contenedorAtaques.innerHTML += opcionDeAtaques
     })
-
-    // botonFuego = document.getElementById('btn-fuego')
-    // botonAgua = document.getElementById('btn-agua')
-    // botonTierra = document.getElementById('btn-tierra')
     botonesAtaque = document.querySelectorAll('.btn-ataques')
-
     console.log(botonesAtaque)
-
-    // botonFuego.addEventListener('click', ataqueFuego)
-    // botonAgua.addEventListener('click', ataqueAgua)
-    // botonTierra.addEventListener('click', ataqueTierra)
-
     modularAtaques()
-
 }
 
 function modularAtaques() {
@@ -415,14 +396,10 @@ function modularAtaques() {
                 ataqueJugador = "🌱"
 
             }
-
             ataqueEnemigo = seleccionarAtaqueEnemigo().nombre
             combate()
-
         })
     })
-
-
 }
 
 function seleccionarMascotaEnemigo() {
@@ -446,24 +423,6 @@ function seleccionarAtaqueEnemigo() {
 
     return ataqueEnemigoSeleccionado
 }
-
-// function ataqueFuego() {
-//     ataqueJugador = "🔥"
-//     ataqueEnemigo = seleccionarAtaqueEnemigo().nombre
-//     combate()
-// }
-
-// function ataqueAgua() {
-//     ataqueJugador = "💧"
-//     ataqueEnemigo = seleccionarAtaqueEnemigo().nombre
-//     combate()
-// }
-
-// function ataqueTierra() {
-//     ataqueJugador = "🌱"
-//     ataqueEnemigo = seleccionarAtaqueEnemigo().nombre
-//     combate()
-// }
 
 function combate() {
     let vida = '❤️'
@@ -506,9 +465,6 @@ function combate() {
             'error'
         )
         spanVidasJugador.innerHTML = '☠️'
-        // botonFuego.disabled = true
-        // botonAgua.disabled = true
-        // botonTierra.disabled = true
         sectionReiniciar.style.display = 'block'
 
     } else if (vidasEnemigo == 0) {
@@ -518,9 +474,6 @@ function combate() {
             'success'
         )
         spanVidasEnemigo.innerHTML = '☠️'
-        // botonFuego.disabled = true
-        // botonAgua.disabled = true
-        // botonTierra.disabled = true
         sectionReiniciar.style.display = 'block'
     }
 
