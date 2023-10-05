@@ -32,6 +32,8 @@ let botonFuego
 let botonAgua
 let botonTierra
 let botonesAtaque
+let modoJuegoPorMuerte
+let modoJuegoPorVictorias
 
 //  Clase Mokepon 
 class Mokepon {
@@ -311,7 +313,7 @@ function iniciarJuego() {
 
 function styleMascotaJugador() {
 
-    const espacio = '-'
+    const espacio = ' '
 
     mokepones.forEach((mokepon, index) => {
 
@@ -330,6 +332,22 @@ function seleccionarMascotaJugador() {
 
     spanMascotaJugador = document.getElementById('mascota-jugador')
     spanMascotaEnemigo = document.getElementById('mascota-enemigo')
+
+    let modoJuego1 = document.getElementById('modo-1')
+    let modoJuego2 = document.getElementById('modo-2')
+
+    if (modoJuego1.checked) {
+        modoJuegoPorMuerte = 1
+    } else if (modoJuego2.checked) {
+        modoJuegoPorVictorias = 1
+    } else if (!modoJuego1.checked && !modoJuego2.checked) {
+        Swal.fire(
+            'Selecciona un Modo de Juego',
+            '',
+            'error'
+        );
+        return
+    }
 
     const mokeponSeleccionado = mokepones.find((mokepon) => {
         const input = document.getElementById(mokepon.nombre)
@@ -351,6 +369,7 @@ function seleccionarMascotaJugador() {
             'error'
         )
     }
+
     seleccionarAtaqueJugador(moustruoSeleccionado)
 }
 function seleccionarAtaqueJugador(moustruoSeleccionado) {
@@ -427,54 +446,60 @@ function seleccionarAtaqueEnemigo() {
 function combate() {
     let vida = '❤️'
 
-    mensaje.style.display = 'flex'
+    if (modoJuegoPorMuerte == 1) {
 
-    if (ataqueJugador == "🔥" && ataqueEnemigo == "🌱" || ataqueJugador == "💧" && ataqueEnemigo == "🔥" || ataqueJugador == "🌱" && ataqueEnemigo == "💧") {
-        mensajeJuego("Daño al Enemigo 🎉")
-        vidasEnemigo--
-        spanVidasEnemigo.innerHTML = ''
-        spanVidasJugador.innerHTML = ''
+        mensaje.style.display = 'flex'
 
-    } else if (ataqueJugador == ataqueEnemigo) {
-        mensajeJuego("Sin daños 😮, Ataques Igualados")
-        spanVidasJugador.innerHTML = ''
-        spanVidasEnemigo.innerHTML = ''
-        //vidasJugador++
-        //vidasEnemigo++
+        if (ataqueJugador == "🔥" && ataqueEnemigo == "🌱" || ataqueJugador == "💧" && ataqueEnemigo == "🔥" || ataqueJugador == "🌱" && ataqueEnemigo == "💧") {
+            mensajeJuego("Daño al Enemigo 🎉")
+            vidasEnemigo--
+            spanVidasEnemigo.innerHTML = ''
+            spanVidasJugador.innerHTML = ''
 
-    } else {
-        mensajeJuego("Te han hecho Daño 🥶")
-        vidasJugador--
-        spanVidasEnemigo.innerHTML = ''
-        spanVidasJugador.innerHTML = ''
+        } else if (ataqueJugador == ataqueEnemigo) {
+            mensajeJuego("Sin daños 😮, Ataques Igualados")
+            spanVidasJugador.innerHTML = ''
+            spanVidasEnemigo.innerHTML = ''
+            //vidasJugador++
+            //vidasEnemigo++
 
-    }
+        } else {
+            mensajeJuego("Te han hecho Daño 🥶")
+            vidasJugador--
+            spanVidasEnemigo.innerHTML = ''
+            spanVidasJugador.innerHTML = ''
 
-    for (let i = 0; i < vidasJugador; i++) {
-        spanVidasJugador.innerHTML += vida
-    }
+        }
 
-    for (let i = 0; i < vidasEnemigo; i++) {
-        spanVidasEnemigo.innerHTML += vida
-    }
+        for (let i = 0; i < vidasJugador; i++) {
+            spanVidasJugador.innerHTML += vida
+        }
 
-    if (vidasJugador == 0) {
-        Swal.fire(
-            '¡La Batalla Estuvo Dificil!',
-            'Tu Mascota Perdio la Batalla',
-            'error'
-        )
-        spanVidasJugador.innerHTML = '☠️'
-        sectionReiniciar.style.display = 'block'
+        for (let i = 0; i < vidasEnemigo; i++) {
+            spanVidasEnemigo.innerHTML += vida
+        }
 
-    } else if (vidasEnemigo == 0) {
-        Swal.fire(
-            '¡Buen Trabajo!',
-            'Tu Mascota Gano la Batalla',
-            'success'
-        )
-        spanVidasEnemigo.innerHTML = '☠️'
-        sectionReiniciar.style.display = 'block'
+        if (vidasJugador == 0) {
+            Swal.fire(
+                '¡La Batalla Estuvo Dificil!',
+                'Tu Mascota Perdio la Batalla',
+                'error'
+            )
+            spanVidasJugador.innerHTML = '☠️'
+            sectionReiniciar.style.display = 'block'
+            botonesAtaque.disabled = true
+
+        } else if (vidasEnemigo == 0) {
+            Swal.fire(
+                '¡Buen Trabajo!',
+                'Tu Mascota Gano la Batalla',
+                'success'
+            )
+            spanVidasEnemigo.innerHTML = '☠️'
+            sectionReiniciar.style.display = 'block'
+            botonesAtaque.disabled = true
+        }
+
     }
 
 }
