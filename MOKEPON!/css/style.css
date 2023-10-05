@@ -204,15 +204,35 @@ button {
   background-color: #006400;
   text-align: center;
   cursor: pointer;
-  transition: background-color 0.3s;
-  border: transparent solid 2px;
+  font-size: 15px;
+  transition: background-color 1s;
 }
 
-.modo-juego input:checked + label {
-  background-color: white;
-  color: #000;
+.modo-1 {
+  border-radius: 10px 0px 0px 10px;
+  border: #006400 solid 2px;
+  outline-color: #006400;
 }
 
+.modo-2 {
+  border-radius: 0px 10px 10px 0px;
+  border: #006400 solid 2px;
+  outline-color: #006400;
+}
+
+.modo-juego #modo-1:checked+label {
+  background-color: #3b302f;
+  border: white solid 2px;
+  outline-color: white;
+  /* background-image: linear-gradient(270deg,#006400,#000); */
+}
+
+.modo-juego #modo-2:checked+label {
+  background-color: #3b302f;
+  border: white solid 2px;
+  outline-color: white;
+  /* background-image: linear-gradient(90deg, #006400,#000); */
+}
 
 /* Ataque */
 
