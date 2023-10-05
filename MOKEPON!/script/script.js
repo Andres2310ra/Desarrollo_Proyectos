@@ -14,8 +14,8 @@ const contenedorTarjetas = document.getElementById('seleccion-de-mokepon')
 const contenedorAtaques = document.getElementById('seleccion-de-ataque')
 
 let mokepones = []
-let ataqueJugador
-let ataqueEnemigo
+let ataqueJugador = ''
+let ataqueEnemigo = ''
 let opcionDeMokepones
 let opcionDeAtaques
 let moustruoSeleccionado
@@ -422,33 +422,6 @@ function modularAtaques() {
         })
     })
 
-
-}
-
-function modeloDeAtaques() {
-
-    botonesDeAtaques.forEach((boton)=>{
-
-        boton.addEventListener('click', (e)=>{
-
-            console.log(e)
-
-        })
-    })
-
-    // if (ataqueSeleccionado === '🔥') {
-    //     ataqueJugador = "🔥"
-    //     ataqueEnemigo = seleccionarAtaqueEnemigo().nombre
-    //     combate()
-    // } else if (ataqueSeleccionado === '💧'){
-    //     ataqueJugador = "💧"
-    //     ataqueEnemigo = seleccionarAtaqueEnemigo().nombre
-    //     combate()
-    // } else if (ataqueSeleccionado === '🌱'){
-    //     ataqueJugador = "🌱"
-    //     ataqueEnemigo = seleccionarAtaqueEnemigo().nombre
-    //     combate()
-    // }
 
 }
 
