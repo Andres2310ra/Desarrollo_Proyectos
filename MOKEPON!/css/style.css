@@ -364,6 +364,7 @@ button {
   .btn-de-ataque {
     display: flex;
     flex-direction: column;
+    width: 70%;
   }
 
   .ataque {
@@ -389,6 +390,7 @@ button {
   .btn-de-ataque {
     display: flex;
     flex-direction: column;
+    width: 80%;
   }
 
   .ataque {
@@ -408,11 +410,12 @@ button {
   }
 
   .tarjeta-mascota {
-    width: 24%;
+    width: 30%;
   }
 
   .btn-de-ataque {
     display: flex;
+    width: 90%;
   }
 
   .ataque {
