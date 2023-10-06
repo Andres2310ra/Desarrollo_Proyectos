@@ -552,7 +552,7 @@ function combate() {
             spanVidasEnemigo.innerHTML += vida
         }
 
-        if (ataquesDelJugador.length == 5) {
+        if (ataquesDelJugador.length == 5 || vidasJugador==0 || vidasEnemigo==0) {
             if (vidasJugador == 0) {
                 Swal.fire(
                     '¡La Batalla Estuvo Dificil!',
@@ -561,6 +561,9 @@ function combate() {
                 )
                 spanVidasJugador.innerHTML = '☠️'
                 sectionReiniciar.style.display = 'block'
+                botonesAtaque.forEach((boton) => {
+                    boton.disabled = true;
+                });
 
             } else if (vidasEnemigo == 0) {
                 Swal.fire(
@@ -570,6 +573,9 @@ function combate() {
                 )
                 spanVidasEnemigo.innerHTML = '☠️'
                 sectionReiniciar.style.display = 'block'
+                botonesAtaque.forEach((boton) => {
+                    boton.disabled = true;
+                });
 
             } else if (vidasJugador<vidasEnemigo){
                 Swal.fire(
@@ -578,13 +584,20 @@ function combate() {
                     'error'
                 )
                 sectionReiniciar.style.display = 'block'
-            } else if (vidasJugador<vidasEnemigo){
+                botonesAtaque.forEach((boton) => {
+                    boton.disabled = true;
+                });
+
+            } else if (vidasJugador>vidasEnemigo){
                 Swal.fire(
                     '¡Buen Trabajo!',
                     'Tu Mascota Gano la Batalla',
                     'success'
                 )
                 sectionReiniciar.style.display = 'block'
+                botonesAtaque.forEach((boton) => {
+                    boton.disabled = true;
+                });
 
             } else if (vidasJugador=vidasEnemigo){
                 Swal.fire(
@@ -593,6 +606,9 @@ function combate() {
                     'success'
                 )
                 sectionReiniciar.style.display = 'block'
+                botonesAtaque.forEach((boton) => {
+                    boton.disabled = true;
+                });
             }
 
         }
