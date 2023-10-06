@@ -31,7 +31,7 @@ let spanMascotaEnemigo = ''
 let botonFuego
 let botonAgua
 let botonTierra
-let botonesAtaque=[]
+let botonesAtaque = []
 let modoJuegoPorMuerte
 let modoJuegoPorVictorias
 
@@ -388,7 +388,7 @@ function seleccionarAtaqueJugador(moustruoSeleccionado) {
         contenedorAtaques.innerHTML += opcionDeAtaques
     })
     botonesAtaque = document.querySelectorAll('.btn-ataques')
-    console.log(botonesAtaque)
+    // console.log(botonesAtaque)
     modularAtaques()
 }
 
@@ -398,20 +398,32 @@ function modularAtaques() {
         botones.addEventListener('click', (e) => {
             if (e.target.textContent == '🔥') {
                 ataquesDelJugador.push('Fuego')
-                console.log(ataquesDelJugador)
-                botones.style.background = '#112f58'
+                // console.log(ataquesDelJugador)
+
+                if (modoJuegoPorVictorias == 1) {
+                    botones.style.background = '#FFFFFF'
+                    botones.disabled = true;
+                }
                 ataqueJugador = "🔥"
 
             } else if (e.target.textContent == '💧') {
                 ataquesDelJugador.push('Agua')
-                console.log(ataquesDelJugador)
-                botones.style.background = '#112f58'
+                // console.log(ataquesDelJugador)
+
+                if (modoJuegoPorVictorias == 1) {
+                    botones.style.background = '#FFFFFF'
+                    botones.disabled = true;
+                }
                 ataqueJugador = "💧"
 
             } else if (e.target.textContent == '🌱') {
                 ataquesDelJugador.push('Tierra')
-                console.log(ataquesDelJugador)
-                botones.style.background = '#112f58'
+                // console.log(ataquesDelJugador)
+
+                if (modoJuegoPorVictorias == 1) {
+                    botones.style.background = '#FFFFFF'
+                    botones.disabled = true;
+                }
                 ataqueJugador = "🌱"
 
             }
@@ -437,8 +449,7 @@ function seleccionarAtaqueEnemigo() {
     } else if (ataqueEnemigoSeleccionado.nombre == '🌱') {
         ataquesDelEnemigo.push('Tierra')
     }
-
-    console.log(ataquesDelEnemigo)
+    // console.log(ataquesDelEnemigo)
 
     return ataqueEnemigoSeleccionado
 }
@@ -488,6 +499,7 @@ function combate() {
             spanVidasJugador.innerHTML = '☠️'
             sectionReiniciar.style.display = 'block'
             botonesAtaque.forEach((boton) => {
+                boton.style.background = '#FFFFFF'
                 boton.disabled = true;
             });
 
@@ -500,8 +512,89 @@ function combate() {
             spanVidasEnemigo.innerHTML = '☠️'
             sectionReiniciar.style.display = 'block'
             botonesAtaque.forEach((boton) => {
+                boton.style.background = '#FFFFFF'
                 boton.disabled = true;
             });
+        }
+
+    }
+
+    if (modoJuegoPorVictorias == 1) {
+
+        mensaje.style.display = 'flex'
+
+        if (ataqueJugador == "🔥" && ataqueEnemigo == "🌱" || ataqueJugador == "💧" && ataqueEnemigo == "🔥" || ataqueJugador == "🌱" && ataqueEnemigo == "💧") {
+            mensajeJuego("Daño al Enemigo 🎉")
+            vidasEnemigo--
+            spanVidasEnemigo.innerHTML = ''
+            spanVidasJugador.innerHTML = ''
+
+        } else if (ataqueJugador == ataqueEnemigo) {
+            mensajeJuego("Sin daños 😮, Ataques Igualados")
+            spanVidasJugador.innerHTML = ''
+            spanVidasEnemigo.innerHTML = ''
+            //vidasJugador++
+            //vidasEnemigo++
+
+        } else {
+            mensajeJuego("Te han hecho Daño 🥶")
+            vidasJugador--
+            spanVidasEnemigo.innerHTML = ''
+            spanVidasJugador.innerHTML = ''
+
+        }
+
+        for (let i = 0; i < vidasJugador; i++) {
+            spanVidasJugador.innerHTML += vida
+        }
+
+        for (let i = 0; i < vidasEnemigo; i++) {
+            spanVidasEnemigo.innerHTML += vida
+        }
+
+        if (ataquesDelJugador.length == 5) {
+            if (vidasJugador == 0) {
+                Swal.fire(
+                    '¡La Batalla Estuvo Dificil!',
+                    'Tu Mascota Perdio la Batalla',
+                    'error'
+                )
+                spanVidasJugador.innerHTML = '☠️'
+                sectionReiniciar.style.display = 'block'
+
+            } else if (vidasEnemigo == 0) {
+                Swal.fire(
+                    '¡Buen Trabajo!',
+                    'Tu Mascota Gano la Batalla',
+                    'success'
+                )
+                spanVidasEnemigo.innerHTML = '☠️'
+                sectionReiniciar.style.display = 'block'
+
+            } else if (vidasJugador<vidasEnemigo){
+                Swal.fire(
+                    '¡La Batalla Estuvo Dificil!',
+                    'Tu Mascota Perdio la Batalla',
+                    'error'
+                )
+                sectionReiniciar.style.display = 'block'
+            } else if (vidasJugador<vidasEnemigo){
+                Swal.fire(
+                    '¡Buen Trabajo!',
+                    'Tu Mascota Gano la Batalla',
+                    'success'
+                )
+                sectionReiniciar.style.display = 'block'
+
+            } else if (vidasJugador=vidasEnemigo){
+                Swal.fire(
+                    '¡Gran Batalla!',
+                    'Tu Mascota Obtuvo un Empate',
+                    'success'
+                )
+                sectionReiniciar.style.display = 'block'
+            }
+
         }
 
     }
