@@ -78,53 +78,53 @@ let monster29 = new Mokepon('Leviatán', 'img/Monster_Mokepon/tarjeta_29.gif', '
 let monster30 = new Mokepon('Kaelen', 'img/Monster_Mokepon/tarjeta_30.gif', '3')
 
 monster1.ataque.push(
-    { nombre: '🔥', id: 'btn-fuego'},
-    { nombre: '🔥', id: 'btn-fuego'},
-    { nombre: '🔥', id: 'btn-fuego'},
-    { nombre: '💧', id: 'btn-agua'},
-    { nombre: '🌱', id: 'btn-tierra'},
+    { nombre: '🔥', id: 'btn-fuego' },
+    { nombre: '🔥', id: 'btn-fuego' },
+    { nombre: '🔥', id: 'btn-fuego' },
+    { nombre: '💧', id: 'btn-agua' },
+    { nombre: '🌱', id: 'btn-tierra' },
 )
 monster2.ataque.push(
-    { nombre: '🌱', id: 'btn-tierra'},
-    { nombre: '🌱', id: 'btn-tierra'},
-    { nombre: '🌱', id: 'btn-tierra'},
-    { nombre: '💧', id: 'btn-agua'},
-    { nombre: '🔥', id: 'btn-fuego'},
+    { nombre: '🌱', id: 'btn-tierra' },
+    { nombre: '🌱', id: 'btn-tierra' },
+    { nombre: '🌱', id: 'btn-tierra' },
+    { nombre: '💧', id: 'btn-agua' },
+    { nombre: '🔥', id: 'btn-fuego' },
 )
 monster3.ataque.push(
-    { nombre: '💧', id: 'btn-agua'},
-    { nombre: '💧', id: 'btn-agua'},
-    { nombre: '💧', id: 'btn-agua'},
-    { nombre: '🔥', id: 'btn-fuego'},
-    { nombre: '🌱', id: 'btn-tierra'},
+    { nombre: '💧', id: 'btn-agua' },
+    { nombre: '💧', id: 'btn-agua' },
+    { nombre: '💧', id: 'btn-agua' },
+    { nombre: '🔥', id: 'btn-fuego' },
+    { nombre: '🌱', id: 'btn-tierra' },
 )
 monster4.ataque.push(
-    { nombre: '⛈️', id: 'btn-tormenta'},
-    { nombre: '⛈️', id: 'btn-tormenta'},
-    { nombre: '🔥', id: 'btn-fuego'},
-    { nombre: '💧', id: 'btn-agua'},
-    { nombre: '🌱', id: 'btn-tierra'},
+    { nombre: '⛈️', id: 'btn-tormenta' },
+    { nombre: '⛈️', id: 'btn-tormenta' },
+    { nombre: '⛈️', id: 'btn-tormenta' },
+    { nombre: '💧', id: 'btn-agua' },
+    { nombre: '🔥', id: 'btn-fuego' },
 )
 monster5.ataque.push(
     { nombre: '🌀', id: 'btn-viento' },
     { nombre: '🌀', id: 'btn-viento' },
-    { nombre: '🔥', id: 'btn-fuego' },
+    { nombre: '🌀', id: 'btn-viento' },
     { nombre: '💧', id: 'btn-agua' },
     { nombre: '🌱', id: 'btn-tierra' },
 )
 monster6.ataque.push(
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
+    { nombre: '⚡', id: 'btn-trueno' },
+    { nombre: '⚡', id: 'btn-trueno' },
+    { nombre: '⚡', id: 'btn-trueno' },
+    { nombre: '🌀', id: 'btn-viento' },
     { nombre: '💧', id: 'btn-agua' },
-    { nombre: '🌱', id: 'btn-tierra' },
 )
 monster7.ataque.push(
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '💧', id: 'btn-agua' },
-    { nombre: '🌱', id: 'btn-tierra' },
+    { nombre: '🌑', id: 'btn-noche' },
+    { nombre: '🌑', id: 'btn-noche' },
+    { nombre: '🌑', id: 'btn-noche' },
+    { nombre: '🌀', id: 'btn-viento' },
+    { nombre: '⛈️', id: 'btn-tormenta' },
 )
 monster8.ataque.push(
     { nombre: '🔥', id: 'btn-fuego' },
@@ -134,46 +134,46 @@ monster8.ataque.push(
     { nombre: '🌱', id: 'btn-tierra' },
 )
 monster9.ataque.push(
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '💧', id: 'btn-agua' },
     { nombre: '🌱', id: 'btn-tierra' },
+    { nombre: '🌱', id: 'btn-tierra' },
+    { nombre: '🌱', id: 'btn-tierra' },
+    { nombre: '💧', id: 'btn-agua' },
+    { nombre: '🔥', id: 'btn-fuego' },
 )
 monster10.ataque.push(
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
     { nombre: '💧', id: 'btn-agua' },
+    { nombre: '💧', id: 'btn-agua' },
+    { nombre: '💧', id: 'btn-agua' },
+    { nombre: '🔥', id: 'btn-fuego' },
     { nombre: '🌱', id: 'btn-tierra' },
 )
 monster11.ataque.push(
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
+    { nombre: '⛈️', id: 'btn-tormenta' },
+    { nombre: '⛈️', id: 'btn-tormenta' },
+    { nombre: '⛈️', id: 'btn-tormenta' },
     { nombre: '💧', id: 'btn-agua' },
-    { nombre: '🌱', id: 'btn-tierra' },
+    { nombre: '🔥', id: 'btn-fuego' },
 )
 monster12.ataque.push(
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
+    { nombre: '🌀', id: 'btn-viento' },
+    { nombre: '🌀', id: 'btn-viento' },
+    { nombre: '🌀', id: 'btn-viento' },
     { nombre: '💧', id: 'btn-agua' },
     { nombre: '🌱', id: 'btn-tierra' },
 )
 monster13.ataque.push(
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
+    { nombre: '⚡', id: 'btn-trueno' },
+    { nombre: '⚡', id: 'btn-trueno' },
+    { nombre: '⚡', id: 'btn-trueno' },
+    { nombre: '🌀', id: 'btn-viento' },
     { nombre: '💧', id: 'btn-agua' },
-    { nombre: '🌱', id: 'btn-tierra' },
 )
 monster14.ataque.push(
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '💧', id: 'btn-agua' },
-    { nombre: '🌱', id: 'btn-tierra' },
+    { nombre: '🌑', id: 'btn-noche' },
+    { nombre: '🌑', id: 'btn-noche' },
+    { nombre: '🌑', id: 'btn-noche' },
+    { nombre: '🌀', id: 'btn-viento' },
+    { nombre: '⛈️', id: 'btn-tormenta' },
 )
 monster15.ataque.push(
     { nombre: '🔥', id: 'btn-fuego' },
@@ -183,46 +183,46 @@ monster15.ataque.push(
     { nombre: '🌱', id: 'btn-tierra' },
 )
 monster16.ataque.push(
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '💧', id: 'btn-agua' },
     { nombre: '🌱', id: 'btn-tierra' },
+    { nombre: '🌱', id: 'btn-tierra' },
+    { nombre: '🌱', id: 'btn-tierra' },
+    { nombre: '💧', id: 'btn-agua' },
+    { nombre: '🔥', id: 'btn-fuego' },
 )
 monster17.ataque.push(
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
     { nombre: '💧', id: 'btn-agua' },
+    { nombre: '💧', id: 'btn-agua' },
+    { nombre: '💧', id: 'btn-agua' },
+    { nombre: '🔥', id: 'btn-fuego' },
     { nombre: '🌱', id: 'btn-tierra' },
 )
 monster18.ataque.push(
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
+    { nombre: '⛈️', id: 'btn-tormenta' },
+    { nombre: '⛈️', id: 'btn-tormenta' },
+    { nombre: '⛈️', id: 'btn-tormenta' },
     { nombre: '💧', id: 'btn-agua' },
-    { nombre: '🌱', id: 'btn-tierra' },
+    { nombre: '🔥', id: 'btn-fuego' },
 )
 monster19.ataque.push(
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
+    { nombre: '🌀', id: 'btn-viento' },
+    { nombre: '🌀', id: 'btn-viento' },
+    { nombre: '🌀', id: 'btn-viento' },
     { nombre: '💧', id: 'btn-agua' },
     { nombre: '🌱', id: 'btn-tierra' },
 )
 monster20.ataque.push(
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
+    { nombre: '⚡', id: 'btn-trueno' },
+    { nombre: '⚡', id: 'btn-trueno' },
+    { nombre: '⚡', id: 'btn-trueno' },
+    { nombre: '🌀', id: 'btn-viento' },
     { nombre: '💧', id: 'btn-agua' },
-    { nombre: '🌱', id: 'btn-tierra' },
 )
 monster21.ataque.push(
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '💧', id: 'btn-agua' },
-    { nombre: '🌱', id: 'btn-tierra' },
+    { nombre: '🌑', id: 'btn-noche' },
+    { nombre: '🌑', id: 'btn-noche' },
+    { nombre: '🌑', id: 'btn-noche' },
+    { nombre: '🌀', id: 'btn-viento' },
+    { nombre: '⛈️', id: 'btn-tormenta' },
 )
 monster22.ataque.push(
     { nombre: '🔥', id: 'btn-fuego' },
@@ -232,60 +232,60 @@ monster22.ataque.push(
     { nombre: '🌱', id: 'btn-tierra' },
 )
 monster23.ataque.push(
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '💧', id: 'btn-agua' },
     { nombre: '🌱', id: 'btn-tierra' },
+    { nombre: '🌱', id: 'btn-tierra' },
+    { nombre: '🌱', id: 'btn-tierra' },
+    { nombre: '💧', id: 'btn-agua' },
+    { nombre: '🔥', id: 'btn-fuego' },
 )
 monster24.ataque.push(
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
     { nombre: '💧', id: 'btn-agua' },
+    { nombre: '💧', id: 'btn-agua' },
+    { nombre: '💧', id: 'btn-agua' },
+    { nombre: '🔥', id: 'btn-fuego' },
     { nombre: '🌱', id: 'btn-tierra' },
 )
 monster25.ataque.push(
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
+    { nombre: '⛈️', id: 'btn-tormenta' },
+    { nombre: '⛈️', id: 'btn-tormenta' },
+    { nombre: '⛈️', id: 'btn-tormenta' },
     { nombre: '💧', id: 'btn-agua' },
-    { nombre: '🌱', id: 'btn-tierra' },
+    { nombre: '🔥', id: 'btn-fuego' },
 )
 monster26.ataque.push(
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
+    { nombre: '🌀', id: 'btn-viento' },
+    { nombre: '🌀', id: 'btn-viento' },
+    { nombre: '🌀', id: 'btn-viento' },
     { nombre: '💧', id: 'btn-agua' },
     { nombre: '🌱', id: 'btn-tierra' },
 )
 monster27.ataque.push(
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
+    { nombre: '⚡', id: 'btn-trueno' },
+    { nombre: '⚡', id: 'btn-trueno' },
+    { nombre: '⚡', id: 'btn-trueno' },
+    { nombre: '🌀', id: 'btn-viento' },
     { nombre: '💧', id: 'btn-agua' },
-    { nombre: '🌱', id: 'btn-tierra' },
 )
 monster28.ataque.push(
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '💧', id: 'btn-agua' },
-    { nombre: '🌱', id: 'btn-tierra' },
+    { nombre: '🌑', id: 'btn-noche' },
+    { nombre: '🌑', id: 'btn-noche' },
+    { nombre: '🌑', id: 'btn-noche' },
+    { nombre: '🌀', id: 'btn-viento' },
+    { nombre: '⛈️', id: 'btn-tormenta' },
 )
 monster29.ataque.push(
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
+    { nombre: '⚡', id: 'btn-trueno' },
+    { nombre: '⚡', id: 'btn-trueno' },
+    { nombre: '⚡', id: 'btn-trueno' },
+    { nombre: '🌀', id: 'btn-viento' },
     { nombre: '💧', id: 'btn-agua' },
-    { nombre: '🌱', id: 'btn-tierra' },
 )
 monster30.ataque.push(
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '💧', id: 'btn-agua' },
-    { nombre: '🌱', id: 'btn-tierra' },
+    { nombre: '🌑', id: 'btn-noche' },
+    { nombre: '🌑', id: 'btn-noche' },
+    { nombre: '🌑', id: 'btn-noche' },
+    { nombre: '🌀', id: 'btn-viento' },
+    { nombre: '⛈️', id: 'btn-tormenta' },
 )
 
 mokepones.push(monster1, monster2, monster3, monster4, monster5, monster6, monster7, monster8, monster9, monster10, monster11, monster12, monster13, monster14, monster15, monster16, monster17, monster18, monster19, monster20, monster21, monster22, monster23, monster24, monster25, monster26, monster27, monster28, monster29, monster30)
@@ -426,6 +426,46 @@ function modularAtaques() {
                 }
                 ataqueJugador = "🌱"
 
+            } else if (e.target.textContent == '⛈️') {
+                ataquesDelJugador.push('Tierra')
+                // console.log(ataquesDelJugador)
+
+                if (modoJuegoPorVictorias == 1) {
+                    botones.style.background = '#FFFFFF'
+                    botones.disabled = true;
+                }
+                ataqueJugador = "⛈️"
+
+            } else if (e.target.textContent == '🌀') {
+                ataquesDelJugador.push('Tierra')
+                // console.log(ataquesDelJugador)
+
+                if (modoJuegoPorVictorias == 1) {
+                    botones.style.background = '#FFFFFF'
+                    botones.disabled = true;
+                }
+                ataqueJugador = "🌀"
+
+            } else if (e.target.textContent == '⚡') {
+                ataquesDelJugador.push('Tierra')
+                // console.log(ataquesDelJugador)
+
+                if (modoJuegoPorVictorias == 1) {
+                    botones.style.background = '#FFFFFF'
+                    botones.disabled = true;
+                }
+                ataqueJugador = "⚡"
+
+            } else if (e.target.textContent == '🌑') {
+                ataquesDelJugador.push('Tierra')
+                // console.log(ataquesDelJugador)
+
+                if (modoJuegoPorVictorias == 1) {
+                    botones.style.background = '#FFFFFF'
+                    botones.disabled = true;
+                }
+                ataqueJugador = "🌑"
+
             }
             ataqueEnemigo = seleccionarAtaqueEnemigo().nombre
             combate()
@@ -448,6 +488,14 @@ function seleccionarAtaqueEnemigo() {
         ataquesDelEnemigo.push('Agua')
     } else if (ataqueEnemigoSeleccionado.nombre == '🌱') {
         ataquesDelEnemigo.push('Tierra')
+    } else if (ataqueEnemigoSeleccionado.nombre == '⛈️') {
+        ataquesDelEnemigo.push('Tormenta')
+    } else if (ataqueEnemigoSeleccionado.nombre == '🌀') {
+        ataquesDelEnemigo.push('Viento')
+    } else if (ataqueEnemigoSeleccionado.nombre == '⚡') {
+        ataquesDelEnemigo.push('Trueno')
+    } else if (ataqueEnemigoSeleccionado.nombre == '🌑') {
+        ataquesDelEnemigo.push('Noche')
     }
     // console.log(ataquesDelEnemigo)
 
@@ -461,7 +509,7 @@ function combate() {
 
         mensaje.style.display = 'flex'
 
-        if (ataqueJugador == "🔥" && ataqueEnemigo == "🌱" || ataqueJugador == "💧" && ataqueEnemigo == "🔥" || ataqueJugador == "🌱" && ataqueEnemigo == "💧") {
+        if (ataqueJugador == "🔥" && ataqueEnemigo == "🌱" || ataqueJugador == "💧" && ataqueEnemigo == "🔥" || ataqueJugador == "🌱" && ataqueEnemigo == "💧" || ataqueJugador == "⛈️" && ataqueEnemigo == "🌀" || ataqueJugador == "🌀" && ataqueEnemigo == "⚡" || ataqueJugador == "⚡" && ataqueEnemigo == "⛈️" || ataqueJugador == "🌑" && ataqueEnemigo == "🔥" || ataqueJugador == "🌑" && ataqueEnemigo == "💧" || ataqueJugador == "🌑" && ataqueEnemigo == "🌱" || ataqueJugador == "🌑" && ataqueEnemigo == "⛈️" || ataqueJugador == "🌑" && ataqueEnemigo == "🌀" || ataqueJugador == "🌑" && ataqueEnemigo == "⚡") {
             mensajeJuego("Daño al Enemigo 🎉")
             vidasEnemigo--
             spanVidasEnemigo.innerHTML = ''
