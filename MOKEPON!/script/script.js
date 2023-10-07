@@ -53,29 +53,29 @@ let monster4 = new Mokepon('Quimera', 'img/Monster_Mokepon/tarjeta_4.gif', '3')
 let monster5 = new Mokepon('Gorgona', 'img/Monster_Mokepon/tarjeta_5.gif', '3')
 let monster6 = new Mokepon('Cerbero', 'img/Monster_Mokepon/tarjeta_6.gif', '3')
 let monster7 = new Mokepon('Basilisco', 'img/Monster_Mokepon/tarjeta_7.gif', '3')
-let monster8 = new Mokepon('Arpía', 'img/Monster_Mokepon/tarjeta_8.gif', '3')
-let monster9 = new Mokepon('Minotauro', 'img/Monster_Mokepon/tarjeta_9.gif', '3')
-let monster10 = new Mokepon('Grifo', 'img/Monster_Mokepon/tarjeta_10.gif', '3')
-let monster11 = new Mokepon('Cíclope', 'img/Monster_Mokepon/tarjeta_11.gif', '3')
-let monster12 = new Mokepon('León De Nemea', 'img/Monster_Mokepon/tarjeta_12.gif', '3')
-let monster13 = new Mokepon('Pájaro Del Trueno', 'img/Monster_Mokepon/tarjeta_13.gif', '3')
-let monster14 = new Mokepon('Roc', 'img/Monster_Mokepon/tarjeta_14.gif', '3')
-let monster15 = new Mokepon('Kraken', 'img/Monster_Mokepon/tarjeta_15.gif', '3')
-let monster16 = new Mokepon('Wendigo', 'img/Monster_Mokepon/tarjeta_16.gif', '3')
-let monster17 = new Mokepon('Centauro', 'img/Monster_Mokepon/tarjeta_17.gif', '3')
-let monster18 = new Mokepon('Sirena', 'img/Monster_Mokepon/tarjeta_18.gif', '3')
-let monster19 = new Mokepon('Mantícora', 'img/Monster_Mokepon/tarjeta_19.gif', '3')
-let monster20 = new Mokepon('Lamía', 'img/Monster_Mokepon/tarjeta_20.gif', '3')
-let monster21 = new Mokepon('Cíclope', 'img/Monster_Mokepon/tarjeta_21.gif', '3')
-let monster22 = new Mokepon('Fénix', 'img/Monster_Mokepon/tarjeta_22.gif', '3')
-let monster23 = new Mokepon('Yeti', 'img/Monster_Mokepon/tarjeta_23.gif', '3')
-let monster24 = new Mokepon('Espectro', 'img/Monster_Mokepon/tarjeta_24.gif', '3')
-let monster25 = new Mokepon('Wyvern', 'img/Monster_Mokepon/tarjeta_25.gif', '3')
-let monster26 = new Mokepon('Alma', 'img/Monster_Mokepon/tarjeta_26.gif', '3')
-let monster27 = new Mokepon('Ogro', 'img/Monster_Mokepon/tarjeta_27.gif', '3')
-let monster28 = new Mokepon('Gárgola', 'img/Monster_Mokepon/tarjeta_28.gif', '3')
-let monster29 = new Mokepon('Leviatán', 'img/Monster_Mokepon/tarjeta_29.gif', '3')
-let monster30 = new Mokepon('Kaelen', 'img/Monster_Mokepon/tarjeta_30.gif', '3')
+// let monster8 = new Mokepon('Arpía', 'img/Monster_Mokepon/tarjeta_8.gif', '3')
+// let monster9 = new Mokepon('Minotauro', 'img/Monster_Mokepon/tarjeta_9.gif', '3')
+// let monster10 = new Mokepon('Grifo', 'img/Monster_Mokepon/tarjeta_10.gif', '3')
+// let monster11 = new Mokepon('Cíclope', 'img/Monster_Mokepon/tarjeta_11.gif', '3')
+// let monster12 = new Mokepon('León De Nemea', 'img/Monster_Mokepon/tarjeta_12.gif', '3')
+// let monster13 = new Mokepon('Pájaro Del Trueno', 'img/Monster_Mokepon/tarjeta_13.gif', '3')
+// let monster14 = new Mokepon('Roc', 'img/Monster_Mokepon/tarjeta_14.gif', '3')
+// let monster15 = new Mokepon('Kraken', 'img/Monster_Mokepon/tarjeta_15.gif', '3')
+// let monster16 = new Mokepon('Wendigo', 'img/Monster_Mokepon/tarjeta_16.gif', '3')
+// let monster17 = new Mokepon('Centauro', 'img/Monster_Mokepon/tarjeta_17.gif', '3')
+// let monster18 = new Mokepon('Sirena', 'img/Monster_Mokepon/tarjeta_18.gif', '3')
+// let monster19 = new Mokepon('Mantícora', 'img/Monster_Mokepon/tarjeta_19.gif', '3')
+// let monster20 = new Mokepon('Lamía', 'img/Monster_Mokepon/tarjeta_20.gif', '3')
+// let monster21 = new Mokepon('Cíclope', 'img/Monster_Mokepon/tarjeta_21.gif', '3')
+// let monster22 = new Mokepon('Fénix', 'img/Monster_Mokepon/tarjeta_22.gif', '3')
+// let monster23 = new Mokepon('Yeti', 'img/Monster_Mokepon/tarjeta_23.gif', '3')
+// let monster24 = new Mokepon('Espectro', 'img/Monster_Mokepon/tarjeta_24.gif', '3')
+// let monster25 = new Mokepon('Wyvern', 'img/Monster_Mokepon/tarjeta_25.gif', '3')
+// let monster26 = new Mokepon('Alma', 'img/Monster_Mokepon/tarjeta_26.gif', '3')
+// let monster27 = new Mokepon('Ogro', 'img/Monster_Mokepon/tarjeta_27.gif', '3')
+// let monster28 = new Mokepon('Gárgola', 'img/Monster_Mokepon/tarjeta_28.gif', '3')
+// let monster29 = new Mokepon('Leviatán', 'img/Monster_Mokepon/tarjeta_29.gif', '3')
+// let monster30 = new Mokepon('Kaelen', 'img/Monster_Mokepon/tarjeta_30.gif', '3')
 
 monster1.ataque.push(
     { nombre: '🔥', id: 'btn-fuego' },
@@ -126,169 +126,169 @@ monster7.ataque.push(
     { nombre: '🌀', id: 'btn-viento' },
     { nombre: '⛈️', id: 'btn-tormenta' },
 )
-monster8.ataque.push(
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '💧', id: 'btn-agua' },
-    { nombre: '🌱', id: 'btn-tierra' },
-)
-monster9.ataque.push(
-    { nombre: '🌱', id: 'btn-tierra' },
-    { nombre: '🌱', id: 'btn-tierra' },
-    { nombre: '🌱', id: 'btn-tierra' },
-    { nombre: '💧', id: 'btn-agua' },
-    { nombre: '🔥', id: 'btn-fuego' },
-)
-monster10.ataque.push(
-    { nombre: '💧', id: 'btn-agua' },
-    { nombre: '💧', id: 'btn-agua' },
-    { nombre: '💧', id: 'btn-agua' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🌱', id: 'btn-tierra' },
-)
-monster11.ataque.push(
-    { nombre: '⛈️', id: 'btn-tormenta' },
-    { nombre: '⛈️', id: 'btn-tormenta' },
-    { nombre: '⛈️', id: 'btn-tormenta' },
-    { nombre: '💧', id: 'btn-agua' },
-    { nombre: '🔥', id: 'btn-fuego' },
-)
-monster12.ataque.push(
-    { nombre: '🌀', id: 'btn-viento' },
-    { nombre: '🌀', id: 'btn-viento' },
-    { nombre: '🌀', id: 'btn-viento' },
-    { nombre: '💧', id: 'btn-agua' },
-    { nombre: '🌱', id: 'btn-tierra' },
-)
-monster13.ataque.push(
-    { nombre: '⚡', id: 'btn-trueno' },
-    { nombre: '⚡', id: 'btn-trueno' },
-    { nombre: '⚡', id: 'btn-trueno' },
-    { nombre: '🌀', id: 'btn-viento' },
-    { nombre: '💧', id: 'btn-agua' },
-)
-monster14.ataque.push(
-    { nombre: '🌑', id: 'btn-noche' },
-    { nombre: '🌑', id: 'btn-noche' },
-    { nombre: '🌑', id: 'btn-noche' },
-    { nombre: '🌀', id: 'btn-viento' },
-    { nombre: '⛈️', id: 'btn-tormenta' },
-)
-monster15.ataque.push(
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '💧', id: 'btn-agua' },
-    { nombre: '🌱', id: 'btn-tierra' },
-)
-monster16.ataque.push(
-    { nombre: '🌱', id: 'btn-tierra' },
-    { nombre: '🌱', id: 'btn-tierra' },
-    { nombre: '🌱', id: 'btn-tierra' },
-    { nombre: '💧', id: 'btn-agua' },
-    { nombre: '🔥', id: 'btn-fuego' },
-)
-monster17.ataque.push(
-    { nombre: '💧', id: 'btn-agua' },
-    { nombre: '💧', id: 'btn-agua' },
-    { nombre: '💧', id: 'btn-agua' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🌱', id: 'btn-tierra' },
-)
-monster18.ataque.push(
-    { nombre: '⛈️', id: 'btn-tormenta' },
-    { nombre: '⛈️', id: 'btn-tormenta' },
-    { nombre: '⛈️', id: 'btn-tormenta' },
-    { nombre: '💧', id: 'btn-agua' },
-    { nombre: '🔥', id: 'btn-fuego' },
-)
-monster19.ataque.push(
-    { nombre: '🌀', id: 'btn-viento' },
-    { nombre: '🌀', id: 'btn-viento' },
-    { nombre: '🌀', id: 'btn-viento' },
-    { nombre: '💧', id: 'btn-agua' },
-    { nombre: '🌱', id: 'btn-tierra' },
-)
-monster20.ataque.push(
-    { nombre: '⚡', id: 'btn-trueno' },
-    { nombre: '⚡', id: 'btn-trueno' },
-    { nombre: '⚡', id: 'btn-trueno' },
-    { nombre: '🌀', id: 'btn-viento' },
-    { nombre: '💧', id: 'btn-agua' },
-)
-monster21.ataque.push(
-    { nombre: '🌑', id: 'btn-noche' },
-    { nombre: '🌑', id: 'btn-noche' },
-    { nombre: '🌑', id: 'btn-noche' },
-    { nombre: '🌀', id: 'btn-viento' },
-    { nombre: '⛈️', id: 'btn-tormenta' },
-)
-monster22.ataque.push(
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '💧', id: 'btn-agua' },
-    { nombre: '🌱', id: 'btn-tierra' },
-)
-monster23.ataque.push(
-    { nombre: '🌱', id: 'btn-tierra' },
-    { nombre: '🌱', id: 'btn-tierra' },
-    { nombre: '🌱', id: 'btn-tierra' },
-    { nombre: '💧', id: 'btn-agua' },
-    { nombre: '🔥', id: 'btn-fuego' },
-)
-monster24.ataque.push(
-    { nombre: '💧', id: 'btn-agua' },
-    { nombre: '💧', id: 'btn-agua' },
-    { nombre: '💧', id: 'btn-agua' },
-    { nombre: '🔥', id: 'btn-fuego' },
-    { nombre: '🌱', id: 'btn-tierra' },
-)
-monster25.ataque.push(
-    { nombre: '⛈️', id: 'btn-tormenta' },
-    { nombre: '⛈️', id: 'btn-tormenta' },
-    { nombre: '⛈️', id: 'btn-tormenta' },
-    { nombre: '💧', id: 'btn-agua' },
-    { nombre: '🔥', id: 'btn-fuego' },
-)
-monster26.ataque.push(
-    { nombre: '🌀', id: 'btn-viento' },
-    { nombre: '🌀', id: 'btn-viento' },
-    { nombre: '🌀', id: 'btn-viento' },
-    { nombre: '💧', id: 'btn-agua' },
-    { nombre: '🌱', id: 'btn-tierra' },
-)
-monster27.ataque.push(
-    { nombre: '⚡', id: 'btn-trueno' },
-    { nombre: '⚡', id: 'btn-trueno' },
-    { nombre: '⚡', id: 'btn-trueno' },
-    { nombre: '🌀', id: 'btn-viento' },
-    { nombre: '💧', id: 'btn-agua' },
-)
-monster28.ataque.push(
-    { nombre: '🌑', id: 'btn-noche' },
-    { nombre: '🌑', id: 'btn-noche' },
-    { nombre: '🌑', id: 'btn-noche' },
-    { nombre: '🌀', id: 'btn-viento' },
-    { nombre: '⛈️', id: 'btn-tormenta' },
-)
-monster29.ataque.push(
-    { nombre: '⚡', id: 'btn-trueno' },
-    { nombre: '⚡', id: 'btn-trueno' },
-    { nombre: '⚡', id: 'btn-trueno' },
-    { nombre: '🌀', id: 'btn-viento' },
-    { nombre: '💧', id: 'btn-agua' },
-)
-monster30.ataque.push(
-    { nombre: '🌑', id: 'btn-noche' },
-    { nombre: '🌑', id: 'btn-noche' },
-    { nombre: '🌑', id: 'btn-noche' },
-    { nombre: '🌀', id: 'btn-viento' },
-    { nombre: '⛈️', id: 'btn-tormenta' },
-)
+// monster8.ataque.push(
+//     { nombre: '🔥', id: 'btn-fuego' },
+//     { nombre: '🔥', id: 'btn-fuego' },
+//     { nombre: '🔥', id: 'btn-fuego' },
+//     { nombre: '💧', id: 'btn-agua' },
+//     { nombre: '🌱', id: 'btn-tierra' },
+// )
+// monster9.ataque.push(
+//     { nombre: '🌱', id: 'btn-tierra' },
+//     { nombre: '🌱', id: 'btn-tierra' },
+//     { nombre: '🌱', id: 'btn-tierra' },
+//     { nombre: '💧', id: 'btn-agua' },
+//     { nombre: '🔥', id: 'btn-fuego' },
+// )
+// monster10.ataque.push(
+//     { nombre: '💧', id: 'btn-agua' },
+//     { nombre: '💧', id: 'btn-agua' },
+//     { nombre: '💧', id: 'btn-agua' },
+//     { nombre: '🔥', id: 'btn-fuego' },
+//     { nombre: '🌱', id: 'btn-tierra' },
+// )
+// monster11.ataque.push(
+//     { nombre: '⛈️', id: 'btn-tormenta' },
+//     { nombre: '⛈️', id: 'btn-tormenta' },
+//     { nombre: '⛈️', id: 'btn-tormenta' },
+//     { nombre: '💧', id: 'btn-agua' },
+//     { nombre: '🔥', id: 'btn-fuego' },
+// )
+// monster12.ataque.push(
+//     { nombre: '🌀', id: 'btn-viento' },
+//     { nombre: '🌀', id: 'btn-viento' },
+//     { nombre: '🌀', id: 'btn-viento' },
+//     { nombre: '💧', id: 'btn-agua' },
+//     { nombre: '🌱', id: 'btn-tierra' },
+// )
+// monster13.ataque.push(
+//     { nombre: '⚡', id: 'btn-trueno' },
+//     { nombre: '⚡', id: 'btn-trueno' },
+//     { nombre: '⚡', id: 'btn-trueno' },
+//     { nombre: '🌀', id: 'btn-viento' },
+//     { nombre: '💧', id: 'btn-agua' },
+// )
+// monster14.ataque.push(
+//     { nombre: '🌑', id: 'btn-noche' },
+//     { nombre: '🌑', id: 'btn-noche' },
+//     { nombre: '🌑', id: 'btn-noche' },
+//     { nombre: '🌀', id: 'btn-viento' },
+//     { nombre: '⛈️', id: 'btn-tormenta' },
+// )
+// monster15.ataque.push(
+//     { nombre: '🔥', id: 'btn-fuego' },
+//     { nombre: '🔥', id: 'btn-fuego' },
+//     { nombre: '🔥', id: 'btn-fuego' },
+//     { nombre: '💧', id: 'btn-agua' },
+//     { nombre: '🌱', id: 'btn-tierra' },
+// )
+// monster16.ataque.push(
+//     { nombre: '🌱', id: 'btn-tierra' },
+//     { nombre: '🌱', id: 'btn-tierra' },
+//     { nombre: '🌱', id: 'btn-tierra' },
+//     { nombre: '💧', id: 'btn-agua' },
+//     { nombre: '🔥', id: 'btn-fuego' },
+// )
+// monster17.ataque.push(
+//     { nombre: '💧', id: 'btn-agua' },
+//     { nombre: '💧', id: 'btn-agua' },
+//     { nombre: '💧', id: 'btn-agua' },
+//     { nombre: '🔥', id: 'btn-fuego' },
+//     { nombre: '🌱', id: 'btn-tierra' },
+// )
+// monster18.ataque.push(
+//     { nombre: '⛈️', id: 'btn-tormenta' },
+//     { nombre: '⛈️', id: 'btn-tormenta' },
+//     { nombre: '⛈️', id: 'btn-tormenta' },
+//     { nombre: '💧', id: 'btn-agua' },
+//     { nombre: '🔥', id: 'btn-fuego' },
+// )
+// monster19.ataque.push(
+//     { nombre: '🌀', id: 'btn-viento' },
+//     { nombre: '🌀', id: 'btn-viento' },
+//     { nombre: '🌀', id: 'btn-viento' },
+//     { nombre: '💧', id: 'btn-agua' },
+//     { nombre: '🌱', id: 'btn-tierra' },
+// )
+// monster20.ataque.push(
+//     { nombre: '⚡', id: 'btn-trueno' },
+//     { nombre: '⚡', id: 'btn-trueno' },
+//     { nombre: '⚡', id: 'btn-trueno' },
+//     { nombre: '🌀', id: 'btn-viento' },
+//     { nombre: '💧', id: 'btn-agua' },
+// )
+// monster21.ataque.push(
+//     { nombre: '🌑', id: 'btn-noche' },
+//     { nombre: '🌑', id: 'btn-noche' },
+//     { nombre: '🌑', id: 'btn-noche' },
+//     { nombre: '🌀', id: 'btn-viento' },
+//     { nombre: '⛈️', id: 'btn-tormenta' },
+// )
+// monster22.ataque.push(
+//     { nombre: '🔥', id: 'btn-fuego' },
+//     { nombre: '🔥', id: 'btn-fuego' },
+//     { nombre: '🔥', id: 'btn-fuego' },
+//     { nombre: '💧', id: 'btn-agua' },
+//     { nombre: '🌱', id: 'btn-tierra' },
+// )
+// monster23.ataque.push(
+//     { nombre: '🌱', id: 'btn-tierra' },
+//     { nombre: '🌱', id: 'btn-tierra' },
+//     { nombre: '🌱', id: 'btn-tierra' },
+//     { nombre: '💧', id: 'btn-agua' },
+//     { nombre: '🔥', id: 'btn-fuego' },
+// )
+// monster24.ataque.push(
+//     { nombre: '💧', id: 'btn-agua' },
+//     { nombre: '💧', id: 'btn-agua' },
+//     { nombre: '💧', id: 'btn-agua' },
+//     { nombre: '🔥', id: 'btn-fuego' },
+//     { nombre: '🌱', id: 'btn-tierra' },
+// )
+// monster25.ataque.push(
+//     { nombre: '⛈️', id: 'btn-tormenta' },
+//     { nombre: '⛈️', id: 'btn-tormenta' },
+//     { nombre: '⛈️', id: 'btn-tormenta' },
+//     { nombre: '💧', id: 'btn-agua' },
+//     { nombre: '🔥', id: 'btn-fuego' },
+// )
+// monster26.ataque.push(
+//     { nombre: '🌀', id: 'btn-viento' },
+//     { nombre: '🌀', id: 'btn-viento' },
+//     { nombre: '🌀', id: 'btn-viento' },
+//     { nombre: '💧', id: 'btn-agua' },
+//     { nombre: '🌱', id: 'btn-tierra' },
+// )
+// monster27.ataque.push(
+//     { nombre: '⚡', id: 'btn-trueno' },
+//     { nombre: '⚡', id: 'btn-trueno' },
+//     { nombre: '⚡', id: 'btn-trueno' },
+//     { nombre: '🌀', id: 'btn-viento' },
+//     { nombre: '💧', id: 'btn-agua' },
+// )
+// monster28.ataque.push(
+//     { nombre: '🌑', id: 'btn-noche' },
+//     { nombre: '🌑', id: 'btn-noche' },
+//     { nombre: '🌑', id: 'btn-noche' },
+//     { nombre: '🌀', id: 'btn-viento' },
+//     { nombre: '⛈️', id: 'btn-tormenta' },
+// )
+// monster29.ataque.push(
+//     { nombre: '⚡', id: 'btn-trueno' },
+//     { nombre: '⚡', id: 'btn-trueno' },
+//     { nombre: '⚡', id: 'btn-trueno' },
+//     { nombre: '🌀', id: 'btn-viento' },
+//     { nombre: '💧', id: 'btn-agua' },
+// )
+// monster30.ataque.push(
+//     { nombre: '🌑', id: 'btn-noche' },
+//     { nombre: '🌑', id: 'btn-noche' },
+//     { nombre: '🌑', id: 'btn-noche' },
+//     { nombre: '🌀', id: 'btn-viento' },
+//     { nombre: '⛈️', id: 'btn-tormenta' },
+// )    
 
-mokepones.push(monster1, monster2, monster3, monster4, monster5, monster6, monster7, monster8, monster9, monster10, monster11, monster12, monster13, monster14, monster15, monster16, monster17, monster18, monster19, monster20, monster21, monster22, monster23, monster24, monster25, monster26, monster27, monster28, monster29, monster30)
+mokepones.push(monster1, monster2, monster3, monster4, monster5, monster6, monster7/*, monster8, monster9, monster10, monster11, monster12, monster13, monster14, monster15, monster16, monster17, monster18, monster19, monster20, monster21, monster22, monster23, monster24, monster25, monster26, monster27, monster28, monster29, monster30*/)
 
 function iniciarJuego() {
     sectionSeleccionarAtaque.style.display = 'none'
@@ -509,7 +509,17 @@ function combate() {
 
         mensaje.style.display = 'flex'
 
-        if (ataqueJugador == "🔥" && ataqueEnemigo == "🌱" || ataqueJugador == "💧" && ataqueEnemigo == "🔥" || ataqueJugador == "🌱" && ataqueEnemigo == "💧" || ataqueJugador == "⛈️" && ataqueEnemigo == "🌀" || ataqueJugador == "🌀" && ataqueEnemigo == "⚡" || ataqueJugador == "⚡" && ataqueEnemigo == "⛈️" || ataqueJugador == "🌑" && ataqueEnemigo == "🔥" || ataqueJugador == "🌑" && ataqueEnemigo == "💧" || ataqueJugador == "🌑" && ataqueEnemigo == "🌱" || ataqueJugador == "🌑" && ataqueEnemigo == "⛈️" || ataqueJugador == "🌑" && ataqueEnemigo == "🌀" || ataqueJugador == "🌑" && ataqueEnemigo == "⚡") {
+        if (ataqueJugador == '🔥' && ataqueEnemigo == '🌱' || ataqueJugador == '🔥' && ataqueEnemigo == '🌀' || 
+        ataqueJugador == '💧' && ataqueEnemigo == '🔥' || ataqueJugador == '💧' && ataqueEnemigo == '🌱' || 
+        ataqueJugador == '💧' && ataqueEnemigo == '⛈️' || ataqueJugador == '🌱' && ataqueEnemigo == '🔥' || 
+        ataqueJugador == '🌱' && ataqueEnemigo == '⚡' || ataqueJugador == '⛈️' && ataqueEnemigo == '💧' || 
+        ataqueJugador == '⛈️' && ataqueEnemigo == '🌀' || ataqueJugador == '⛈️' && ataqueEnemigo == '🌱' || 
+        ataqueJugador == '🌀' && ataqueEnemigo == '🔥' || ataqueJugador == '🌀' && ataqueEnemigo == '🌱 ' || 
+        ataqueJugador == '🌀' && ataqueEnemigo == '⚡' || ataqueJugador == '⚡' && ataqueEnemigo == '💧' || 
+        ataqueJugador == '⚡' && ataqueEnemigo == '🌀' || ataqueJugador == '🌑' && ataqueEnemigo == '🔥' || 
+        ataqueJugador == '🌑' && ataqueEnemigo == '💧' || ataqueJugador == '🌑' && ataqueEnemigo == '🌱' || 
+        ataqueJugador == '🌑' && ataqueEnemigo == '⛈️' || ataqueJugador == '🌑' && ataqueEnemigo == '🌀' || 
+        ataqueJugador == '🌑' && ataqueEnemigo == '⚡' ) {
             mensajeJuego("Daño al Enemigo 🎉")
             vidasEnemigo--
             spanVidasEnemigo.innerHTML = ''
