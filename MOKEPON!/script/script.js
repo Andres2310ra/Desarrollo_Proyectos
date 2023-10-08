@@ -12,6 +12,8 @@ const ataqueDelJugador = document.getElementById('ataque-jugador')
 const ataqueDelEnemigo = document.getElementById('ataque-enemigo')
 const contenedorTarjetas = document.getElementById('seleccion-de-mokepon')
 const contenedorAtaques = document.getElementById('seleccion-de-ataque')
+const sectionMapaCamvas = document.getElementById('ver-mapa-canvas')
+const mapaCanvas = document.getElementById('mapa')
 
 let mokepones = []
 let ataqueJugador = ''
@@ -34,6 +36,7 @@ let botonTierra
 let botonesAtaque = []
 let modoJuegoPorMuerte
 let modoJuegoPorVictorias
+let lienzo = mapaCanvas.getContext("2d")
 
 //  Clase Mokepon 
 class Mokepon {
@@ -294,6 +297,7 @@ function iniciarJuego() {
     sectionSeleccionarAtaque.style.display = 'none'
     mensaje.style.display = 'none'
     sectionReiniciar.style.display = 'none'
+    sectionMapaCamvas.style.display = 'none'
 
     mokepones.forEach((Mokepon, index) => {
         opcionDeMokepones = `
@@ -357,9 +361,14 @@ function seleccionarMascotaJugador() {
     seleccionarMascotaEnemigo()
 
     if (mokeponSeleccionado) {
-        spanMascotaJugador.innerHTML =mokeponSeleccionado.nombre
-        spanMascotaEnemigo.innerHTML =moustruoEnemigoSeleccionado.nombre
-        sectionSeleccionarAtaque.style.display = 'flex'
+        spanMascotaJugador.innerHTML = mokeponSeleccionado.nombre
+        spanMascotaEnemigo.innerHTML = moustruoEnemigoSeleccionado.nombre
+        // sectionSeleccionarAtaque.style.display = 'flex'
+        sectionMapaCamvas.style.display = 'flex'
+
+
+
+
         sectionSeleccionarMascota.style.display = 'none'
         moustruoSeleccionado = mokeponSeleccionado.nombre
     } else {
@@ -509,17 +518,17 @@ function combate() {
 
         mensaje.style.display = 'flex'
 
-        if (ataqueJugador == '🔥' && ataqueEnemigo == '🌱' || ataqueJugador == '🔥' && ataqueEnemigo == '🌀' || 
-        ataqueJugador == '💧' && ataqueEnemigo == '🔥' || ataqueJugador == '💧' && ataqueEnemigo == '🌱' || 
-        ataqueJugador == '💧' && ataqueEnemigo == '⛈️' || ataqueJugador == '🌱' && ataqueEnemigo == '🔥' || 
-        ataqueJugador == '🌱' && ataqueEnemigo == '⚡' || ataqueJugador == '⛈️' && ataqueEnemigo == '💧' || 
-        ataqueJugador == '⛈️' && ataqueEnemigo == '🌀' || ataqueJugador == '⛈️' && ataqueEnemigo == '🌱' || 
-        ataqueJugador == '🌀' && ataqueEnemigo == '🔥' || ataqueJugador == '🌀' && ataqueEnemigo == '🌱 ' || 
-        ataqueJugador == '🌀' && ataqueEnemigo == '⚡' || ataqueJugador == '⚡' && ataqueEnemigo == '💧' || 
-        ataqueJugador == '⚡' && ataqueEnemigo == '🌀' || ataqueJugador == '🌑' && ataqueEnemigo == '🔥' || 
-        ataqueJugador == '🌑' && ataqueEnemigo == '💧' || ataqueJugador == '🌑' && ataqueEnemigo == '🌱' || 
-        ataqueJugador == '🌑' && ataqueEnemigo == '⛈️' || ataqueJugador == '🌑' && ataqueEnemigo == '🌀' || 
-        ataqueJugador == '🌑' && ataqueEnemigo == '⚡' ) {
+        if (ataqueJugador == '🔥' && ataqueEnemigo == '🌱' || ataqueJugador == '🔥' && ataqueEnemigo == '🌀' ||
+            ataqueJugador == '💧' && ataqueEnemigo == '🔥' || ataqueJugador == '💧' && ataqueEnemigo == '🌱' ||
+            ataqueJugador == '💧' && ataqueEnemigo == '⛈️' || ataqueJugador == '🌱' && ataqueEnemigo == '🔥' ||
+            ataqueJugador == '🌱' && ataqueEnemigo == '⚡' || ataqueJugador == '⛈️' && ataqueEnemigo == '💧' ||
+            ataqueJugador == '⛈️' && ataqueEnemigo == '🌀' || ataqueJugador == '⛈️' && ataqueEnemigo == '🌱' ||
+            ataqueJugador == '🌀' && ataqueEnemigo == '🔥' || ataqueJugador == '🌀' && ataqueEnemigo == '🌱 ' ||
+            ataqueJugador == '🌀' && ataqueEnemigo == '⚡' || ataqueJugador == '⚡' && ataqueEnemigo == '💧' ||
+            ataqueJugador == '⚡' && ataqueEnemigo == '🌀' || ataqueJugador == '🌑' && ataqueEnemigo == '🔥' ||
+            ataqueJugador == '🌑' && ataqueEnemigo == '💧' || ataqueJugador == '🌑' && ataqueEnemigo == '🌱' ||
+            ataqueJugador == '🌑' && ataqueEnemigo == '⛈️' || ataqueJugador == '🌑' && ataqueEnemigo == '🌀' ||
+            ataqueJugador == '🌑' && ataqueEnemigo == '⚡') {
             mensajeJuego("Daño al Enemigo 🎉")
             vidasEnemigo--
             spanVidasEnemigo.innerHTML = ''
@@ -581,17 +590,17 @@ function combate() {
 
         mensaje.style.display = 'flex'
 
-        if (ataqueJugador == '🔥' && ataqueEnemigo == '🌱' || ataqueJugador == '🔥' && ataqueEnemigo == '🌀' || 
-        ataqueJugador == '💧' && ataqueEnemigo == '🔥' || ataqueJugador == '💧' && ataqueEnemigo == '🌱' || 
-        ataqueJugador == '💧' && ataqueEnemigo == '⛈️' || ataqueJugador == '🌱' && ataqueEnemigo == '🔥' || 
-        ataqueJugador == '🌱' && ataqueEnemigo == '⚡' || ataqueJugador == '⛈️' && ataqueEnemigo == '💧' || 
-        ataqueJugador == '⛈️' && ataqueEnemigo == '🌀' || ataqueJugador == '⛈️' && ataqueEnemigo == '🌱' || 
-        ataqueJugador == '🌀' && ataqueEnemigo == '🔥' || ataqueJugador == '🌀' && ataqueEnemigo == '🌱 ' || 
-        ataqueJugador == '🌀' && ataqueEnemigo == '⚡' || ataqueJugador == '⚡' && ataqueEnemigo == '💧' || 
-        ataqueJugador == '⚡' && ataqueEnemigo == '🌀' || ataqueJugador == '🌑' && ataqueEnemigo == '🔥' || 
-        ataqueJugador == '🌑' && ataqueEnemigo == '💧' || ataqueJugador == '🌑' && ataqueEnemigo == '🌱' || 
-        ataqueJugador == '🌑' && ataqueEnemigo == '⛈️' || ataqueJugador == '🌑' && ataqueEnemigo == '🌀' || 
-        ataqueJugador == '🌑' && ataqueEnemigo == '⚡' ) {
+        if (ataqueJugador == '🔥' && ataqueEnemigo == '🌱' || ataqueJugador == '🔥' && ataqueEnemigo == '🌀' ||
+            ataqueJugador == '💧' && ataqueEnemigo == '🔥' || ataqueJugador == '💧' && ataqueEnemigo == '🌱' ||
+            ataqueJugador == '💧' && ataqueEnemigo == '⛈️' || ataqueJugador == '🌱' && ataqueEnemigo == '🔥' ||
+            ataqueJugador == '🌱' && ataqueEnemigo == '⚡' || ataqueJugador == '⛈️' && ataqueEnemigo == '💧' ||
+            ataqueJugador == '⛈️' && ataqueEnemigo == '🌀' || ataqueJugador == '⛈️' && ataqueEnemigo == '🌱' ||
+            ataqueJugador == '🌀' && ataqueEnemigo == '🔥' || ataqueJugador == '🌀' && ataqueEnemigo == '🌱 ' ||
+            ataqueJugador == '🌀' && ataqueEnemigo == '⚡' || ataqueJugador == '⚡' && ataqueEnemigo == '💧' ||
+            ataqueJugador == '⚡' && ataqueEnemigo == '🌀' || ataqueJugador == '🌑' && ataqueEnemigo == '🔥' ||
+            ataqueJugador == '🌑' && ataqueEnemigo == '💧' || ataqueJugador == '🌑' && ataqueEnemigo == '🌱' ||
+            ataqueJugador == '🌑' && ataqueEnemigo == '⛈️' || ataqueJugador == '🌑' && ataqueEnemigo == '🌀' ||
+            ataqueJugador == '🌑' && ataqueEnemigo == '⚡') {
             mensajeJuego("Daño al Enemigo 🎉")
             vidasEnemigo--
             spanVidasEnemigo.innerHTML = ''
