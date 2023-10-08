@@ -357,8 +357,8 @@ function seleccionarMascotaJugador() {
     seleccionarMascotaEnemigo()
 
     if (mokeponSeleccionado) {
-        spanMascotaJugador.innerHTML = mokeponSeleccionado.nombre
-        spanMascotaEnemigo.innerHTML = moustruoEnemigoSeleccionado.nombre
+        spanMascotaJugador.innerHTML =mokeponSeleccionado.nombre
+        spanMascotaEnemigo.innerHTML =moustruoEnemigoSeleccionado.nombre
         sectionSeleccionarAtaque.style.display = 'flex'
         sectionSeleccionarMascota.style.display = 'none'
         moustruoSeleccionado = mokeponSeleccionado.nombre
@@ -401,7 +401,7 @@ function modularAtaques() {
                 // console.log(ataquesDelJugador)
 
                 if (modoJuegoPorVictorias == 1) {
-                    botones.style.background = '#FFFFFF'
+                    botones.style.background = '#2D2524'
                     botones.disabled = true;
                 }
                 ataqueJugador = "🔥"
@@ -411,7 +411,7 @@ function modularAtaques() {
                 // console.log(ataquesDelJugador)
 
                 if (modoJuegoPorVictorias == 1) {
-                    botones.style.background = '#FFFFFF'
+                    botones.style.background = '#2D2524'
                     botones.disabled = true;
                 }
                 ataqueJugador = "💧"
@@ -421,7 +421,7 @@ function modularAtaques() {
                 // console.log(ataquesDelJugador)
 
                 if (modoJuegoPorVictorias == 1) {
-                    botones.style.background = '#FFFFFF'
+                    botones.style.background = '#2D2524'
                     botones.disabled = true;
                 }
                 ataqueJugador = "🌱"
@@ -431,7 +431,7 @@ function modularAtaques() {
                 // console.log(ataquesDelJugador)
 
                 if (modoJuegoPorVictorias == 1) {
-                    botones.style.background = '#FFFFFF'
+                    botones.style.background = '#2D2524'
                     botones.disabled = true;
                 }
                 ataqueJugador = "⛈️"
@@ -441,7 +441,7 @@ function modularAtaques() {
                 // console.log(ataquesDelJugador)
 
                 if (modoJuegoPorVictorias == 1) {
-                    botones.style.background = '#FFFFFF'
+                    botones.style.background = '#2D2524'
                     botones.disabled = true;
                 }
                 ataqueJugador = "🌀"
@@ -451,7 +451,7 @@ function modularAtaques() {
                 // console.log(ataquesDelJugador)
 
                 if (modoJuegoPorVictorias == 1) {
-                    botones.style.background = '#FFFFFF'
+                    botones.style.background = '#2D2524'
                     botones.disabled = true;
                 }
                 ataqueJugador = "⚡"
@@ -461,7 +461,7 @@ function modularAtaques() {
                 // console.log(ataquesDelJugador)
 
                 if (modoJuegoPorVictorias == 1) {
-                    botones.style.background = '#FFFFFF'
+                    botones.style.background = '#2D2524'
                     botones.disabled = true;
                 }
                 ataqueJugador = "🌑"
@@ -555,9 +555,9 @@ function combate() {
                 'error'
             )
             spanVidasJugador.innerHTML = '☠️'
-            sectionReiniciar.style.display = 'block'
+            sectionReiniciar.style.display = 'flex'
             botonesAtaque.forEach((boton) => {
-                boton.style.background = '#FFFFFF'
+                boton.style.background = '#2D2524'
                 boton.disabled = true;
             });
 
@@ -568,9 +568,9 @@ function combate() {
                 'success'
             )
             spanVidasEnemigo.innerHTML = '☠️'
-            sectionReiniciar.style.display = 'block'
+            sectionReiniciar.style.display = 'flex'
             botonesAtaque.forEach((boton) => {
-                boton.style.background = '#FFFFFF'
+                boton.style.background = '#2D2524'
                 boton.disabled = true;
             });
         }
@@ -618,7 +618,7 @@ function combate() {
                     'error'
                 )
                 spanVidasJugador.innerHTML = '☠️'
-                sectionReiniciar.style.display = 'block'
+                sectionReiniciar.style.display = 'flex'
                 botonesAtaque.forEach((boton) => {
                     boton.disabled = true;
                 });
@@ -630,7 +630,7 @@ function combate() {
                     'success'
                 )
                 spanVidasEnemigo.innerHTML = '☠️'
-                sectionReiniciar.style.display = 'block'
+                sectionReiniciar.style.display = 'flex'
                 botonesAtaque.forEach((boton) => {
                     boton.disabled = true;
                 });
@@ -641,7 +641,7 @@ function combate() {
                     'Tu Mascota Perdio la Batalla',
                     'error'
                 )
-                sectionReiniciar.style.display = 'block'
+                sectionReiniciar.style.display = 'flex'
                 botonesAtaque.forEach((boton) => {
                     boton.disabled = true;
                 });
@@ -652,7 +652,7 @@ function combate() {
                     'Tu Mascota Gano la Batalla',
                     'success'
                 )
-                sectionReiniciar.style.display = 'block'
+                sectionReiniciar.style.display = 'flex'
                 botonesAtaque.forEach((boton) => {
                     boton.disabled = true;
                 });
@@ -663,7 +663,7 @@ function combate() {
                     'Tu Mascota Obtuvo un Empate',
                     'success'
                 )
-                sectionReiniciar.style.display = 'block'
+                sectionReiniciar.style.display = 'flex'
                 botonesAtaque.forEach((boton) => {
                     boton.disabled = true;
                 });
