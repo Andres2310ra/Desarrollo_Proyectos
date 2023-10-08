@@ -365,7 +365,15 @@ function seleccionarMascotaJugador() {
         spanMascotaEnemigo.innerHTML = moustruoEnemigoSeleccionado.nombre
         // sectionSeleccionarAtaque.style.display = 'flex'
         sectionMapaCamvas.style.display = 'flex'
-
+        let imgMonster1= new Image()
+        imgMonster1.src=monster1.foto
+        lienzo.drawImage(
+            imgMonster1,
+            20,
+            40,
+            100,
+            100
+        )
 
 
         sectionSeleccionarMascota.style.display = 'none'
