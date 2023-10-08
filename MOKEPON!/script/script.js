@@ -368,7 +368,6 @@ function seleccionarMascotaJugador() {
 
 
 
-
         sectionSeleccionarMascota.style.display = 'none'
         moustruoSeleccionado = mokeponSeleccionado.nombre
     } else {
