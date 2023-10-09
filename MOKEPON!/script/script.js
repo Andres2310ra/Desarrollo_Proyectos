@@ -740,6 +740,9 @@ function pintarCanvas() {
     mokeponSeleccionado.x = mokeponSeleccionado.x + mokeponSeleccionado.velocidadX
     mokeponSeleccionado.y = mokeponSeleccionado.y + mokeponSeleccionado.velocidadY
 
+    moustruoEnemigoSeleccionado.x=400
+    moustruoEnemigoSeleccionado.y =500
+
     // console.log(mokeponSeleccionado.x + "||||" + mokeponSeleccionado.y)
 
     lienzo.clearRect(0, 0, mapaCanvas.width, mapaCanvas.height)
@@ -747,6 +750,7 @@ function pintarCanvas() {
         mapabackground, 0, 0, mapaCanvas.width, mapaCanvas.height
     )
     mokeponSeleccionado.pintarMokepon()
+    moustruoEnemigoSeleccionado.pintarMokepon()
 }
 
 function moverMonsterAr() {
