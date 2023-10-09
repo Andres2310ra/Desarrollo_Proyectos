@@ -377,7 +377,8 @@ function seleccionarMascotaJugador() {
         // sectionSeleccionarAtaque.style.display = 'flex'
         sectionMapaCamvas.style.display = 'flex'
         intervalo = setInterval(pintarPersonaje, 50)
-
+        window.addEventListener('keydown',movientoTeclas)
+        window.addEventListener('keyup',detenerMovimiento)
 
         sectionSeleccionarMascota.style.display = 'none'
         moustruoSeleccionado = mokeponSeleccionado.nombre
@@ -756,6 +757,25 @@ function moverMonsterD() {
 function detenerMovimiento() {
     mokeponSeleccionado.velocidadX = 0
     mokeponSeleccionado.velocidadY = 0
+}
+
+function movientoTeclas(event){
+    switch (event.key) {
+        case 'ArrowUp':
+            moverMonsterAr()
+            break;
+        case 'ArrowDown':
+            moverMonsterAb()
+            break;
+        case 'ArrowRight':
+            moverMonsterD()
+            break;
+        case 'ArrowLeft':
+            moverMonsterI()
+            break;
+        default:
+            break;
+    }
 }
 
 window.addEventListener('load', iniciarJuego)
