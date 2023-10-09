@@ -14,6 +14,7 @@ const contenedorTarjetas = document.getElementById('seleccion-de-mokepon')
 const contenedorAtaques = document.getElementById('seleccion-de-ataque')
 const sectionMapaCamvas = document.getElementById('ver-mapa-canvas')
 const mapaCanvas = document.getElementById('mapa')
+const titulo=document.getElementById('titulo')
 
 let mokepones = []
 let ataqueJugador = ''
@@ -50,8 +51,8 @@ class Mokepon {
         this.canvas = canvas
         this.vida = vida
         this.ataque = []
-        this.x = 186
-        this.y = 328
+        this.x = 240
+        this.y = 250
         this.ancho = 100
         this.alto = 100
         this.imgMonster = new Image()
@@ -386,6 +387,7 @@ function seleccionarMascotaJugador() {
     if (mokeponSeleccionado) {
         spanMascotaJugador.innerHTML = mokeponSeleccionado.nombre
         spanMascotaEnemigo.innerHTML = moustruoEnemigoSeleccionado.nombre
+        titulo.style.display='none'
         // sectionSeleccionarAtaque.style.display = 'flex'
         sectionMapaCamvas.style.display = 'flex'
         iniciarMapa()
@@ -740,10 +742,10 @@ function pintarCanvas() {
     mokeponSeleccionado.x = mokeponSeleccionado.x + mokeponSeleccionado.velocidadX
     mokeponSeleccionado.y = mokeponSeleccionado.y + mokeponSeleccionado.velocidadY
 
-    moustruoEnemigoSeleccionado.x=400
-    moustruoEnemigoSeleccionado.y =500
+    moustruoEnemigoSeleccionado.x=230
+    moustruoEnemigoSeleccionado.y =100
 
-    // console.log(mokeponSeleccionado.x + "||||" + mokeponSeleccionado.y)
+    console.log(mokeponSeleccionado.x + "||||" + mokeponSeleccionado.y)
 
     lienzo.clearRect(0, 0, mapaCanvas.width, mapaCanvas.height)
     lienzo.drawImage(
@@ -792,8 +794,8 @@ function movientoTeclas(event) {
 
 function iniciarMapa() {
 
-    mapaCanvas.width = 500
-    mapaCanvas.height = 800
+    mapaCanvas.width = 563
+    mapaCanvas.height = 354
 
     // Evento
 
