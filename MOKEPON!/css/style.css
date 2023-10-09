@@ -196,7 +196,7 @@ button {
   justify-content: center;
 }
 
-#sub-titilo-modo{
+#sub-titilo-modo {
   position: relative;
   font-size: 25px;
 }
@@ -228,14 +228,14 @@ button {
   /* background-color: #3b302f; */
   border: white solid 2px;
   outline-color: white;
-  background-image: linear-gradient(270deg,#006400,#008000);
+  background-image: linear-gradient(270deg, #006400, #008000);
 }
 
 .modo-juego #modo-2:checked+label {
   /* background-color: #3b302f; */
   border: white solid 2px;
   outline-color: white;
-  background-image: linear-gradient(90deg, #006400,#008000);
+  background-image: linear-gradient(90deg, #006400, #008000);
 }
 
 /* Mapa Canvas */
@@ -280,9 +280,10 @@ button {
   padding: 2% 0%;
 }
 
-#mapa{
+#mapa {
   position: relative;
   width: 80%;
+  height: 80%;
   border: white solid 2px;
 }
 
@@ -368,22 +369,25 @@ button {
   margin-top: 10px;
 }
 
-#vidas-jugador, #vidas-enemigo {
+#vidas-jugador,
+#vidas-enemigo {
   margin-bottom: 10px;
   font-size: 30px;
   animation: vida 1s infinite alternate;
 }
 
 @keyframes vida {
-  from{
+  from {
     transform: scale(.7);
   }
-  to{
+
+  to {
     transform: scale(.5);
   }
 }
 
-#ataque-jugador, #ataque-enemigo {
+#ataque-jugador,
+#ataque-enemigo {
   border-radius: 10px;
   background-color: #3b302f;
   border: 2px solid #007200;
@@ -405,7 +409,7 @@ button {
     font-size: 1rem;
   }
 
-  #sub-titilo-modo{
+  #sub-titilo-modo {
     font-size: 1rem;
   }
 
@@ -439,7 +443,7 @@ button {
     font-size: 1rem;
   }
 
-  #sub-titilo-modo{
+  #sub-titilo-modo {
     font-size: 1rem;
   }
 
@@ -473,7 +477,7 @@ button {
     font-size: 2rem;
   }
 
-  #sub-titilo-modo{
+  #sub-titilo-modo {
     font-size: 2rem;
   }
 
