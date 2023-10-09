@@ -14,7 +14,7 @@ const contenedorTarjetas = document.getElementById('seleccion-de-mokepon')
 const contenedorAtaques = document.getElementById('seleccion-de-ataque')
 const sectionMapaCamvas = document.getElementById('ver-mapa-canvas')
 const mapaCanvas = document.getElementById('mapa')
-const titulo=document.getElementById('titulo')
+const titulo = document.getElementById('titulo')
 
 let mokepones = []
 let ataqueJugador = ''
@@ -387,7 +387,7 @@ function seleccionarMascotaJugador() {
     if (mokeponSeleccionado) {
         spanMascotaJugador.innerHTML = mokeponSeleccionado.nombre
         spanMascotaEnemigo.innerHTML = moustruoEnemigoSeleccionado.nombre
-        titulo.style.display='none'
+        titulo.style.display = 'none'
         // sectionSeleccionarAtaque.style.display = 'flex'
         sectionMapaCamvas.style.display = 'flex'
         iniciarMapa()
@@ -742,8 +742,8 @@ function pintarCanvas() {
     mokeponSeleccionado.x = mokeponSeleccionado.x + mokeponSeleccionado.velocidadX
     mokeponSeleccionado.y = mokeponSeleccionado.y + mokeponSeleccionado.velocidadY
 
-    moustruoEnemigoSeleccionado.x=230
-    moustruoEnemigoSeleccionado.y =100
+    moustruoEnemigoSeleccionado.x = 230
+    moustruoEnemigoSeleccionado.y = 100
 
     // console.log(mokeponSeleccionado.x + "||||" + mokeponSeleccionado.y)
 
@@ -752,7 +752,18 @@ function pintarCanvas() {
         mapabackground, 0, 0, mapaCanvas.width, mapaCanvas.height
     )
     mokeponSeleccionado.pintarMokepon()
-    moustruoEnemigoSeleccionado.pintarMokepon()
+
+    if (moustruoEnemigoSeleccionado.nombre == mokeponSeleccionado) {
+        seleccionarMascotaEnemigo()
+        moustruoEnemigoSeleccionado.pintarMokepon()
+    }
+    else (
+        moustruoEnemigoSeleccionado.pintarMokepon()
+    )
+
+    if (mokeponSeleccionado.velocidadX !== 0 || mokeponSeleccionado.velocidadY !== 0) {
+        colision(moustruoEnemigoSeleccionado)
+    }
 }
 
 function moverMonsterAr() {
@@ -790,6 +801,35 @@ function movientoTeclas(event) {
         default:
             break;
     }
+}
+
+function colision(enemigo) {
+
+    const arribaEnemigo = enemigo.y
+    const abajoEnemigo = enemigo.y + enemigo.alto
+    const derechaEnemigo = enemigo.x + enemigo.ancho
+    const izquierdaEnemigo = enemigo.x
+
+    const arribaMascota = mokeponSeleccionado.y
+    const abajoMascota = mokeponSeleccionado.y + mokeponSeleccionado.alto
+    const derechaMascota = mokeponSeleccionado.x + mokeponSeleccionado.ancho
+    const izquierdaMascota = mokeponSeleccionado.x
+
+    if (
+        abajoMascota + 50 < arribaEnemigo ||
+        arribaMascota + 50 > abajoEnemigo ||
+        derechaMascota + 50 < izquierdaEnemigo ||
+        izquierdaMascota + 50 > derechaEnemigo
+    ) {
+        return
+    }
+
+    detenerMovimiento()
+
+    titulo.style.display = 'flex'
+    sectionSeleccionarAtaque.style.display = 'flex'
+    sectionMapaCamvas.style.display = 'none'
+
 }
 
 function iniciarMapa() {
