@@ -282,6 +282,7 @@ button {
 
 #mapa{
   position: relative;
+  width: 80%;
   border: white solid 2px;
 }
 
