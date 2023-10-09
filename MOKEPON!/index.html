@@ -32,7 +32,7 @@
             <input type="radio" name="mascota" id="monster1" /> -->
 
         </div>
-            <p id="sub-titilo-modo">Modo de Juego</p>
+        <p id="sub-titilo-modo">Modo de Juego</p>
         <div id="modo-juego" class="modo-juego">
 
             <input type="radio" name="modo" id="modo-1">
@@ -55,13 +55,14 @@
 
         <div class="tarjeta-contenedor"></div>
         <h2>Mueve el Mokepon</h2>
-        
-        <canvas id="mapa"></canvas>
 
-        <button onmouseup="detenerMovimiento()" onmousedown="moverMonsterI()">Izquierda</button>
-        <button onmouseup="detenerMovimiento()" onmousedown="moverMonsterAb()">Abajo</button>
-        <button onmouseup="detenerMovimiento()" onmousedown="moverMonsterAr()">Arriba</button>
-        <button onmouseup="detenerMovimiento()" onmousedown="moverMonsterD()">Derecha</button>
+        <canvas id="mapa"></canvas>
+        <div id="teclas">
+            <button onmouseup="detenerMovimiento()" onmousedown="moverMonsterI()">Izquierda</button>
+            <button onmouseup="detenerMovimiento()" onmousedown="moverMonsterAb()">Abajo</button>
+            <button onmouseup="detenerMovimiento()" onmousedown="moverMonsterAr()">Arriba</button>
+            <button onmouseup="detenerMovimiento()" onmousedown="moverMonsterD()">Derecha</button>
+        </div>
 
     </section>
 
