@@ -745,7 +745,7 @@ function pintarCanvas() {
     moustruoEnemigoSeleccionado.x=230
     moustruoEnemigoSeleccionado.y =100
 
-    console.log(mokeponSeleccionado.x + "||||" + mokeponSeleccionado.y)
+    // console.log(mokeponSeleccionado.x + "||||" + mokeponSeleccionado.y)
 
     lienzo.clearRect(0, 0, mapaCanvas.width, mapaCanvas.height)
     lienzo.drawImage(
