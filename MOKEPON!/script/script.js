@@ -39,6 +39,8 @@ let modoJuegoPorVictorias
 let lienzo = mapaCanvas.getContext("2d")
 let mokeponSeleccionado
 let intervalo
+let mapabackground = new Image()
+mapabackground.src = 'img/mapa.jpg'
 
 //  Clase Mokepon 
 class Mokepon {
@@ -48,14 +50,24 @@ class Mokepon {
         this.canvas = canvas
         this.vida = vida
         this.ataque = []
-        this.x = 20
-        this.y = 40
-        this.ancho = 80
-        this.alto = 80
+        this.x = 186
+        this.y = 328
+        this.ancho = 100
+        this.alto = 100
         this.imgMonster = new Image()
         this.imgMonster.src = canvas
         this.velocidadX = 0
         this.velocidadY = 0
+    }
+
+    pintarMokepon() {
+        lienzo.drawImage(
+            this.imgMonster,
+            this.x,
+            this.y,
+            this.alto,
+            this.ancho
+        );
     }
 }
 
@@ -63,10 +75,10 @@ class Mokepon {
 let monster1 = new Mokepon('Dracarión', 'img/Monster_Mokepon/tarjeta_1.gif', 'img/Imagenes_Tarjetas_Mokepon/tarjeta_1.png', '3')
 let monster2 = new Mokepon('Hidra', 'img/Monster_Mokepon/tarjeta_2.gif', 'img/Imagenes_Tarjetas_Mokepon/tarjeta_2.png', '3')
 let monster3 = new Mokepon('Fenrir', 'img/Monster_Mokepon/tarjeta_3.gif', 'img/Imagenes_Tarjetas_Mokepon/tarjeta_3.png', '3')
-// let monster4 = new Mokepon('Quimera', 'img/Monster_Mokepon/tarjeta_4.gif', 'img/Imagenes_Tarjetas_Mokepon/tarjeta_4.png', '3')
-// let monster5 = new Mokepon('Gorgona', 'img/Monster_Mokepon/tarjeta_5.gif', 'img/Imagenes_Tarjetas_Mokepon/tarjeta_5.png', '3')
-// let monster6 = new Mokepon('Cerbero', 'img/Monster_Mokepon/tarjeta_6.gif', 'img/Imagenes_Tarjetas_Mokepon/tarjeta_6.png', '3')
-// let monster7 = new Mokepon('Basilisco', 'img/Monster_Mokepon/tarjeta_7.gif', 'img/Imagenes_Tarjetas_Mokepon/tarjeta_7.png', '3')
+let monster4 = new Mokepon('Quimera', 'img/Monster_Mokepon/tarjeta_4.gif', 'img/Imagenes_Tarjetas_Mokepon/tarjeta_4.png', '3')
+let monster5 = new Mokepon('Gorgona', 'img/Monster_Mokepon/tarjeta_5.gif', 'img/Imagenes_Tarjetas_Mokepon/tarjeta_5.png', '3')
+let monster6 = new Mokepon('Cerbero', 'img/Monster_Mokepon/tarjeta_6.gif', 'img/Imagenes_Tarjetas_Mokepon/tarjeta_6.png', '3')
+let monster7 = new Mokepon('Basilisco', 'img/Monster_Mokepon/tarjeta_7.gif', 'img/Imagenes_Tarjetas_Mokepon/tarjeta_7.png', '3')
 // let monster8 = new Mokepon('Arpía', 'img/Monster_Mokepon/tarjeta_8.gif', 'img/Imagenes_Tarjetas_Mokepon/tarjeta_8.png', '3')
 // let monster9 = new Mokepon('Minotauro', 'img/Monster_Mokepon/tarjeta_9.gif', 'img/Imagenes_Tarjetas_Mokepon/tarjeta_9.png', '3')
 // let monster10 = new Mokepon('Grifo', 'img/Monster_Mokepon/tarjeta_10.gif', 'img/Imagenes_Tarjetas_Mokepon/tarjeta_10.png', '3')
@@ -112,34 +124,34 @@ monster3.ataque.push(
     { nombre: '🔥', id: 'btn-fuego' },
     { nombre: '🌱', id: 'btn-tierra' },
 )
-// monster4.ataque.push(
-//     { nombre: '⛈️', id: 'btn-tormenta' },
-//     { nombre: '⛈️', id: 'btn-tormenta' },
-//     { nombre: '⛈️', id: 'btn-tormenta' },
-//     { nombre: '💧', id: 'btn-agua' },
-//     { nombre: '🔥', id: 'btn-fuego' },
-// )
-// monster5.ataque.push(
-//     { nombre: '🌀', id: 'btn-viento' },
-//     { nombre: '🌀', id: 'btn-viento' },
-//     { nombre: '🌀', id: 'btn-viento' },
-//     { nombre: '💧', id: 'btn-agua' },
-//     { nombre: '🌱', id: 'btn-tierra' },
-// )
-// monster6.ataque.push(
-//     { nombre: '⚡', id: 'btn-trueno' },
-//     { nombre: '⚡', id: 'btn-trueno' },
-//     { nombre: '⚡', id: 'btn-trueno' },
-//     { nombre: '🌀', id: 'btn-viento' },
-//     { nombre: '💧', id: 'btn-agua' },
-// )
-// monster7.ataque.push(
-//     { nombre: '🌑', id: 'btn-noche' },
-//     { nombre: '🌑', id: 'btn-noche' },
-//     { nombre: '🌑', id: 'btn-noche' },
-//     { nombre: '🌀', id: 'btn-viento' },
-//     { nombre: '⛈️', id: 'btn-tormenta' },
-// )
+monster4.ataque.push(
+    { nombre: '⛈️', id: 'btn-tormenta' },
+    { nombre: '⛈️', id: 'btn-tormenta' },
+    { nombre: '⛈️', id: 'btn-tormenta' },
+    { nombre: '💧', id: 'btn-agua' },
+    { nombre: '🔥', id: 'btn-fuego' },
+)
+monster5.ataque.push(
+    { nombre: '🌀', id: 'btn-viento' },
+    { nombre: '🌀', id: 'btn-viento' },
+    { nombre: '🌀', id: 'btn-viento' },
+    { nombre: '💧', id: 'btn-agua' },
+    { nombre: '🌱', id: 'btn-tierra' },
+)
+monster6.ataque.push(
+    { nombre: '⚡', id: 'btn-trueno' },
+    { nombre: '⚡', id: 'btn-trueno' },
+    { nombre: '⚡', id: 'btn-trueno' },
+    { nombre: '🌀', id: 'btn-viento' },
+    { nombre: '💧', id: 'btn-agua' },
+)
+monster7.ataque.push(
+    { nombre: '🌑', id: 'btn-noche' },
+    { nombre: '🌑', id: 'btn-noche' },
+    { nombre: '🌑', id: 'btn-noche' },
+    { nombre: '🌀', id: 'btn-viento' },
+    { nombre: '⛈️', id: 'btn-tormenta' },
+)
 // monster8.ataque.push(
 //     { nombre: '🔥', id: 'btn-fuego' },
 //     { nombre: '🔥', id: 'btn-fuego' },
@@ -302,7 +314,7 @@ monster3.ataque.push(
 //     { nombre: '⛈️', id: 'btn-tormenta' },
 // )    
 
-mokepones.push(monster1, monster2, monster3/*, monster4, monster5, monster6, monster7, monster8, monster9, monster10, monster11, monster12, monster13, monster14, monster15, monster16, monster17, monster18, monster19, monster20, monster21, monster22, monster23, monster24, monster25, monster26, monster27, monster28, monster29, monster30*/)
+mokepones.push(monster1, monster2, monster3, monster4, monster5, monster6, monster7/*, monster8, monster9, monster10, monster11, monster12, monster13, monster14, monster15, monster16, monster17, monster18, monster19, monster20, monster21, monster22, monster23, monster24, monster25, monster26, monster27, monster28, monster29, monster30*/)
 
 function iniciarJuego() {
     sectionSeleccionarAtaque.style.display = 'none'
@@ -723,20 +735,18 @@ function aleatorio(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-function pintarPersonaje() {
+function pintarCanvas() {
 
     mokeponSeleccionado.x = mokeponSeleccionado.x + mokeponSeleccionado.velocidadX
     mokeponSeleccionado.y = mokeponSeleccionado.y + mokeponSeleccionado.velocidadY
 
-    lienzo.clearRect(0, 0, mapaCanvas.width, mapaCanvas.height)
+    // console.log(mokeponSeleccionado.x + "||||" + mokeponSeleccionado.y)
 
+    lienzo.clearRect(0, 0, mapaCanvas.width, mapaCanvas.height)
     lienzo.drawImage(
-        mokeponSeleccionado.imgMonster,
-        mokeponSeleccionado.x,
-        mokeponSeleccionado.y,
-        mokeponSeleccionado.alto,
-        mokeponSeleccionado.ancho
-    );
+        mapabackground, 0, 0, mapaCanvas.width, mapaCanvas.height
+    )
+    mokeponSeleccionado.pintarMokepon()
 }
 
 function moverMonsterAr() {
@@ -778,7 +788,12 @@ function movientoTeclas(event) {
 
 function iniciarMapa() {
 
-    intervalo = setInterval(pintarPersonaje, 50)
+    mapaCanvas.width = 500
+    mapaCanvas.height = 800
+
+    // Evento
+
+    intervalo = setInterval(pintarCanvas, 50)
     window.addEventListener('keydown', movientoTeclas)
     window.addEventListener('keyup', detenerMovimiento)
 
