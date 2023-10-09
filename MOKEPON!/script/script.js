@@ -37,6 +37,8 @@ let botonesAtaque = []
 let modoJuegoPorMuerte
 let modoJuegoPorVictorias
 let lienzo = mapaCanvas.getContext("2d")
+let mokeponSeleccionado
+let intervalo
 
 //  Clase Mokepon 
 class Mokepon {
@@ -46,6 +48,14 @@ class Mokepon {
         this.canvas = canvas
         this.vida = vida
         this.ataque = []
+        this.x = 20
+        this.y = 40
+        this.ancho = 80
+        this.alto = 80
+        this.imgMonster = new Image()
+        this.imgMonster.src = canvas
+        this.velocidadX = 0
+        this.velocidadY = 0
     }
 }
 
@@ -354,7 +364,7 @@ function seleccionarMascotaJugador() {
         return
     }
 
-    const mokeponSeleccionado = mokepones.find((mokepon) => {
+    mokeponSeleccionado = mokepones.find((mokepon) => {
         const input = document.getElementById(mokepon.nombre)
         return input.checked
     })
@@ -366,13 +376,7 @@ function seleccionarMascotaJugador() {
         spanMascotaEnemigo.innerHTML = moustruoEnemigoSeleccionado.nombre
         // sectionSeleccionarAtaque.style.display = 'flex'
         sectionMapaCamvas.style.display = 'flex'
-        let imgMonster1 = new Image()
-        imgMonster1.src = monster1.canvas
-
-        imgMonster1.onload = function () {
-            lienzo.drawImage(
-                imgMonster1, 20, 40, 100, 100);
-        };
+        intervalo = setInterval(pintarPersonaje, 50)
 
 
         sectionSeleccionarMascota.style.display = 'none'
@@ -718,6 +722,40 @@ function reiniciarJuego() {
 
 function aleatorio(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+function pintarPersonaje() {
+
+    mokeponSeleccionado.x = mokeponSeleccionado.x + mokeponSeleccionado.velocidadX
+    mokeponSeleccionado.y = mokeponSeleccionado.y + mokeponSeleccionado.velocidadY
+
+    lienzo.clearRect(0, 0, mapaCanvas.width, mapaCanvas.height)
+
+    lienzo.drawImage(
+        mokeponSeleccionado.imgMonster,
+        mokeponSeleccionado.x,
+        mokeponSeleccionado.y,
+        mokeponSeleccionado.alto,
+        mokeponSeleccionado.ancho
+    );
+}
+
+function moverMonsterAr() {
+    mokeponSeleccionado.velocidadY = -2
+}
+function moverMonsterI() {
+    mokeponSeleccionado.velocidadX = -2
+}
+function moverMonsterAb() {
+    mokeponSeleccionado.velocidadY = 2
+}
+function moverMonsterD() {
+    mokeponSeleccionado.velocidadX = 2
+}
+
+function detenerMovimiento() {
+    mokeponSeleccionado.velocidadX = 0
+    mokeponSeleccionado.velocidadY = 0
 }
 
 window.addEventListener('load', iniciarJuego)
