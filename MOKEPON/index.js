@@ -7,7 +7,7 @@ class Jugador {
     constructor(idJugadores) {
         this.idJugadores = idJugadores
     }
-} 
+}
 
 app.get("/unirse", (reqs, resp) => {
 
@@ -21,10 +21,9 @@ app.get("/unirse", (reqs, resp) => {
 
 app.listen(8080, (err) => {
 
-        if (err) {
-            console.error('El Error es: ' + err)
-        } else{
-            console.log('Servidor Funcionando')
-        }
-
+    if (err) {
+        console.error('El Error es: ' + err)
+    } else {
+        console.log('Servidor Funcionando')
+    }
 })
