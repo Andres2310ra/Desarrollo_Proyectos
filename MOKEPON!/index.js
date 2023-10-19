@@ -7,7 +7,7 @@ class jugador {
     constructor(idJugadores) {
         this.idJugadores = idJugadores
     }
-}
+} 
 
 app.get("/unirse", (reqs, resp) => {
 
