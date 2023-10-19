@@ -9,14 +9,16 @@ class Jugador {
     }
 }
 
-app.get("/unirse", (reqs, resp) => {
+app.get("/unirse", (req, res) => {
 
     const idJugadores = `${Date.now()}-${Math.random()}`
     const jugador = new Jugador(idJugadores)
 
     jugadores.push(`¡Jugador con ID ${idJugadores} se ha unido correctamente!`)
 
-    resp.send(idJugadores)
+    res.setHeader('Access-Control-Allow-Origin','*')
+    res.send(idJugadores)
+
 })
 
 app.listen(8080, (err) => {
