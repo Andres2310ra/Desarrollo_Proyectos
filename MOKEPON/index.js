@@ -3,7 +3,7 @@ const app = libreriaExpress()
 
 const jugadores = []
 
-class jugador {
+class Jugador {
     constructor(idJugadores) {
         this.idJugadores = idJugadores
     }
@@ -11,14 +11,20 @@ class jugador {
 
 app.get("/unirse", (reqs, resp) => {
 
-    const idJugadores = `${Math.round()}`
-    const jugador = new jugador(idJugadores)
+    const idJugadores = `${Date.now()}-${Math.random()}`
+    const jugador = new Jugador(idJugadores)
 
-    jugadores.push(jugador)
+    jugadores.push(`¡Jugador con ID ${idJugadores} se ha unido correctamente!`)
 
     resp.send(idJugadores)
 })
 
-app.listen(8080, () => {
-    console.log('Servidor Funcionando')
+app.listen(8080, (err) => {
+
+        if (err) {
+            console.error('El Error es: ' + err)
+        } else{
+            console.log('Servidor Funcionando')
+        }
+
 })
