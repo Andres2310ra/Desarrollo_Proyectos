@@ -16,6 +16,7 @@ const sectionMapaCamvas = document.getElementById('ver-mapa-canvas')
 const mapaCanvas = document.getElementById('mapa')
 const titulo = document.getElementById('titulo')
 
+let jugadorId = null
 let mokepones = []
 let ataqueJugador = ''
 let ataqueEnemigo = ''
@@ -343,11 +344,12 @@ function iniciarJuego() {
 
 function unirseAlJuego() {
     fetch('http://localhost:8080/unirse')
-        .then( function(res){
+        .then(function (res) {
             if (res.ok) {
                 res.text()
-                    .then(function(respuesta){
+                    .then(function (respuesta) {
                         console.log(respuesta)
+                        jugadorId=respuesta
                     })
             }
         })
@@ -416,8 +418,24 @@ function seleccionarMascotaJugador() {
         )
     }
 
+    seleccionarMokepon(moustruoSeleccionado)
     seleccionarAtaqueJugador(moustruoSeleccionado)
 }
+
+function seleccionarMokepon(moustruoSeleccionado) {
+
+    fetch(`http://localhost:8080/mokepon/${jugadorId}`, {
+        method: "post",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            mokepon: moustruoSeleccionado
+        })
+    })
+
+}
+
 function seleccionarAtaqueJugador(moustruoSeleccionado) {
 
     let ataques
