@@ -349,7 +349,7 @@ function unirseAlJuego() {
                 res.text()
                     .then(function (respuesta) {
                         console.log(respuesta)
-                        jugadorId=respuesta
+                        jugadorId = respuesta
                     })
             }
         })
@@ -781,9 +781,15 @@ function pintarCanvas() {
 
     lienzo.clearRect(0, 0, mapaCanvas.width, mapaCanvas.height)
     lienzo.drawImage(
-        mapabackground, 0, 0, mapaCanvas.width, mapaCanvas.height
+        mapabackground,
+        0,
+        0,
+        mapaCanvas.width,
+        mapaCanvas.height
     )
     mokeponSeleccionado.pintarMokepon()
+
+    enviarPosicion(mokeponSeleccionado.x, mokeponSeleccionado.y)
 
     if (moustruoEnemigoSeleccionado.nombre == mokeponSeleccionado) {
         seleccionarMascotaEnemigo()
@@ -796,6 +802,27 @@ function pintarCanvas() {
     if (mokeponSeleccionado.velocidadX !== 0 || mokeponSeleccionado.velocidadY !== 0) {
         colision(moustruoEnemigoSeleccionado)
     }
+}
+
+function enviarPosicion(x, y) {
+    fetch(`http://localhost:8080/mokepon/${jugadorId}/posicion`, {
+        method: "post",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            x,
+            y
+        })
+    })
+        .then(function (res) {
+            if (res.ok) {
+                res.json()
+                    .then(function ({ enemigos }) {
+                        console.log(enemigos)
+                    })
+            }
+        })
 }
 
 function moverMonsterAr() {
