@@ -1,5 +1,5 @@
 const libreriaExpress = require('express')
-const libreriaCors=require('cors')
+const libreriaCors = require('cors')
 const app = libreriaExpress()
 
 app.use(libreriaCors())
@@ -8,31 +8,31 @@ app.use(libreriaExpress.json())
 const jugadores = []
 
 class Jugador {
-    constructor(idJugadores) {
-        this.idJugadores = idJugadores
+    constructor(id) {
+        this.id = id
     }
 }
 
 app.get("/unirse", (req, res) => {
 
-    const idJugadores = `${Date.now()}-${Math.random()}`
-    const jugador = new Jugador(idJugadores)
+    const id = `${Date.now()}-${Math.random()}`
+    const jugador = new Jugador(id)
 
-    jugadores.push(`¡Jugador con ID ${jugador} se ha unido correctamente!`)
+    jugadores.push(jugador)
 
-    res.setHeader('Access-Control-Allow-Origin','*')
-    res.send(idJugadores)
+    res.setHeader('Access-Control-Allow-Origin', '*')
+    res.send(id)
 
 })
 
-app.post("/mokepon/:jugadorId",(req,res=>{
-    const jugadorId=req.params.jugadorId || ""
+app.post("/mokepon/:jugadorId", (req, res) => {
+    const jugadorId = req.params.jugadorId || ""
 
     console.log(jugadores)
     console.log(jugadorId)
 
     res.end()
-}))
+})
 
 app.listen(8080, (err) => {
 
