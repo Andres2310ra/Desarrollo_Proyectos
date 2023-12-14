@@ -1,15 +1,17 @@
 function solution(num) {
 
-    let resultado
+    let resultado=[]
+    let i = 1
 
-    if ((num !== 2 && num !== 3) || (num % 2 === 0 || num % 3 === 0)) {
-        resultado = true
-    } else {
-        resultado = false
+    while (i < num) {
+        i++
+        if ((i === 2 || i === 3) || (i % 2 !== 0 && i % 3 !== 0 && i % 5 !== 0 && i % 7 !== 0) ) {
+            resultado.push(i)
+        }
     }
     console.log(resultado)
 }
 
-let valor = 2
+let valor = 100
 
 solution(valor)
