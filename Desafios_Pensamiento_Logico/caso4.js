@@ -1,15 +1,22 @@
 function solution(num) {
 
-    let resultado=[]
-    let i = 1
+    let resultado = []
 
-    while (i < num) {
-        i++
-        if ((i === 2 || i === 3) || (i % 2 !== 0 && i % 3 !== 0 && i % 5 !== 0 && i % 7 !== 0) ) {
+    function numPrimo(n) {
+        for (let i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i === 0) {
+                return false
+            }
+        }
+        return true
+    }
+
+    for (let i = 2; i <= num; i++) {
+        if (numPrimo(i)) {
             resultado.push(i)
         }
     }
-    console.log(resultado)
+    console.log(resultado.length)
 }
 
 let valor = 100
