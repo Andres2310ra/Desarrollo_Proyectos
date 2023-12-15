@@ -16,7 +16,7 @@ function solution(num) {
             resultado.push(i)
         }
     }
-    console.log(resultado.length)
+    console.log(resultado)
 }
 
 let valor = 100
