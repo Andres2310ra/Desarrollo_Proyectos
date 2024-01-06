@@ -41,4 +41,3 @@ except Exception as e:
     print(f"Ha ocurrido un error con la base de datos:{type(e).__name__}:{e}")
 else:
     print("Proceso Terminado")
-
