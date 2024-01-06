@@ -6,31 +6,45 @@ from faker import Faker
 fake = Faker()
  
 # Configuración de semilla para reproducibilidad
-np.random.seed(42)
+np.random.seed(1)
  
 # Número de puntos de venta
-num_puntos_venta = 1000
+numRegistros = 10000
  
 # Generar datos aleatorios
-nombres = [fake.first_name() for _ in range(num_puntos_venta)]
-apellidos = [fake.last_name() for _ in range(num_puntos_venta)]
-f_nacimiento = [fake.date_of_birth(minimum_age=17, maximum_age=45) for _ in range(num_puntos_venta)]
+doc = np.random.randint(1011111111, 1099999999, numRegistros)
+nombres = [fake.first_name() for _ in range(numRegistros)]
+apellidos = [fake.last_name() for _ in range(numRegistros)]
+f_nacimiento = [fake.date_of_birth(minimum_age=17, maximum_age=45) for _ in range(numRegistros)]
 login = [n + "." + a for n, a in zip(nombres,apellidos)]
-direccion = [fake.address() for _ in range(num_puntos_venta)]
-latitudes = np.random.uniform(35.0, 45.0, num_puntos_venta)  # Latitudes centradas en un país ficticio
-longitudes = np.random.uniform(-5.0, 5.0, num_puntos_venta)  # Longitudes centradas en un país ficticio
-ventas = np.random.uniform(5, 100, num_puntos_venta)
+direccion = [fake.address() for _ in range(numRegistros)]
+perfilCodigo = np.random.randint(1, 50, numRegistros)
+ciudadCodigo = np.random.randint(1, 1341, numRegistros)
+# latitudes = np.random.uniform(35.0, 45.0, numRegistros)
+# longitudes = np.random.uniform(-5.0, 5.0, numRegistros)
  
 # Crear el DataFrame
 data = {
-    'Nombre': nombres,
-    'Apellidos':apellidos,
-    'Fecha_Nacimiento':f_nacimiento,
-    'Usuario':login,
-    'Direccion':direccion, 
-    'Latitud': latitudes, 
-    'Longitud': longitudes, 
-    'Ventas': ventas}
+    'USU_NOMBRE': nombres,
+    'USU_APELLIDO':apellidos,
+    'USU_DOCUMENTO': doc,
+    'TIP_DOC':'',
+    'TIP_DOCUMENTO_NOMBRE':'',
+    'USUARIO':login,
+    'FECHA_NACIMIENTO':f_nacimiento,
+    'PER_CODIGO':perfilCodigo,
+    'PER_NOMBRE':'',
+    'DIRECCION':direccion,
+    'CIU_CODIGO':ciudadCodigo,
+    'CIU_NOMBRE':'',
+    'DEP_CODIGO':'',
+    'DEP_NOMBRE':'',
+    'PAI_CODIGO':'',
+    'PAI_NOMBRE':'', 
+    # 'Latitud': latitudes, 
+    # 'Longitud': longitudes
+    'ESTADO':1,
+    'OBSERVACION':''}
 
 df = pd.DataFrame(data)
 # print(df)
