@@ -15,7 +15,7 @@ num_puntos_venta = 1000
 nombres = [fake.first_name() for _ in range(num_puntos_venta)]
 apellidos = [fake.last_name() for _ in range(num_puntos_venta)]
 f_nacimiento = [fake.date_of_birth(minimum_age=17, maximum_age=45) for _ in range(num_puntos_venta)]
-login = [nombres + '.' + apellidos for _ in range(num_puntos_venta)]
+login = [n + "." + a for n, a in zip(nombres,apellidos)]
 direccion = [fake.address() for _ in range(num_puntos_venta)]
 latitudes = np.random.uniform(35.0, 45.0, num_puntos_venta)  # Latitudes centradas en un país ficticio
 longitudes = np.random.uniform(-5.0, 5.0, num_puntos_venta)  # Longitudes centradas en un país ficticio
@@ -33,4 +33,6 @@ data = {
     'Ventas': ventas}
 
 df = pd.DataFrame(data)
-print(df)
+# print(df)
+
+df.to_excel(r'C:\Users\carlo\Descargas\base_usuarios.xlsx', sheet_name='USUARIOS', index=True)
