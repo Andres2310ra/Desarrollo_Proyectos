@@ -35,4 +35,10 @@ data = {
 df = pd.DataFrame(data)
 # print(df)
 
-df.to_excel(r'C:\Users\carlo\Descargas\base_usuarios.xlsx', sheet_name='USUARIOS', index=True)
+try:
+    df.to_excel(r'C:\Users\carlo\Descargas\base_usuarios.xlsx', sheet_name='USUARIOS', index=True)
+except Exception as e:
+    print(f"Ha ocurrido un error con la base de datos:{type(e).__name__}:{e}")
+else:
+    print("Proceso Terminado")
+
