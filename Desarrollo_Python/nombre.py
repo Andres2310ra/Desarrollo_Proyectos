@@ -1,65 +1,36 @@
-# Importar librerías
-import requests
-import random
-import re
+import pandas as pd
+import numpy as np
+from faker import Faker
+ 
+# Configuración de Faker para generar nombres y direcciones
+fake = Faker()
+ 
+# Configuración de semilla para reproducibilidad
+np.random.seed(42)
+ 
+# Número de puntos de venta
+num_puntos_venta = 1000
+ 
+# Generar datos aleatorios
+nombres = [fake.first_name() for _ in range(num_puntos_venta)]
+apellidos = [fake.last_name() for _ in range(num_puntos_venta)]
+f_nacimiento = [fake.date_of_birth(minimum_age=17, maximum_age=45) for _ in range(num_puntos_venta)]
+login = [nombres + '.' + apellidos for _ in range(num_puntos_venta)]
+direccion = [fake.address() for _ in range(num_puntos_venta)]
+latitudes = np.random.uniform(35.0, 45.0, num_puntos_venta)  # Latitudes centradas en un país ficticio
+longitudes = np.random.uniform(-5.0, 5.0, num_puntos_venta)  # Longitudes centradas en un país ficticio
+ventas = np.random.uniform(5, 100, num_puntos_venta)
+ 
+# Crear el DataFrame
+data = {
+    'Nombre': nombres,
+    'Apellidos':apellidos,
+    'Fecha_Nacimiento':f_nacimiento,
+    'Usuario':login,
+    'Direccion':direccion, 
+    'Latitud': latitudes, 
+    'Longitud': longitudes, 
+    'Ventas': ventas}
 
-# Definir las URLs de las fuentes web
-url1 = "https://www.planetamama.com.ar/nombres-de-bebes/buscar/todos/sexo/todos/origen/todos"
-url2 = "https://www.aboutespanol.com/los-200-nombres-de-bebe-en-espanol-mas-populares-1176840"
-
-# Obtener el contenido de las páginas web
-response1 = requests.get(url1)
-response2 = requests.get(url2)
-
-# Extraer los nombres de las páginas web
-nombres_mujer = []
-nombres_hombre = []
-
-# Usar expresiones regulares para encontrar los nombres entre etiquetas HTML
-pattern = re.compile(r"<td>(\w+)</td>")
-
-# Buscar los nombres en la primera fuente web
-matches = pattern.findall(response1.text)
-for i in range(0, len(matches), 2):
-    nombre = matches[i]
-    sexo = matches[i + 1]
-    if sexo == "Mujer":
-        nombres_mujer.append(nombre)
-    elif sexo == "Varón":
-        nombres_hombre.append(nombre)
-
-# Buscar los nombres en la segunda fuente web
-matches = pattern.findall(response2.text)
-for i in range(0, len(matches), 2):
-    nombre = matches[i]
-    sexo = matches[i + 1]
-    if sexo == "niña":
-        nombres_mujer.append(nombre)
-    elif sexo == "niño":
-        nombres_hombre.append(nombre)
-
-# Eliminar los nombres duplicados
-nombres_mujer = list(set(nombres_mujer))
-nombres_hombre = list(set(nombres_hombre))
-
-# Verificar las listas de nombres obtenidas
-print("Nombres de mujer:", nombres_mujer)
-print("Nombres de hombre:", nombres_hombre)
-
-# Obtener 500 nombres aleatorios de mujer
-if len(nombres_mujer) >= 500:
-    nombres_mujer_aleatorios = random.sample(nombres_mujer, 500)
-else:
-    nombres_mujer_aleatorios = nombres_mujer
-
-# Obtener 500 nombres aleatorios de hombre
-if len(nombres_hombre) >= 500:
-    nombres_hombre_aleatorios = random.sample(nombres_hombre, 500)
-else:
-    nombres_hombre_aleatorios = nombres_hombre
-
-# Combinar las dos listas de nombres
-lista_nombres = nombres_mujer_aleatorios + nombres_hombre_aleatorios
-
-# Mostrar la lista de nombres
-print(lista_nombres)
+df = pd.DataFrame(data)
+print(df)
