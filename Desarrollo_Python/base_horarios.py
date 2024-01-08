@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from faker import Faker
-from datetime import date
+import datetime
  
 # Configuración de Faker para generar nombres y direcciones
 fake = Faker()
@@ -13,8 +13,12 @@ np.random.seed(1)
 numRegistros = 150000
  
 # Generar datos aleatorios
-usuarioCodigo = np.random.randint(1, 10000, numRegistros)
-fechaHorario=[fake.date(start_date=('2023-01-01'), end_date=('2023-12-31')) for _ in range(numRegistros)]
+usuarioCodigo = np.random.randint(1, 10001, numRegistros)
+
+fIni = datetime.date(2023, 1, 1)
+fFin = datetime.date(2023, 12, 31)
+
+fechaHorario=[fake.date_between_dates(date_start=fIni, date_end=fFin) for _ in range(numRegistros)]
 
 # Crear el DataFrame
 data = {
