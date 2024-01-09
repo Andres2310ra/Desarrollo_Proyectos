@@ -1,12 +1,13 @@
-# from openpyxl import op
 import pandas as pd
+import fake as fk
 
-rutaDoc = r'C:\Users\carlo\OneDrive\Documents\GitHub\Platzi_Estudio\Desarrollo_Python\BD_Ventas_Frutas.xlsx'
-datosExcel = pd.read_excel(rutaDoc,sheet_name='VENTAS')
+# fk=fk.Faker()
 
-print(datosExcel)
+numeroRegistros=1001
 
-# Agrupar por la columna 'Fruta' y calcular el promedio de la columna 'Total'
-promedio_por_fruta = datosExcel.groupby('Fruta')['Total'].mean()
+nombre=[fk.name() for _ in range(numeroRegistros)]
 
-print(promedio_por_fruta)
+date={'Nombre':nombre}
+
+df=pd.DataFrame(date)
+print(df)
