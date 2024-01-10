@@ -9,5 +9,5 @@ nombre=[fk.name() for _ in range(numeroRegistros)]
 
 date={'Nombre':nombre}
 
-df=pd.DataFrame(date)
+df=pd.DataFrame(date) 
 print(df)
