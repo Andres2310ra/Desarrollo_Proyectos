@@ -7,7 +7,7 @@ import datetime
 fake = Faker()
  
 # Configuración de semilla para reproducibilidad
-np.random.seed(1)
+np.random.seed(50)
  
 # Número de puntos de venta
 numRegistros = 150000
@@ -19,6 +19,7 @@ fIni = datetime.date(2023, 1, 1)
 fFin = datetime.date(2023, 12, 31)
 
 fechaHorario=[fake.date_between_dates(date_start=fIni, date_end=fFin) for _ in range(numRegistros)]
+horaHorario=np.random.uniform(0.290972222222222,0.417361111111111,numRegistros)
 
 # Crear el DataFrame
 data = {
@@ -26,13 +27,14 @@ data = {
     'NOMBRE_USUARUIO':'',
     'USUARIO':'',
     'FECHA_HORARIO':fechaHorario,
+    'HORA_ENTRADA':horaHorario,
     'ESTADO':1}
 
 df = pd.DataFrame(data)
 # print(df)
 
 try:
-    df.to_excel(r'C:\Users\carlo\OneDrive\Escritorio\py\base_horarios.xlsx', sheet_name='HORARIOS', index=True)
+    df.to_excel(r'C:\Users\carlo\OneDrive\Documents\Desarrollo\Python\Bases_Python\base_horarios.xlsx', sheet_name='HORARIOS', index=True)
 except Exception as e:
     print(f"Ha ocurrido un error con la base de datos:{type(e).__name__}:{e}")
 else:
