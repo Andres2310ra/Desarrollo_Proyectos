@@ -1,11 +1,13 @@
 import pandas as pd
-import fake as fk
+import faker as fk
 
-numeroRegistros=1001
+fk = fk.Faker()
 
-nombre=[fk.fake.name() for _ in range(numeroRegistros)]
+numeroRegistros = 1001
 
-date={'Nombre':nombre}
+nombres = [fk.name() for _ in range(numeroRegistros)]
 
-df=pd.DataFrame(date) 
+data = {'Nombre': nombres}
+
+df = pd.DataFrame(data)
 print(df)
