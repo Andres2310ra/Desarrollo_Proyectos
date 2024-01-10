@@ -17,9 +17,14 @@ usuarioCodigo = np.random.randint(1, 10001, numRegistros)
 
 fIni = datetime.date(2023, 1, 1)
 fFin = datetime.date(2023, 12, 31)
-
 fechaHorario=[fake.date_between_dates(date_start=fIni, date_end=fFin) for _ in range(numRegistros)]
-horaHorario=np.random.uniform(0.290972222222222,0.417361111111111,numRegistros)
+
+hEntrada=[0.291666666666667,0.3125,0.333333333333333]
+hAleatoria=np.random.randint(0,3,numRegistros)
+horaEntrada=[hEntrada[aleatorio] for aleatorio  in hAleatoria ]
+
+horaIngreso=np.random.uniform(0.290972222222222,0.417361111111111,numRegistros)
+HoraSalida=np.random.uniform(0.708333333333333,0.791666666666667,numRegistros)
 
 # Crear el DataFrame
 data = {
@@ -27,7 +32,9 @@ data = {
     'NOMBRE_USUARUIO':'',
     'USUARIO':'',
     'FECHA_HORARIO':fechaHorario,
-    'HORA_ENTRADA':horaHorario,
+    'HORA_ENTRADA':horaEntrada,
+    'HORA_INGRESO':horaIngreso,
+    'HORA_SALIDA':HoraSalida,
     'ESTADO':1}
 
 df = pd.DataFrame(data)
