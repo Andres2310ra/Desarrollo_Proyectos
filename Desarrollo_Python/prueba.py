@@ -5,7 +5,7 @@ import fake as fk
 
 numeroRegistros=1001
 
-nombre=[fk.name() for _ in range(numeroRegistros)]
+nombre=[fk.faker.name() for _ in range(numeroRegistros)]
 
 date={'Nombre':nombre}
 
