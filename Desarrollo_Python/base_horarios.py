@@ -21,7 +21,7 @@ fechaHorario=[fake.date_between_dates(date_start=fIni, date_end=fFin) for _ in r
 
 hEntrada=[0.291666666666667,0.3125,0.333333333333333]
 hAleatoria=np.random.randint(0,3,numRegistros)
-horaEntrada=[hEntrada[aleatorio] for aleatorio  in hAleatoria ]
+horaEntrada=[hEntrada[aleatorio] for aleatorio  in hAleatoria]
 
 horaIngreso=np.random.uniform(0.290972222222222,0.417361111111111,numRegistros)
 HoraSalida=np.random.uniform(0.708333333333333,0.791666666666667,numRegistros)
@@ -38,6 +38,7 @@ data = {
     'ESTADO':1}
 
 df = pd.DataFrame(data)
+df['HORA_SALIDA'] = pd.to_datetime(df['HORA_SALIDA'], format='%H:%M:%S.%f')
 # print(df)
 
 try:
