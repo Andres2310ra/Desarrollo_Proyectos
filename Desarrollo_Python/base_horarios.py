@@ -10,7 +10,7 @@ fake = Faker()
 np.random.seed(50)
  
 # Número de puntos de venta
-numRegistros = 150000
+numRegistros = 50000
  
 # Generar datos aleatorios
 usuarioCodigo = np.random.randint(1, 10001, numRegistros)
@@ -32,7 +32,7 @@ HoraSalida = [datetime.datetime.fromtimestamp(value * 86400, datetime.timezone.u
 
 # Crear el DataFrame
 data = {
-    'USU_NOMBRE': usuarioCodigo,
+    'USU_CODIGO': usuarioCodigo,
     'NOMBRE_USUARUIO':'',
     'USUARIO':'',
     'FECHA_HORARIO':fechaHorario,
