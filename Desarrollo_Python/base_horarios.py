@@ -10,7 +10,7 @@ fake = Faker()
 np.random.seed(50)
  
 # Número de puntos de venta
-numRegistros = 150000
+numRegistros = 1000
  
 # Generar datos aleatorios
 usuarioCodigo = np.random.randint(1, 10001, numRegistros)
@@ -25,6 +25,7 @@ horaEntrada=[hEntrada[aleatorio] for aleatorio  in hAleatoria]
 
 horaIngreso=np.random.uniform(0.290972222222222,0.417361111111111,numRegistros)
 HoraSalida=np.random.uniform(0.708333333333333,0.791666666666667,numRegistros)
+HoraSalida = [datetime.datetime.fromtimestamp(value * 86400, datetime.timezone.utc).strftime('%H:%M:%S.%f') for value in HoraSalida]
 
 # Crear el DataFrame
 data = {
@@ -38,7 +39,7 @@ data = {
     'ESTADO':1}
 
 df = pd.DataFrame(data)
-df['HORA_SALIDA'] = pd.to_datetime(df['HORA_SALIDA'], format='%H:%M:%S.%f')
+df['HORA_SALIDA'] = pd.to_datetime(df['HORA_SALIDA'], format='%H:%M:%S.%f', errors='coerce')
 # print(df)
 
 try:
