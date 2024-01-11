@@ -22,10 +22,13 @@ fechaHorario=[fake.date_between_dates(date_start=fIni, date_end=fFin) for _ in r
 hEntrada=[0.291666666666667,0.3125,0.333333333333333]
 hAleatoria=np.random.randint(0,3,numRegistros)
 horaEntrada=[hEntrada[aleatorio] for aleatorio  in hAleatoria]
+horaEntrada = [datetime.datetime.fromtimestamp(value * 86400, datetime.timezone.utc).strftime('%H:%M:%S') for value in horaEntrada]
 
 horaIngreso=np.random.uniform(0.290972222222222,0.417361111111111,numRegistros)
+horaIngreso = [datetime.datetime.fromtimestamp(value * 86400, datetime.timezone.utc).strftime('%H:%M:%S') for value in horaIngreso]
+
 HoraSalida=np.random.uniform(0.708333333333333,0.791666666666667,numRegistros)
-HoraSalida = [datetime.datetime.fromtimestamp(value * 86400, datetime.timezone.utc).strftime('%H:%M:%S.%f') for value in HoraSalida]
+HoraSalida = [datetime.datetime.fromtimestamp(value * 86400, datetime.timezone.utc).strftime('%H:%M:%S') for value in HoraSalida]
 
 # Crear el DataFrame
 data = {
@@ -39,7 +42,15 @@ data = {
     'ESTADO':1}
 
 df = pd.DataFrame(data)
-df['HORA_SALIDA'] = pd.to_datetime(df['HORA_SALIDA'], format='%H:%M:%S.%f', errors='coerce')
+
+df['HORA_ENTRADA'] = pd.to_datetime(df['HORA_ENTRADA'], format='%H:%M:%S', errors='coerce')
+df['HORA_ENTRADA'] = df['HORA_ENTRADA'].dt.strftime('%H:%M:%S')
+
+df['HORA_INGRESO'] = pd.to_datetime(df['HORA_INGRESO'], format='%H:%M:%S', errors='coerce')
+df['HORA_INGRESO'] = df['HORA_INGRESO'].dt.strftime('%H:%M:%S')
+
+df['HORA_SALIDA'] = pd.to_datetime(df['HORA_SALIDA'], format='%H:%M:%S', errors='coerce')
+df['HORA_SALIDA'] = df['HORA_SALIDA'].dt.strftime('%H:%M:%S')
 # print(df)
 
 try:
