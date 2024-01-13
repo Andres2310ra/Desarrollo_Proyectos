@@ -18,6 +18,6 @@ function solution(num) {
   console.log(resultado);
 }
 
-let valor = 1000;
+let valor = 10000;
 
 solution(valor);
