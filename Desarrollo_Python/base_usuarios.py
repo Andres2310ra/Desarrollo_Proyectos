@@ -9,7 +9,7 @@ fake = Faker()
 np.random.seed(1)
  
 # Número de puntos de venta
-numRegistros = 10000
+numRegistros = 100
  
 # Generar datos aleatorios
 doc = np.random.randint(1011111111, 1099999999, numRegistros)
