@@ -1,122 +1,133 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indigital</title>
-    <link rel="icon" href="imagenes/logo.jpg">
-    <link rel="stylesheet" href="css/style_inicio.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indigital</title>
+  <link rel="icon" href="imagenes/logo.jpg">
+  <link rel="stylesheet" href="css/style_inicio.css">
 </head>
+
 <body>
 
-<!-- Sección de encabezado con el logo y la barra de navegación -->
-<header>
-    <div id="logo">
-        <img src="imagenes/logo.jpg" alt="Logo de la tienda">
+  <!-- Sección de encabezado con el logo y la barra de navegación -->
+  <header>
+    <div class="logo">
+      <img src="imagenes/logo.jpg" alt="Logo de la tienda" id="logo-barra">
     </div>
     <nav>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#productos">Productos</a></li>
-            <li><a href="#eventos">Eventos</a></li>
-            <li><a href="#ofertas">Ofertas</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+      </ul>
+      <ul>
+        <li><a href="#productos">Productos</a></li>
+      </ul>
+      <ul>
+        <li><a href="#eventos">Eventos</a></li>
+      </ul>
+      <ul>
+        <li><a href="#ofertas">Ofertas</a></li>
+      </ul>
+      <ul>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
     </nav>
-</header>
+  </header>
 
-<!-- Banner con imagen y texto -->
-<section id="banner">
+  <!-- Banner con imagen y texto -->
+  <section id="banner">
     <img src="imagenes/banner.jpg" alt="Banner de la tienda">
     <div class="texto-banner">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-            pharetra, odio sed ultrices efficitur, turpis libero molestie nunc,
-            vehicula placerat purus ante ac mi. Aliquam erat volutpat. Suspendisse
-            maximus semper leo, non accumsan justo tempor facilisis. Curabitur
-            ornare, eros non suscipit aliquet, est ex malesuada libero, eu
-            efficitur diam ipsum in purus. Aliquam rhoncus enim sem, quis posuere
-            risus vulputate nec. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Suspendisse auctor molestie odio sit amet cursus.
-        </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+        pharetra, odio sed ultrices efficitur, turpis libero molestie nunc,
+        vehicula placerat purus ante ac mi. Aliquam erat volutpat. Suspendisse
+        maximus semper leo, non accumsan justo tempor facilisis. Curabitur
+        ornare, eros non suscipit aliquet, est ex malesuada libero, eu
+        efficitur diam ipsum in purus. Aliquam rhoncus enim sem, quis posuere
+        risus vulputate nec. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Suspendisse auctor molestie odio sit amet cursus.
+      </p>
     </div>
-</section>
+  </section>
 
-<!-- Sección de búsqueda y filtros de productos -->
-<section id="busqueda-filtros">
+  <!-- Sección de búsqueda y filtros de productos -->
+  <section id="busqueda-filtros">
     <h2>Buscar y Filtrar Productos</h2>
     <form>
-        <!-- Agrega campos de búsqueda y filtros aquí -->
-        <label for="marca">Marca:</label>
-        <select id="marca" name="marca">
-            <!-- Opciones de marcas -->
-            <option value="marca1">Marca 1</option>
-            <option value="marca2">Marca 2</option>
-            <!-- Agrega más opciones según sea necesario -->
-        </select>
+      <!-- Agrega campos de búsqueda y filtros aquí -->
+      <label for="marca">Marca:</label>
+      <select id="marca" name="marca">
+        <!-- Opciones de marcas -->
+        <option value="marca1">Marca 1</option>
+        <option value="marca2">Marca 2</option>
+        <!-- Agrega más opciones según sea necesario -->
+      </select>
 
-        <label for="categoria">Categoría:</label>
-        <select id="categoria" name="categoria">
-            <!-- Opciones de categorías -->
-            <option value="categoria1">Categoría 1</option>
-            <option value="categoria2">Categoría 2</option>
-            <!-- Agrega más opciones según sea necesario -->
-        </select>
+      <label for="categoria">Categoría:</label>
+      <select id="categoria" name="categoria">
+        <!-- Opciones de categorías -->
+        <option value="categoria1">Categoría 1</option>
+        <option value="categoria2">Categoría 2</option>
+        <!-- Agrega más opciones según sea necesario -->
+      </select>
 
-        <label for="precio">Precio:</label>
-        <input type="text" id="precio" name="precio" placeholder="Ingrese precio">
+      <label for="precio">Precio:</label>
+      <input type="text" id="precio" name="precio" placeholder="Ingrese precio">
 
-        <button type="submit">Buscar</button>
+      <button type="submit">Buscar</button>
     </form>
-</section>
+  </section>
 
-<!-- Sección de productos -->
-<section id="productos">
+  <!-- Sección de productos -->
+  <section id="productos">
     <h2>Nuestros Productos</h2>
 
     <!-- Ejemplo de producto 1 -->
     <div class="producto">
-        <img src="imagen_producto1.jpg" alt="Producto 1">
-        <h3>Nombre del Producto 1</h3>
-        <p>Precio: $50.00</p>
+      <img src="imagen_producto1.jpg" alt="Producto 1">
+      <h3>Nombre del Producto 1</h3>
+      <p>Precio: $50.00</p>
     </div>
 
     <!-- Ejemplo de producto 2 -->
     <div class="producto">
-        <img src="imagen_producto2.jpg" alt="Producto 2">
-        <h3>Nombre del Producto 2</h3>
-        <p>Precio: $35.00</p>
+      <img src="imagen_producto2.jpg" alt="Producto 2">
+      <h3>Nombre del Producto 2</h3>
+      <p>Precio: $35.00</p>
     </div>
 
     <!-- Agrega más productos según sea necesario -->
 
-</section>
+  </section>
 
-<!-- Pie de página -->
-<footer>
+  <!-- Pie de página -->
+  <footer>
     <div class="redes-sociales">
-        <a href="enlace_facebook" target="_blank"><img src="logo_facebook.png" alt="Facebook"></a>
-        <a href="enlace_twitter" target="_blank"><img src="logo_twitter.png" alt="Twitter"></a>
-        <!-- Agrega más redes sociales según sea necesario -->
+      <a href="enlace_facebook" target="_blank"><img src="logo_facebook.png" alt="Facebook"></a>
+      <a href="enlace_twitter" target="_blank"><img src="logo_twitter.png" alt="Twitter"></a>
+      <!-- Agrega más redes sociales según sea necesario -->
     </div>
 
     <div class="contacto">
-        <p>Contacto: contacto@tutienda.com</p>
-        <!-- Agrega más información de contacto según sea necesario -->
+      <p>Contacto: contacto@tutienda.com</p>
+      <!-- Agrega más información de contacto según sea necesario -->
     </div>
 
     <nav class="enlaces-pie">
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#productos">Productos</a></li>
-            <li><a href="#eventos">Eventos</a></li>
-            <li><a href="#ofertas">Ofertas</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#eventos">Eventos</a></li>
+        <li><a href="#ofertas">Ofertas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
     </nav>
 
     <p>&copy; 2024 Tu Tienda Online. Todos los derechos reservados.</p>
-</footer>
+  </footer>
 
 </body>
+
 </html>
