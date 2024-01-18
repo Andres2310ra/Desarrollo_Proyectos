@@ -2,6 +2,10 @@
 
 body {
     font-family: 'Roboto Slab', sans-serif;
+    /* background-image: url(../imagenes/fondo_1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; */
 }
 
 /* Header */
@@ -11,12 +15,49 @@ header {
     height: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    margin: 3% 0% 4% 0%;
+    border-bottom: solid black 3px;
+}
+
+#titulo-banner {
+    font-size: medium;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    margin: 1%;
 }
 
 #logo-barra {
     width: 70px;
     height: 68px;
     border-radius: 100%;
+    margin-right: 10%;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Banner */
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* #contenedor-img {
+    height: 200px;
+    overflow: hidden;
+} */
+
+#img-banner {
+    width: 100%;
+    height: 50%;
 }
