@@ -92,7 +92,8 @@ def redistribuir_x(adf):
         for dia in dias_mes:
             tiempo_limite = 480
             cluster_dia_adf = cluster_adf[cluster_adf[dia.strftime('%Y-%m-%d')] == 'X']
-            while cluster_dia_adf['Horas PDV2024'].sum() > tiempo_limite:
+            # while cluster_dia_adf['Horas PDV2024'].sum() > tiempo_limite:
+            while cluster_dia_adf['Hora_Visita'].sum() > tiempo_limite:
                 punto_a_quitar = np.random.choice(cluster_dia_adf.index)
                 adf.at[punto_a_quitar, dia.strftime('%Y-%m-%d')] = np.nan
                 cluster_dia_adf = cluster_adf[cluster_adf[dia.strftime('%Y-%m-%d')] == 'X']
@@ -106,7 +107,7 @@ for dia in dias_mes:
 # Agregar 'X' en las columnas de los días según la cantidad de Dias_de_visita de cada punto
 for index, row in adf.iterrows():
     dias_a_visitar = row['Frecuencia 2024']
-    dias_disponibles = adf.columns[34:]  # Ignorar las columnas
+    dias_disponibles = adf.columns[35:]  # Ignorar las columnas
     dias_seleccionados = np.random.choice(dias_disponibles, dias_a_visitar, replace=False)
     adf.loc[index, dias_seleccionados] = 'X'
 ##### Funcion tiempos de movilización caminando
@@ -196,7 +197,7 @@ adf_final = pd.merge(adf_ruta_optima_total,adf,how='inner', on='Nombre Nestle')
 #aadf_final.drop_duplicates(subset =['NOMBRE V&M','Representante Farmacias_x','Coordinador',], keep = 'first', inplace = True)
  
 try:
-    adf_final.to_excel(r'C:\Users\carlo\OneDrive\Documents\Desarrollo\Python\Bases_Generadas_Python\MODELO DE SERVICIO_centro.xlsx', sheet_name='Base Rutas', index=False)
+    adf_final.to_excel(r'C:\Users\carlo\OneDrive\Documents\Desarrollo\Python\Bases_Generadas_Python\MODELO DE SERVICIO_centro_2.xlsx', sheet_name='Base Rutas', index=False)
  
 except Exception as e:
     print(f"Ha ocurrido un error con la base de datos:{type(e).__name__}:{e}")
