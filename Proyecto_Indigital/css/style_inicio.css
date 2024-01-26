@@ -15,7 +15,6 @@ header {
     align-items: center;
     background-color: black;
     color: white;
-    margin-bottom: 4%;
 }
 
 #logo-barra {
@@ -26,6 +25,17 @@ header {
 #titulo-banner{
     margin-right: 3%;
     font-size: 140%;
+}
+
+#barra-busqueda{
+    width: 40%;
+    margin-left: 0%;
+    margin-right: 1%;
+}
+
+#button-buscar{
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 #barra-banner{
@@ -43,11 +53,21 @@ header {
 
 #barra-banner li a{
     text-decoration: none;
-    color: white;
+    color: black;
     font-weight: bolder;
 }
 
 #barra-banner li a:hover{
     color: #ffc300;
     font-size: 115%;
+}
+
+/* Estilo General Botones */
+button{
+    width: 5%;
+    font-size: 90%;
+    font-weight: bold;
+    background-color: #00000000;
+    color: white;
+    border: 0px solid #ffffff;
 }
