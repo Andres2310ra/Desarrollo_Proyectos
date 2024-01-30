@@ -1,8 +1,19 @@
-from faker import Faker
-import datetime
+import numpy as np
 
-fake = Faker()
-start_date = datetime.date(2023, 1, 1)
-end_date = datetime.date(2023, 12, 31)
-fecha = fake.date_between_dates(date_start=start_date, date_end=end_date)
-print(fecha)
+def solution(num):
+    resultado = []
+
+    def numero_primo(n):
+        for i in range(2, int(np.sqrt(n))):
+            if n % i == 0:
+                return False
+        return True
+
+    for i in range(2, num + 1):
+        if numero_primo(i):
+            resultado.append(i)
+
+    return resultado
+
+valor = 100000
+print(solution(valor))
