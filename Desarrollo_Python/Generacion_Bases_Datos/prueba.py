@@ -1,23 +1,17 @@
-import pandas as pd
-import faker as fk
-import numpy as np
+def for_(num):
 
-fk = fk.Faker()
+    valor=[]
 
-numeroRegistros = 1001
+    for i in range(num):
+        valor.append(num)
 
-nombres = [fk.name() for _ in range(numeroRegistros)]
+    return valor
 
-data = {'Nombre ': nombres}
+valor=10
 
-df = pd.DataFrame(data)
-print(df)
+print(for_(valor))
 
-from faker import Faker
-import datetime
-
-fake = Faker()
-start_date = datetime.date(2023, 1, 1)
-end_date = datetime.date(2023, 12, 31)
-fecha = fake.date_between_dates(date_start=start_date, date_end=end_date)
-print(fecha)
+# Ejemplo con un diccionario
+persona = {"nombre": "Juan", "edad": 30, "ciudad": "México"}
+for clave, valor in persona.items():
+    print(clave, ":", valor)
