@@ -45,11 +45,11 @@ except Exception as e:
 
 else:
     print('Base de Datos Terminada')
-    #print(df.head(5))  # Muestra las primeras filas del DataFrame resultante con las categorías
+    #print(df.head(5))  # Mostrar las Primeras Filas del DataFrime
 
     # Exportar Base de Datos Generada en Excel
     df.to_excel(r'C:\Users\carlo\OneDrive\Documents\Desarrollo\Modelo_Servicio\Base_Ventas_Categorizadas.xlsx', sheet_name='VENTAS_CATEGORIZADAS')
-    
+
     print(Q1)
     print(Q2)
     print(Q3)
