@@ -5,18 +5,18 @@ import faker as Faker
 try:
     fk = Faker.Faker() 
     np.random.seed(50)
-    numero_registros = 100
-    nombre_pais_set=set()
+    numero_registros = 10000
+    nombre_cliente_set=set()
 
-    while len(nombre_pais_set) < numero_registros:
-        nombre_pais_set.add(fk.country())
+    while len(nombre_cliente_set) < numero_registros:
+        nombre_cliente_set.add(fk.name())
 
-    nombre_pais = list(nombre_pais_set)
-    venta_pais = np.random.randint(100,1000,numero_registros)
+    nombre_cliente = list(nombre_cliente_set)
+    venta_cliente = np.random.randint(100,1000,numero_registros)
 
     data = {
-        'PAIS VENTA': nombre_pais,
-        'VENTAS': venta_pais
+        'CLIENTE VENTA': nombre_cliente,
+        'VENTAS': venta_cliente
     }
 
     df = pd.DataFrame(data)
