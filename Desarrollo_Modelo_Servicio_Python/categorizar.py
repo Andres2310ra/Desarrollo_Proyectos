@@ -24,9 +24,9 @@ try:
     upper_limit = Q3 + 1.5 * IQR
 
     # Crear Nueva Columna
-    df['CATEGORIA'] = np.nan # Se Crea Columna con NAN para
+    df['CATEGORIA'] = np.nan # Se Crea Columna con NAN (Numero no Valido)
 
-    df['CATEGORIA'] = df['CATEGORIA'].astype('object')
+    df['CATEGORIA'] = df['CATEGORIA'].astype('object') # Se Transforma Columna a Objeto para que Pueda Recibir Cual Quier Tipo de Dato
 
     # Asignar las Categorías SegUn los Limites Calculados
     df.loc[(df['VENTAS'] < Q1) & (df['VENTAS'] >=lower_limit), 'CATEGORIA'] = 'D'
