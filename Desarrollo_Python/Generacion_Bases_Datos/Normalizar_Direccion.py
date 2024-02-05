@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 from tqdm import tqdm  # Importa la librería tqdm para la barra de progreso
+import requests
 
 try:
     archivo_excel= r'C:\Users\carlo\OneDrive\Documents\Desarrollo\Python\Bases_Trabajo_Python\BASE_DIRECCIONES.xlsx'
@@ -14,6 +15,8 @@ try:
 
     if 'DIRECCION' not in df.columns:
         raise KeyError('Hay columnas que no estan presente en el DataFreme.')
+
+    ##################################### Formatear Direcciones #####################################
 
     direccion_pdv = np.array(df['DIRECCION'].tolist())
 
@@ -42,6 +45,34 @@ try:
     direccion_pdv = [' '.join(palabra.upper() for palabra in direccion.strip().split()) for direccion in tqdm(direccion_pdv,'Realizando Ultimos Ajustes!')]
 
     df['DIRECCION_ARREGLADA'] = direccion_pdv
+
+    ##################################### Coordenadas de Direcciones #####################################
+
+    def obtener_coordenadas(api_key, direccion):
+        base_url = "https://maps.googleapis.com/maps/api/geocode/json"
+        parametros = {"address": direccion, "key": api_key}
+
+        respuesta = requests.get(base_url, params=parametros)
+        datos = respuesta.json()
+
+        if datos["status"] == "OK" and datos.get("results"):
+            # Obtén las coordenadas de la primera coincidencia
+            coordenadas = datos["results"][0]["geometry"]["location"]
+            latitud = coordenadas["lat"]
+            longitud = coordenadas["lng"]
+            return latitud, longitud
+        else:
+            print("Error al obtener las coordenadas.")
+            return None
+
+    # Reemplaza 'TU_CLAVE_DE_API' con tu clave de API de Google Maps
+    clave_api = 'TU_CLAVE_DE_API'
+    direccion_a_buscar = "1600 Amphitheatre Parkway, Mountain View, CA"  # Ejemplo de dirección
+
+    coordenadas = obtener_coordenadas(clave_api, direccion_a_buscar)
+
+    if coordenadas:
+        print(f"Las coordenadas de {direccion_a_buscar} son: {coordenadas}")
 
 except FileNotFoundError as e:
     print(f"Error: {e}")
