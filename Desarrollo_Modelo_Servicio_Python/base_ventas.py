@@ -4,7 +4,7 @@ import faker as Faker
 
 try:
     fk = Faker.Faker() 
-    np.random.seed(50)
+    np.random.seed(42)
     numero_registros = 10000
     nombre_cliente_set=set()
 
@@ -12,7 +12,7 @@ try:
         nombre_cliente_set.add(fk.name())
 
     nombre_cliente = list(nombre_cliente_set)
-    venta_cliente = np.random.randint(100,1000,numero_registros)
+    venta_cliente = np.random.randint(100,100000,numero_registros)
 
     data = {
         'CLIENTE VENTA': nombre_cliente,
