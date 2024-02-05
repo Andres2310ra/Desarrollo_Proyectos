@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 try:
-    archivo_excel= r'C:\Users\carlo\OneDrive\Documents\Desarrollo\Python\Bases_Trabajo_Python\PDV NESTLE.xlsx'
+    archivo_excel= r'C:\Users\carlo\OneDrive\Documents\Desarrollo\Python\Bases_Trabajo_Python\BASE_DIRECCIONES.xlsx'
     if not pd.ExcelFile(archivo_excel).sheet_names:
         raise FileNotFoundError(f"No se encontró el archivo Excel en la ruta especificada: {archivo_excel}")
     
