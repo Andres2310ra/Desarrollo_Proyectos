@@ -14,7 +14,17 @@ try:
     if 'DIRECCION' not in df.columns:
         raise KeyError('Hay columnas que no estan presente en el DataFreme.')
 
-    direccion_pdv = np.array(df['DIRECCION'].strip().split().tolist())
+    direccion_pdv = np.array(df['DIRECCION'].tolist())
+
+    # ############# Variables de Prueba #############
+    # prueba=direccion_pdv
+
+    # Formatear las direcciones
+    direccion_pdv = [' '.join(palabra.upper() for palabra in direccion.strip().split()) for direccion in direccion_pdv]
+
+    # ############# Variables de Prueba #############
+    # direccion_pdv_2 = [' '.join(palabra.upper() for palabra in direccion.strip().split()) for direccion in direccion_pdv]
+
     direccion = np.array(df_2['DIRECCION'].tolist())
     nomenclatura = np.array(df_2['NOMENCLATURA'].tolist())
 
@@ -26,6 +36,9 @@ try:
     df['DIRECCION_ARREGLADA'] = np.nan # Se Crea Columna con NAN (Numero no Valido)
 
     df['DIRECCION_ARREGLADA'] = df['DIRECCION_ARREGLADA'].astype('object') # Se Transforma Columna a Objeto para que Pueda Recibir Cual Quier Tipo de Dato
+
+    # Voler a Formatear las Direcciones para Quitar Espacios Sobrantes Despues del Ajuste de Nomenclatura
+    direccion_pdv = [' '.join(palabra.upper() for palabra in direccion.strip().split()) for direccion in direccion_pdv]
 
     df['DIRECCION_ARREGLADA'] = direccion_pdv
 
@@ -39,8 +52,11 @@ except Exception as e:
     print(f"Hubo un error inesperado: {type(e).__name__}:{e}")
 
 else:
-    print('Base de Datos Terminada')
-    # print(df.head(2))
+    # print('Direccion Inicial:    ' + prueba[3])
+    # print('Direccion Formateada: ' + direccion_pdv_2[3])
+    # print('Direccion Ajustada:   ' + direccion_pdv[3])
 
     # Exportar Base de Datos Generada en Excel
     df.to_excel(r'C:\Users\carlo\OneDrive\Documents\Desarrollo\Python\Bases_Generadas_Python\Direcciones_Ajustadas.xlsx', sheet_name='Direcciones_PDV')
+
+    print('Base de Datos Terminada')
