@@ -21,7 +21,7 @@ try:
     # prueba=direccion_pdv
 
     # Formatear las direcciones
-    direccion_pdv = [' '.join(palabra.upper() for palabra in direccion.strip().split()) for direccion in tqdm(direccion_pdv,'Ajustando Espacios y Mayusculas de las Direcciones!')]
+    direccion_pdv = [' '.join(palabra.upper() for palabra in direccion.strip().split()) for direccion in tqdm(direccion_pdv,'Formateando Direcciones!')]
 
     # ############# Variables de Prueba #############
     # direccion_pdv_2 = [' '.join(palabra.upper() for palabra in direccion.strip().split()) for direccion in direccion_pdv]
@@ -29,7 +29,7 @@ try:
     direccion = np.array(df_2['DIRECCION'].tolist())
     nomenclatura = np.array(df_2['NOMENCLATURA'].tolist())
 
-    for index in tqdm(range(len(direccion_pdv)), desc='Ajsutando Nomenclatura de las Direcciones, Por Favor Espere!'):
+    for index in tqdm(range(len(direccion_pdv)), desc='Ajsutando Nomenclatura de las Direcciones!'):
         for i in range(len(direccion)):
             direccion_pdv[index] = direccion_pdv[index].replace(direccion[i] , nomenclatura[i])
 
@@ -39,7 +39,7 @@ try:
     df['DIRECCION_ARREGLADA'] = df['DIRECCION_ARREGLADA'].astype('object') # Se Transforma Columna a Objeto para que Pueda Recibir Cual Quier Tipo de Dato
 
     # Voler a Formatear las Direcciones para Quitar Espacios Sobrantes Despues del Ajuste de Nomenclatura
-    direccion_pdv = [' '.join(palabra.upper() for palabra in direccion.strip().split()) for direccion in tqdm(direccion_pdv,'Cargando Datos al DataFrame!')]
+    direccion_pdv = [' '.join(palabra.upper() for palabra in direccion.strip().split()) for direccion in tqdm(direccion_pdv,'Realizando Ultimos Ajustes!')]
 
     df['DIRECCION_ARREGLADA'] = direccion_pdv
 
