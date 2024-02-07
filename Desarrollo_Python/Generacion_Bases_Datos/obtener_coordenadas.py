@@ -1,27 +1,26 @@
 import requests
 
 def obtener_coordenadas(api_key, direccion):
-        base_url = "https://maps.googleapis.com/maps/api/geocode/json"
-        parametros = {"address": direccion, "key": api_key}
+    base_url = "https://maps.googleapis.com/maps/api/geocode/json"
+    parametros = {"address": direccion, "key": api_key}
 
-        respuesta = requests.get(base_url, params=parametros)
-        datos = respuesta.json()
+    respuesta = requests.get(base_url, params=parametros)
+    datos = respuesta.json()
 
-        if datos["status"] == "OK" and datos.get("results"):
-            # Obtén las coordenadas de la primera coincidencia
-            coordenadas = datos["results"][0]["geometry"]["location"]
-            latitud = coordenadas["lat"]
-            longitud = coordenadas["lng"]
-            return latitud, longitud
-        else:
-            print("Error al obtener las coordenadas.")
-            return None
+    if datos["status"] == "OK" and datos.get("results"):
+        # Obtén las coordenadas de la primera coincidencia
+        coordenadas = datos["results"][0]["geometry"]["location"]
+        latitud = coordenadas["lat"]
+        longitud = coordenadas["lng"]
+        return latitud, longitud
+    else:
+        print("Error al obtener las coordenadas.")
+        return None
 
-        # Reemplaza 'TU_CLAVE_DE_API' con tu clave de API de Google Maps
-        clave_api = 'TU_CLAVE_DE_API'
-        direccion_a_buscar = "1600 Amphitheatre Parkway, Mountain View, CA"  # Ejemplo de dirección
+clave_api = 'AIzaSyAKbPDjckorVSxK30UTc10naoXgscO1jmU'
+direccion_a_buscar = "Carrera 19 # 84-50, Bogota, Colombia"  # Ejemplo de dirección
 
-        coordenadas = obtener_coordenadas(clave_api, direccion_a_buscar)
+coordenadas = obtener_coordenadas(clave_api, direccion_a_buscar)
 
-        if coordenadas:
-            print(f"Las coordenadas de {direccion_a_buscar} son: {coordenadas}")
+if coordenadas:
+    print(f"Las coordenadas de {direccion_a_buscar} son: {coordenadas}")
