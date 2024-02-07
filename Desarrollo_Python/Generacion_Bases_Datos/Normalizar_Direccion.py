@@ -65,14 +65,18 @@ try:
             print("Error al obtener las coordenadas.")
             return None
 
-    # Reemplaza 'TU_CLAVE_DE_API' con tu clave de API de Google Maps
-    clave_api = 'TU_CLAVE_DE_API'
-    direccion_a_buscar = "1600 Amphitheatre Parkway, Mountain View, CA"  # Ejemplo de dirección
+    clave_api = 'AIzaSyAKbPDjckorVSxK30UTc10naoXgscO1jmU'
+    direccion_a_buscar = df['DIRECCION_ARREGLADA'] + ',' + df['CIUDAD'] + ',' + df['PAIS']
 
-    coordenadas = obtener_coordenadas(clave_api, direccion_a_buscar)
+    # coordenadas = obtener_coordenadas(clave_api, direccion_a_buscar)
 
-    if coordenadas:
-        print(f"Las coordenadas de {direccion_a_buscar} son: {coordenadas}")
+    coordenadas = direccion_a_buscar.apply(lambda direccion: obtener_coordenadas(clave_api, direccion))
+
+    # Dividir la columna 'COORDENADA_ENCONTRADA' en dos columnas separadas
+    df[['LATITUD_PDV', 'LONGITUD_PDV']] = pd.DataFrame(coordenadas.tolist(), index=df.index)
+
+    # # Eliminar la columna 'COORDENADA_ENCONTRADA' si no la necesitas
+    # df.drop(columns=['COORDENADA_ENCONTRADA'], inplace=True)
 
 except FileNotFoundError as e:
     print(f"Error: {e}")
