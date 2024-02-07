@@ -68,15 +68,20 @@ try:
     clave_api = 'AIzaSyAKbPDjckorVSxK30UTc10naoXgscO1jmU'
     direccion_a_buscar = df['DIRECCION_ARREGLADA'] + ',' + df['CIUDAD'] + ',' + df['PAIS']
 
-    # coordenadas = obtener_coordenadas(clave_api, direccion_a_buscar)
-
-    coordenadas = direccion_a_buscar.apply(lambda direccion: obtener_coordenadas(clave_api, direccion))
+    # Aplicar tqdm al ciclo for
+    coordenadas_list = []
+    for direccion in tqdm(direccion_a_buscar, desc='Obteniendo Coordenadas'):
+        coordenadas = obtener_coordenadas(clave_api, direccion)
+        if coordenadas:
+            coordenadas_list.append(coordenadas)
+        else:
+            coordenadas_list.append((None, None))  # Añadir tupla vacía en caso de error
 
     # Dividir la columna 'COORDENADA_ENCONTRADA' en dos columnas separadas
-    df[['LATITUD_PDV', 'LONGITUD_PDV']] = pd.DataFrame(coordenadas.tolist(), index=df.index)
+    df[['LATITUD_PDV', 'LONGITUD_PDV']] = pd.DataFrame(coordenadas_list, index=df.index)
 
-    # # Eliminar la columna 'COORDENADA_ENCONTRADA' si no la necesitas
-    # df.drop(columns=['COORDENADA_ENCONTRADA'], inplace=True)
+    # # # Eliminar la columna 'COORDENADA_ENCONTRADA' si no la necesitas
+    # # df.drop(columns=['COORDENADA_ENCONTRADA'], inplace=True)
 
 except FileNotFoundError as e:
     print(f"Error: {e}")
