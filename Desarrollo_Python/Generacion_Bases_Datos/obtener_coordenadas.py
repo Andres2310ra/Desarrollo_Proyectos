@@ -14,11 +14,11 @@ def obtener_coordenadas(api_key, direccion):
         longitud = coordenadas["lng"]
         return latitud, longitud
     else:
-        print("Error al obtener las coordenadas.")
-        return None
+        # print("Error al obtener las coordenadas.")
+        return "Error al obtener las coordenadas." # None
 
 clave_api = 'AIzaSyAKbPDjckorVSxK30UTc10naoXgscO1jmU'
-direccion_a_buscar = "Carrera 19 # 84-50, Bogota, Colombia"  # Ejemplo de dirección
+direccion_a_buscar = "CR 80 # 70-97, Bogota, Colombia"  # Ejemplo de dirección
 
 coordenadas = obtener_coordenadas(clave_api, direccion_a_buscar)
 
