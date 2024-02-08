@@ -67,6 +67,7 @@ try:
 
     clave_api = 'AIzaSyAKbPDjckorVSxK30UTc10naoXgscO1jmU'
     direccion_a_buscar = df['DIRECCION_ARREGLADA'] + ',' + df['CIUDAD'] + ',' + df['PAIS']
+    direccion_arrey=np.array(direccion_a_buscar.tolist())
 
     # Aplicar tqdm al ciclo for
     coordenadas_list = []
