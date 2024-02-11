@@ -44,6 +44,10 @@ try:
     # Voler a Formatear las Direcciones para Quitar Espacios Sobrantes Despues del Ajuste de Nomenclatura
     direccion_pdv = [' '.join(palabra.upper() for palabra in direccion.strip().split()) for direccion in tqdm(direccion_pdv,'Realizando Ultimos Ajustes!')]
 
+    for index in tqdm(range(len(direccion_pdv)), desc='Ajsutando Nomenclatura de las Direcciones!'):
+        for i in range(len(direccion)):
+            direccion_pdv[index] = direccion_pdv[index].replace(direccion[i] , nomenclatura[i])
+
     df['DIRECCION_ARREGLADA'] = direccion_pdv
 
     ##################################### Coordenadas de Direcciones #####################################
