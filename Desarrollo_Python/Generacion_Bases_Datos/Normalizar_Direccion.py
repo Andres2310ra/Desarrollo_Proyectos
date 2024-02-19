@@ -4,11 +4,11 @@ from tqdm import tqdm  # Importa la librería tqdm para la barra de progreso
 import requests
 
 try:
-    archivo_excel= r'C:\Users\ramosc\OneDrive - Vision & Marketing S.A.S\Documents\Desarrollo\Python\Bases_Trabajo_Python\BASE_DIRECCIONES.xlsx'
+    archivo_excel= r'C:\Users\carlos.ramos\OneDrive\OneDrive - Vision & Marketing S.A.S\Documents\Desarrollo\Python\Bases_Trabajo_Python\BASE_DIRECCIONES.xlsx'
     if not pd.ExcelFile(archivo_excel).sheet_names:
         raise FileNotFoundError(f"No se encontró el archivo Excel en la ruta especificada: {archivo_excel}")
     
-    archivo_excel_2= r'C:\Users\ramosc\OneDrive - Vision & Marketing S.A.S\Documents\Desarrollo\Python\Bases_Trabajo_Python\Nomenclatura_Direciones.xlsx'
+    archivo_excel_2= r'C:\Users\carlos.ramos\OneDrive\OneDrive - Vision & Marketing S.A.S\Documents\Desarrollo\Python\Bases_Trabajo_Python\Nomenclatura_Direciones.xlsx'
 
     df=pd.read_excel(archivo_excel,sheet_name='PDV')
     df_2=pd.read_excel(archivo_excel_2,sheet_name='Nomenclatura')
@@ -99,6 +99,6 @@ else:
     # print('Direccion Ajustada:   ' + direccion_pdv[3])
 
     # Exportar Base de Datos Generada en Excel
-    df.to_excel(r'C:\Users\ramosc\OneDrive - Vision & Marketing S.A.S\Documents\Desarrollo\Python\Bases_Generadas_Python\Direcciones_Ajustadas.xlsx', sheet_name='Direcciones_PDV')
+    df.to_excel(r'C:\Users\carlos.ramos\OneDrive\OneDrive - Vision & Marketing S.A.S\Documents\Desarrollo\Python\Bases_Generadas_Python\Direcciones_Ajustadas.xlsx', sheet_name='Direcciones_PDV')
 
     print('Base de Datos Terminada')
