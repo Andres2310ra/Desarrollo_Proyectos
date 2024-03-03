@@ -7,6 +7,9 @@ try:
         raise FileNotFoundError(f"No se encontró el archivo Excel en la ruta especificada: {archivo_excel}")
     
     df = pd.read_excel(archivo_excel, sheet_name='Plataformas')
+    df = df[df['CARGO'] == 'ANALISTA DE INFORMACION']
+    df = df[df['NOMBRE'] != 'VACANTE']
+    d_comp = pd.read_excel(archivo_excel, sheet_name='Dias_Compensatorios')
 
     fechas = pd.date_range(start=datetime(2024, 3, 1), end=datetime(2024, 3, 31))
     df_fechas = pd.DataFrame(columns=fechas)
