@@ -7,9 +7,11 @@ try:
         raise FileNotFoundError(f"No se encontró el archivo Excel en la ruta especificada: {archivo_excel}")
     
     df = pd.read_excel(archivo_excel, sheet_name='Plataformas')
-    df = df[df['CARGO'] == 'ANALISTA DE INFORMACION']
+    df = df[df['CARGO'] != 'DESARROLLADOR BD']
     df = df[df['NOMBRE'] != 'VACANTE']
+
     d_comp = pd.read_excel(archivo_excel, sheet_name='Dias_Compensatorios')
+    horarios = pd.read_excel(archivo_excel, sheet_name='Horarios')
 
     fechas = pd.date_range(start=datetime(2024, 3, 1), end=datetime(2024, 3, 31))
     df_fechas = pd.DataFrame(columns=fechas)
@@ -32,5 +34,5 @@ try:
 except Exception as e:
     print(f"Hubo un error inesperado: {type(e).__name__}: {e}")
 else:
-    df_resultado.to_excel(r'C:\Users\carlos.ramos\OneDrive\OneDrive - Vision & Marketing S.A.S\Documents\Plataformas\Cronograma_Soporte\Cronograma_Soporte_Marzo.xlsx')
+    df_resultado.to_excel(r'C:\Users\carlos.ramos\OneDrive\OneDrive - Vision & Marketing S.A.S\Documents\Plataformas\Cronograma_Soporte\Cronograma_Soporte_Prueba.xlsx')
     print('Base de Datos Terminada')
