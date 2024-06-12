@@ -48,6 +48,8 @@ try:
 
     ##################################### Coordenadas de Direcciones #####################################
 
+##### CODIGO FUNCIONAL #####
+
     def obtener_coordenadas(api_key, direccion):
         base_url = "https://maps.googleapis.com/maps/api/geocode/json"
         parametros = {"address": direccion, "key": api_key}
@@ -80,6 +82,8 @@ try:
 
     # Dividir la columna 'COORDENADA_ENCONTRADA' en dos columnas separadas
     df[['LATITUD_PDV', 'LONGITUD_PDV']] = pd.DataFrame(coordenadas_list, index=df.index)
+
+
 
     # # # Eliminar la columna 'COORDENADA_ENCONTRADA' si no la necesitas
     # # df.drop(columns=['COORDENADA_ENCONTRADA'], inplace=True)
