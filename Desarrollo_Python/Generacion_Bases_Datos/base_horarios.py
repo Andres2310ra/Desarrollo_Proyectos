@@ -54,7 +54,7 @@ df['HORA_SALIDA'] = df['HORA_SALIDA'].dt.strftime('%H:%M:%S')
 # print(df)
 
 try:
-    df.to_excel(r'C:\Users\carlo\OneDrive\Documents\Desarrollo\Python\Bases_Python\base_horarios.xlsx', sheet_name='HORARIOS', index=True)
+    df.to_excel(r'C:\Users\carlos.ramos\OneDrive\OneDrive - Vision & Marketing S.A.S\Documents\Desarrollo\Python\Bases_Generadas_Python\base_horarios.xlsx', sheet_name='HORARIOS', index=True)
 except Exception as e:
     print(f"Ha ocurrido un error con la base de datos:{type(e).__name__}:{e}")
 else:
