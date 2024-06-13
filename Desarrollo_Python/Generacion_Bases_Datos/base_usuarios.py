@@ -22,6 +22,7 @@ perfilCodigo = np.random.randint(1, 50, numRegistros)
 ciudadCodigo = np.random.randint(1, 1341, numRegistros)
 # latitudes = np.random.uniform(35.0, 45.0, numRegistros)
 # longitudes = np.random.uniform(-5.0, 5.0, numRegistros)
+usuarioCodigo = np.random.randint(1, 10001, numRegistros)
  
 # Crear el DataFrame
 data = {
@@ -30,6 +31,7 @@ data = {
     'USU_DOCUMENTO': doc,
     'TIP_DOC':'',
     'TIP_DOCUMENTO_NOMBRE':'',
+    'USU_CODIGO': usuarioCodigo,
     'USUARIO':login,
     'FECHA_NACIMIENTO':f_nacimiento,
     'PER_CODIGO':perfilCodigo,
@@ -50,7 +52,7 @@ df = pd.DataFrame(data)
 # print(df)
 
 try:
-    df.to_excel(r'C:\Users\carlo\OneDrive\Documents\Desarrollo\Python\Bases_Python\base_usuarios.xlsx', sheet_name='USUARIOS', index=True)
+    df.to_excel(r'C:\Users\carlos.ramos\OneDrive\OneDrive - Vision & Marketing S.A.S\Documents\Desarrollo\Python\Bases_Generadas_Python\base_usuarios.xlsx', sheet_name='USUARIOS', index=True)
 except Exception as e:
     print(f"Ha ocurrido un error con la base de datos:{type(e).__name__}:{e}")
 else:
