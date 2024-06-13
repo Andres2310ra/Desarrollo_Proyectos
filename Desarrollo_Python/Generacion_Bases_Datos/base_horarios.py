@@ -15,8 +15,8 @@ numRegistros = 5000
 # Generar datos aleatorios
 usuarioCodigo = np.random.randint(1, 10001, numRegistros)
 
-fIni = datetime.date(2023, 1, 1)
-fFin = datetime.date(2023, 12, 31)
+fIni = datetime.date(2024, 5, 1)
+fFin = datetime.date(2024, 5, 31)
 fechaHorario=[fake.date_between_dates(date_start=fIni, date_end=fFin) for _ in range(numRegistros)]
 
 hEntrada=[0.291666666666667,0.3125,0.333333333333333]
