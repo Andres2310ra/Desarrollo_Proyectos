@@ -65,7 +65,7 @@ def agregar_compensatorios(df_horario, df_compensatorios):
     return df_horario
 
 # Especificar mes y año
-mes = 7  # Julio
+mes = 8  # Julio
 año = 2024
 
 # Generar el horario
@@ -78,7 +78,7 @@ df_horario = pd.DataFrame(horario, columns=["Fecha", "Nombre", "Hora Inicio", "H
 df_horario = agregar_compensatorios(df_horario, df_compensatorios)
 
 # Exportar a archivo Excel
-output_path = r'C:\Users\carlos.ramos\OneDrive\OneDrive - Vision & Marketing S.A.S\Documents\Plataformas\Cronograma_Soporte\Cronograma Soporte_Julio.xlsx'
+output_path = r'C:\Users\carlos.ramos\OneDrive\OneDrive - Vision & Marketing S.A.S\Documents\Plataformas\Cronograma_Soporte\Cronograma Soporte_Agosto.xlsx'
 df_horario.to_excel(output_path, index=False)
 
 print(f"Cronograma exportado a {output_path}")
