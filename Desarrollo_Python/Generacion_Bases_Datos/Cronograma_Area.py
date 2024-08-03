@@ -97,9 +97,9 @@ except Exception as e:
 else:
     # Generar el horario para un mes y año especificado
     year = 2024
-    month = 7
+    month = 8
     schedule = generate_schedule(year, month)
     print(schedule)
 
-    schedule.to_excel(r'C:\Users\carlos.ramos\OneDrive\OneDrive - Vision & Marketing S.A.S\Documents\Plataformas\Cronograma_Soporte\Cronograma BI_Julio.xlsx', index=False)
+    schedule.to_excel(r'C:\Users\carlos.ramos\OneDrive\OneDrive - Vision & Marketing S.A.S\Documents\Plataformas\Cronograma_Soporte\Cronograma BI_Agosto.xlsx', index=False)
     print('Base de Datos Terminada')
