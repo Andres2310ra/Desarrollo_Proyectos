@@ -17,7 +17,7 @@ def obtener_coordenadas(api_key, direccion):
         # print("Error al obtener las coordenadas.")
         return "Error al obtener las coordenadas." # None
 
-clave_api = 'AIzaSyAKbPDjckorVSxK30UTc10naoXgscO1jmU'
+clave_api = 'AIzaSyCMd-AKCN4aqTA6BcXkIAro1YgcFh8CjPw'
 direccion_a_buscar = "CR 80 # 70-97, Bogota, Colombia"  # Ejemplo de dirección
 
 coordenadas = obtener_coordenadas(clave_api, direccion_a_buscar)

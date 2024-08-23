@@ -67,7 +67,7 @@ try:
             print("Error al obtener las coordenadas.")
             return None
 
-    clave_api = 'AIzaSyAKbPDjckorVSxK30UTc10naoXgscO1jmU'
+    clave_api = 'AIzaSyCMd-AKCN4aqTA6BcXkIAro1YgcFh8CjPw'
     direccion_a_buscar = df['DIRECCION_ARREGLADA'] + ',' + df['CIUDAD'] + ',' + df['PAIS']
     direccion_arrey=np.array(direccion_a_buscar.tolist())
 
