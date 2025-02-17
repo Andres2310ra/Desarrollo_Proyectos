@@ -1,0 +1,38 @@
+
+.imagen_usuario {
+    text-align: start;
+    margin: 20px 0;
+}
+
+.imagen_usuario img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.barra_nav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+.barra_nav nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.barra_nav nav ul li {
+    float: left;
+}
+
+.barra_nav nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.barra_nav nav ul li a:hover {
+    background-color: #111;
+}
