@@ -1,3 +1,30 @@
+:root {
+    --verde-oscuro: #006400; /* Estabilidad y crecimiento */
+    --verde-menta: #98FF98; /* Innovación y frescura */
+    --fondo: #F7F7F7; /* Fondo claro */
+    --texto: #000000; /* Texto negro */
+    --primario: #FFB22C; /* Color primario */
+    --secundario: #854836; /* Color secundario */
+}
+
+body {
+    background-color: var(--fondo);
+    color: var(--texto);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 2px solid var(--primario);
+}
 
 .imagen_usuario {
     text-align: start;
@@ -5,34 +32,124 @@
 }
 
 .imagen_usuario img {
-    width: 100px;
-    height: 100px;
+    width: 3.5cm; /* 1.38 pulgadas */
+    height: 4.5cm; /* 1.77 pulgadas */
     border-radius: 50%;
+    border: 2px solid var(--primario);
 }
 
 .barra_nav {
-    background-color: #333;
-    overflow: hidden;
+    background-color: var(--fondo);
+    width: 100%;
+    border-bottom: 2px solid var(--primario);
 }
 
 .barra_nav nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: space-around;
 }
 
 .barra_nav nav ul li {
-    float: left;
+    flex: 1;
 }
 
 .barra_nav nav ul li a {
     display: block;
-    color: white;
+    color: var(--texto);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    transition: background-color 0.3s;
 }
 
 .barra_nav nav ul li a:hover {
-    background-color: #111;
+    background-color: var(--primario);
+    color: var(--fondo);
+}
+
+main {
+    padding: 20px;
+    background-color: var(--fondo);
+}
+
+.perfil_usuario, .educacion_usuario, .experiencia_usuario {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.perfil h2, .educacion_usuario h2, .experiencia_usuario h2 {
+    color: var(--primario);
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--secundario);
+    padding-bottom: 5px;
+}
+
+.perfil {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--texto);
+}
+
+.educacion_detalle, .experiencia_detalle {
+    display: flex;
+    flex-direction: column;
+}
+
+.educacion_detalle p, .experiencia_detalle p {
+    margin: 5px 0;
+    color: var(--texto);
+}
+
+.educacion_detalle div[id^="edu_"], .experiencia_detalle div[id^="exp_"] {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border-left: 4px solid var(--primario);
+}
+
+.educacion_detalle div[id^="edu_"]:hover, .experiencia_detalle div[id^="exp_"]:hover {
+    background-color: var(--primario);
+    color: var(--fondo);
+}
+
+footer {
+    background-color: var(--fondo);
+    color: var(--texto);
+    text-align: center;
+    padding: 10px;
+    border-top: 2px solid var(--primario);
+}
+
+@media (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .barra_nav nav ul {
+        flex-direction: column;
+    }
+
+    .barra_nav nav ul li {
+        width: 100%;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .perfil_usuario, .educacion_usuario, .experiencia_usuario {
+        padding: 10px;
+    }
+
+    .perfil, .educacion_detalle p, .experiencia_detalle p {
+        font-size: 14px;
+    }
 }
