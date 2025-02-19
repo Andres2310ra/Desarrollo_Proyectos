@@ -8,8 +8,8 @@
     <title>UI Portfolio - Personal Category Bootstrap Responsive Website Template - Contact </title>
 
     <!-- google-fonts -->
-    <link href="//fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;800&display=swap" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- //google-fonts -->
 
     <!-- Template CSS Style link -->
@@ -59,37 +59,39 @@
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Blog <span class="fas fa-angle-down"></span>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="blog-nosidebar.html">Blog - no sidebar</a>
-                            <a class="dropdown-item" href="blog-right-sidebar.html">Blog - right sidebar</a>
-                            <a class="dropdown-item" href="blog-left-sidebar.html">Blog - left Sidebar</a>
-                            <a class="dropdown-item" href="blogsingle-nosidebar.html">Blog Single - no sidebar</a>
-                            <a class="dropdown-item" href="blogsingle-right-sidebar.html">Blog Single - right
-                                sidebar</a>
-                            <a class="dropdown-item" href="blogsingle-left-sidebar.html">Blog Single - left
-                                sidebar</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="blog-nosidebar.html">Blog - no sidebar</a></li>
+                            <li><a class="dropdown-item" href="blog-right-sidebar.html">Blog - right sidebar</a></li>
+                            <li><a class="dropdown-item" href="blog-left-sidebar.html">Blog - left Sidebar</a></li>
+                            <li><a class="dropdown-item" href="blogsingle-nosidebar.html">Blog Single - no sidebar</a></li>
+                            <li><a class="dropdown-item" href="blogsingle-right-sidebar.html">Blog Single - right
+                                sidebar</a></li>
+                            <li><a class="dropdown-item" href="blogsingle-left-sidebar.html">Blog Single - left
+                                sidebar</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link dropdown-toggle" href="#url" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Pages <span class="fas fa-angle-down"></span>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="error.html">404 Page</a>
-                            <a class="dropdown-item" href="email-template.html">Email Template</a>
-                            <a class="dropdown-item" href="landing-single.html">Landing Page</a>
-                            <a class="dropdown-item" href="shortcodes.html">Shortcodes</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="error.html">404 Page</a></li>
+                            <li><a class="dropdown-item" href="email-template.html">Email Template</a></li>
+                            <li><a class="dropdown-item" href="landing-single.html">Landing Page</a></li>
+                            <li><a class="dropdown-item" href="shortcodes.html">Shortcodes</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
 
                     <!--/right-btn-->
-                    <div class="header-btn mx-2">
-                        <a class="btn btn-style btn-primary mr-lg-5" href="contact.html"> Hire Me</a>
-                    </div>
+                    <li class="nav-item">
+                        <div class="header-btn mx-2">
+                            <a class="btn btn-style btn-primary mr-lg-5" href="contact.html"> Hire Me</a>
+                        </div>
+                    </li>
                     <!--/right-btn-->
 
                 </ul>
@@ -98,7 +100,7 @@
             <!-- search -->
             <ul class="cd-header-buttons px-lg-2">
                 <li>
-                <a class="cd-search-trigger" href="#cd-search">
+                <a class="cd-search-trigger" href="#cd-search" title="Search">
                     <span></span>
                 </a>
                 </li>
@@ -115,6 +117,7 @@
                 <nav class="navigation">
                     <div class="theme-switch-wrapper">
                         <label class="theme-switch" for="checkbox">
+                            <label for="checkbox">Toggle Theme</label>
                             <input type="checkbox" id="checkbox">
                             <div class="mode-container">
                                 <i class="gg-sun"></i>
@@ -164,7 +167,7 @@
                             <input type="text" placeholder="Name" name="w3lName" id="w3lName" required="">
                             <input type="email" name="email" placeholder="Email" id="w3lSender" required="">
                         </div>
-                        <input type="text" placeholder="Phone Number" name="w3lName" id="w3lName" required="">
+                        <input type="text" placeholder="Phone Number" name="w3lPhone" id="w3lPhone" required="">
                         <textarea placeholder="Message" name="w3lMessage" id="w3lMessage" required=""></textarea>
                         <div class="text-end">
                             <button type="submit" class="btn btn-primary btn-style">Submit Now</button>
@@ -178,7 +181,7 @@
         <div class="map mt-5">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158857.7281066703!2d-0.24168144921176335!3d51.5287718408761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2sin!4v1569921526194!5m2!1sen!2sin"
-                frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                frameborder="0" class="map-frame" title="Map of London" allowfullscreen=""></iframe>
         </div>
         <!-- //map -->
     </div>
@@ -221,11 +224,11 @@
             <div class="col-lg-6 text-lg-end text-center mt-lg-0 mt-4">
                 <div class="social">
                     <ul>
-                        <li><a href="#url"><span class="fab me-2 fa-facebook-f"></span></a></li>
-                        <li><a href="#url"><span class="fab me-2 fa-twitter"></span></a></li>
-                        <li><a href="#url"><span class="fab me-2 fa-google-plus"></span></a></li>
-                        <li><a href="#url"><span class="fab me-2 fa-pinterest"></span></a></li>
-                        <li><a href="#url"><span class="fab me-2 fa-vk"></span></a></li>
+                        <li><a href="#url" title="Facebook"><span class="fab me-2 fa-facebook-f"></span></a></li>
+                        <li><a href="#url" title="Twitter"><span class="fab me-2 fa-twitter"></span></a></li>
+                        <li><a href="#url" title="Google Plus"><span class="fab me-2 fa-google-plus"></span></a></li>
+                        <li><a href="#url" title="Pinterest"><span class="fab me-2 fa-pinterest"></span></a></li>
+                        <li><a href="#url" title="VK"><span class="fab me-2 fa-vk"></span></a></li>
                     </ul>
                 </div>
             </div>

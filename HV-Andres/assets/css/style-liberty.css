@@ -59,6 +59,27 @@ body {
   color: #212529;
   background-color: #fff;
   -webkit-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent
 }
 
@@ -325,7 +346,8 @@ caption {
 
 th {
   text-align: inherit;
-  text-align: -webkit-match-parent
+  text-align: -webkit-match-parent;
+  text-align: match-parent;
 }
 
 tbody,
@@ -387,7 +409,8 @@ select:disabled {
 [type=reset],
 [type=submit],
 button {
-  -webkit-appearance: button
+  -webkit-appearance: button;
+  appearance: button;
 }
 
 [type=button]:not(:disabled),
@@ -448,7 +471,8 @@ legend+* {
 
 [type=search] {
   outline-offset: -2px;
-  -webkit-appearance: textfield
+  -webkit-appearance: textfield;
+  appearance: textfield;
 }
 
 ::-webkit-search-decoration {
@@ -2167,7 +2191,6 @@ progress {
 
 .table-responsive {
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch
 }
 
 @media (max-width:575.98px) {
