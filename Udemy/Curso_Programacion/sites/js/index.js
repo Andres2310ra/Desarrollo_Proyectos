@@ -148,17 +148,26 @@ document.addEventListener('DOMContentLoaded', function () {
     //
 
     document.getElementById('actualizar_page').addEventListener('click', function () {
+        let Nombre_User;
 
-        let confirmar = confirm("¿Desea Actualizar la Página?");
+        do {
+            Nombre_User = prompt("¿Cuál es tu nombre?");
+            if (Nombre_User == null || Nombre_User == "") {
+                alert("El campo no puede estar vacío");
+            }
+        } while (Nombre_User == null || Nombre_User == "");
+
+        console.log(Nombre_User);
+
+        let confirmar = confirm("¿" + Nombre_User + " desea actualizar la página?");
 
         console.log(confirmar);
-    
-        if (confirmar=true) {
 
+        if (confirmar === true) {
             Swal.fire({
                 position: "center",
                 icon: "success",
-                title: "Cargando Nuevo Resultado",
+                title: "Cargando Nuevo Resultado " + Nombre_User,
                 showConfirmButton: false,
                 timer: 1500
             }).then(function () {
@@ -168,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function () {
             Swal.fire({
                 position: "center",
                 icon: "error",
-                title: "Operación Cancelada",
+                title: "Operación Cancelada " + Nombre_User,
                 showConfirmButton: false,
                 timer: 1500
             });
