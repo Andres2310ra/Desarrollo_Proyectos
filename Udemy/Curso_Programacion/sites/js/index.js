@@ -111,8 +111,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    console.log(numeros_2); // Imprimir números pares
-    console.log(primos); // Imprimir números primos
+    // console.log(numeros_2);
+    // console.log(primos);
 
     //console.log(numeros);
     ciclo_for += numeros.join(',');
@@ -137,24 +137,42 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //Ciclo Do While
     let ciclo_do_while = '';
+    i = 0; // Reiniciar el valor de i
     do {
-        ciclo_do_while += ',' + i;
+        numeros_3.push(i + 1);
         i++;
     } while (i < numero_3);
+    ciclo_do_while += numeros_3.join(',');
     document.getElementById('ciclo_do_while').textContent = 'Ciclo Do While del numero ' + numero_3 + ': ' + ciclo_do_while;
-    document.getElementById('list_do_while').textContent = 'Numero de numeros iterados : ' + ciclo_do_while.length;
+    document.getElementById('list_do_while').textContent = 'Numero de numeros iterados : ' + numeros_3.length;
     //
 
     document.getElementById('actualizar_page').addEventListener('click', function () {
 
-        Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Cargando Nuevo Resultado",
-            showConfirmButton: false,
-            timer: 1500
-        }).then(function () {
-            location.reload();
-        });
+        let confirmar = confirm("¿Desea Actualizar la Página?");
+
+        console.log(confirmar);
+    
+        if (confirmar=true) {
+
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Cargando Nuevo Resultado",
+                showConfirmButton: false,
+                timer: 1500
+            }).then(function () {
+                location.reload();
+            });
+        } else {
+            Swal.fire({
+                position: "center",
+                icon: "error",
+                title: "Operación Cancelada",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
     });
+
 });
