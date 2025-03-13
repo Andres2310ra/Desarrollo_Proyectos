@@ -5,6 +5,10 @@ document.addEventListener('DOMContentLoaded', function () {
     let numero_2 = document.getElementById('number_2');
     let form_calculo = document.getElementById('form_calculo');
     let boton_inicio = document.getElementById('boton_inicio');
+    let boton_reinicio = document.getElementById('boton_volver');
+
+    numero_1.value = Math.floor(Math.random() * 1000);
+    numero_2.value = Math.floor(Math.random() * 1000);
     
     form_calculo.style.display = 'none';
 
@@ -45,4 +49,9 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     });
+
+    boton_reinicio.addEventListener('click', function () {
+        location.reload();
+    });
+
 });
