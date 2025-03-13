@@ -1,15 +1,14 @@
-"use strict";
+'use strict';
 document.addEventListener('DOMContentLoaded', function () {
 
     let numero_1 = document.getElementById('number_1');
-    let numero_2 = document.getElementById('number_2');
     let form_calculo = document.getElementById('form_calculo');
     let boton_inicio = document.getElementById('boton_inicio');
     let boton_reinicio = document.getElementById('boton_volver');
+    let suma = 0;
+    let i = 0;
+    let comparacion = 0;
 
-    numero_1.value = Math.floor(Math.random() * 1000);
-    numero_2.value = Math.floor(Math.random() * 1000);
-    
     form_calculo.style.display = 'none';
 
     boton_inicio.addEventListener('click', function () {
@@ -18,36 +17,38 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     form_calculo.addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
+        event.preventDefault();
 
-        let valor_1 = parseFloat(numero_1.value);
-        let valor_2 = parseFloat(numero_2.value);
+        do {
 
-        if (valor_1 > valor_2) {
-            Swal.fire({
-                title: "El numero mayor es: " + valor_1 + " y el numero menor es: " + valor_2,
-                icon: "success",
-                draggable: true
-            });
-        } else if (valor_1 < valor_2) {
-            Swal.fire({
-                title: "El numero mayor es: " + valor_2 + " y el numero menor es: " + valor_1,
-                icon: "success",
-                draggable: true
-            });
-        } else if (valor_1 === valor_2) {
-            Swal.fire({
-                title: "Los numeros son iguales",
-                icon: "error",
-                draggable: true
-            });
-        } else {
-            Swal.fire({
-                title: "No puede haber campos vacios",
-                icon: "error",
-                draggable: true
-            });
-        }
+            console.log("Valor del numero ingresado: " + Number(numero_1.value));
+            console.log("Valor del numero de comparacion: " + comparacion);
+            
+            if (Number(numero_1.value) === comparacion) {
+                numero_1.value = Math.floor(Math.random() * 1000);
+            };
+
+            if (Number(numero_1.value) > 0) {
+                i++;
+                suma = suma + Number(numero_1.value);
+
+                Swal.fire({
+                    title: "El valor sumado es: " + suma + " y la media es: " + (suma / i),
+                    icon: "success",
+                    draggable: true
+                });
+            }
+
+            comparacion = Number(numero_1.value);
+            console.log('Valor de comparacion: ' + comparacion);
+            console.log('Valor numero despues de operacion: ' + Number(numero_1.value));
+            console.log('Valor de iteracion: ' + i);
+            console.log('Valor de la suma despues de operacion: ' + suma);
+
+            break;
+
+        } while (Number(numero_1.value) > 0);
+
     });
 
     boton_reinicio.addEventListener('click', function () {
