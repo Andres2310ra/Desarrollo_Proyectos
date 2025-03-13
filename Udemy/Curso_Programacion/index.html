@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 1</title>
+    <script type="text/javascript" src="programa_1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div>
         <ul>
-            <li>Programa 1</li>
-            <li>Programa 2</li>
-            <li>Programa 3</li>
-            <li>Programa 4</li>
+            <li><a href="index.html">Programa 1</a></li>
+            <li><a href="">Programa 2</a></li>
+            <li><a href="">Programa 3</a></li>
+            <li><a href="">Programa 4</a></li>
         </ul>
     </div>
     <div>
@@ -23,6 +25,20 @@
         <p>
             Programa que pida dos numeros y que diga cual es el mayor, el menor o si son iguales.
         </p>
+    </div>
+    <div>
+        <button id="boton_inicio">Empezar</button>
+    </div>
+    <div>
+        <form id="form_calculo">
+            <label for="number_1">Primer Numero</label>
+            <input type="number" name="number_1" id="number_1">
+            <br>
+            <label for="number_2">Segundo Numero</label>
+            <input type="number" name="number_2" id="number_2">
+            <br>
+            <input type="submit" value="Enviar" id="submit_calculo">
+        </form>
     </div>
 </body>
 </html>
