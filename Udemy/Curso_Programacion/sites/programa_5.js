@@ -1,15 +1,11 @@
-"use strict";
+'use strict';
 document.addEventListener('DOMContentLoaded', function () {
-
-    let numero_1 = document.getElementById('number_1');
-    let numero_2 = document.getElementById('number_2');
+    let valor_1 = document.getElementById('number_1');
     let form_calculo = document.getElementById('form_calculo');
     let boton_inicio = document.getElementById('boton_inicio');
     let boton_reinicio = document.getElementById('boton_volver');
+    let comparador = 0;
 
-    numero_1.value = Math.floor(Math.random() * 1000);
-    numero_2.value = Math.floor(Math.random() * 1000);
-    
     form_calculo.style.display = 'none';
 
     boton_inicio.addEventListener('click', function () {
@@ -18,36 +14,43 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     form_calculo.addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
+        event.preventDefault();
 
-        let valor_1 = parseFloat(numero_1.value);
-        let valor_2 = parseFloat(numero_2.value);
+        let i = 0;
+        let divisores = [];
 
-        if (valor_1 > valor_2) {
-            Swal.fire({
-                title: "El numero mayor es: " + valor_1 + " y el numero menor es: " + valor_2,
-                icon: "success",
-                draggable: true
-            });
-        } else if (valor_1 < valor_2) {
-            Swal.fire({
-                title: "El numero mayor es: " + valor_2 + " y el numero menor es: " + valor_1,
-                icon: "success",
-                draggable: true
-            });
-        } else if (valor_1 === valor_2) {
-            Swal.fire({
-                title: "Los numeros son iguales",
-                icon: "error",
-                draggable: true
-            });
-        } else {
-            Swal.fire({
-                title: "No puede haber campos vacios",
-                icon: "error",
-                draggable: true
-            });
+        console.log("Valor del comparador: " + comparador);
+
+        if (Number(valor_1.value) === 0) {
+            valor_1.value = Math.floor(Math.random() * 100) + 1;
+        } else if (Number(valor_1.value) === comparador) {
+            valor_1.value = Math.floor(Math.random() * 100) + 1;
         }
+
+        while (i <= Number(valor_1.value)) {
+            if (Number(valor_1.value) % i === 0) {
+                divisores.push(i);
+            }
+            i++;
+        }
+
+        console.log('Valor del numero ingresado: ' + valor_1.value);
+        comparador = Number(valor_1.value)
+        console.log(divisores);
+
+        Swal.fire({
+            title: "El numero de divisores de " + Number(valor_1.value) + " es: " + divisores.length,
+            icon: "success",
+            draggable: true
+        }).then(() => {
+            Swal.fire({
+                title: "Los divisores de " + Number(valor_1.value) + " son:",
+                text: divisores.join(', '),
+                icon: "success",
+                draggable: true
+            });
+        })
+
     });
 
     boton_reinicio.addEventListener('click', function () {
