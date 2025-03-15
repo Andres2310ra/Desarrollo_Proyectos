@@ -7,9 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let boton_inicio = document.getElementById('boton_inicio');
     let boton_reinicio = document.getElementById('boton_volver');
 
-    numero_1.value = Math.floor(Math.random() * 1000);
-    numero_2.value = Math.floor(Math.random() * 1000);
-    
     form_calculo.style.display = 'none';
 
     boton_inicio.addEventListener('click', function () {
@@ -19,6 +16,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     form_calculo.addEventListener('submit', function (event) {
         event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
+
+        numero_1.value = Math.floor(Math.random() * 1000);
+        numero_2.value = Math.floor(Math.random() * 1000);
 
         let valor_1 = parseFloat(numero_1.value);
         let valor_2 = parseFloat(numero_2.value);
