@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
             draggable: true
         }).then(() => {
             Swal.fire({
-                title: mensaje,
+                text: mensaje,
                 icon: "success",
                 draggable: true
             });

@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }).then(() => {
 
             Swal.fire({
-                title: "El rango de numeros es: " + contenedor,
+                text: "El rango de numeros es: " + contenedor,
                 icon: "success",
                 draggable: true
             });
