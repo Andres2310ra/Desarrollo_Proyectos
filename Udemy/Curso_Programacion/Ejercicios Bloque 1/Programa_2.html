@@ -2,36 +2,42 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="sites/css/stily.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 1</title>
     <script type="text/javascript" src="sites/js/programa_2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet" href="sites/css/stily.css">
 </head>
 <body>
-    <div>
-        <ul>
-            <li><a href="index.html">Programa 1</a></li>
-            <li><a href="Programa_2.html">Programa_2</a></li>
-            <li><a href="Programa_3.html">Programa_3</a></li>
-            <li><a href="Programa_4.html">Programa_4</a></li>
-            <li><a href="Programa_5.html">Programa_5</a></li>
-            <li><a href="Programa_6.html">Programa_6</a></li>
-            <li><a href="Programa_7.html">Programa_7</a></li>
-            <li><a href="Programa_8.html">Programa_8</a></li>
+    <div id="banner">
+        <div id="img_banner">
+            <img src="sites/img/banner.gif" alt="banner">
+        </div>
+        <ul id="menu">
+            <li><a href="index.html"><img src="sites/img/Programa 1 pixel art video game image.png" alt="pro1">Programa 1</a></li>
+            <li><a href="Programa_2.html"><img src="sites/img/Programa 2 pixel art video game image.png" alt="pro2">Programa 2</a></li>
+            <li><a href="Programa_3.html"><img src="sites/img/Programa 3 pixel art video game image.png" alt="pro3">Programa 3</a></li>
+            <li><a href="Programa_4.html"><img src="sites/img/Programa 4 in pixel art style.png" alt="pro4">Programa 4</a></li>
+            <li><a href="Programa_5.html"><img src="sites/img/Programa 5 in pixel art style.png" alt="pro5">Programa 5</a></li>
+            <li><a href="Programa_6.html"><img src="sites/img/Programa 6 in pixel art style.png" alt="pro6">Programa 6</a></li>
+            <li><a href="Programa_7.html"><img src="sites/img/Programa 7 in pixel art style.png" alt="pro7">Programa 7</a></li>
+            <li><a href="Programa_8.html"><img src="sites/img/Programa 8 in pixel art style.png" alt="pro8">Programa 8</a></li>
         </ul>
     </div>
-    <div>
+    <div id="titulo">
         <hr>
         <h1>Programa 2</h1>
     </div>
-    <div>
-        <hr>
+    <div id="descripcion">
+        <p>
+            Estos son los ejercicios del primer bloque del curso de programacion de Udemy.
+        </p>
         <p>
             Utilizando un bucle, mostrar la suma y la media de los numeros introducidos hasta introducir un numero negativo y ahi mostrar el resultado.
         </p>
     </div>
-    <div>
+    <div id="btn_inicio">
+        <hr>
         <button id="boton_inicio">Empezar</button>
     </div>
     <div>
@@ -41,8 +47,14 @@
             <br>
             <input type="submit" value="Calcular" id="submit_calculo">
             <hr>
-            <button type="button" id="boton_volver">Recargar</button>
+            <div id="btn_reinicio">
+                <button type="button" id="boton_volver">Recargar</button>
+            </div>
         </form>
     </div>
+    <footer>
+        <hr>
+        <p>&copy; 2025 Master en JavaScript: Aprender JS, jQuery, Angular, NodeJS</p>
+    </footer>
 </body>
 </html>
