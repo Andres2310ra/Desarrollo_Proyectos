@@ -38,13 +38,12 @@ body {
     left: 50%;
     transform: translateX(-50%);
     justify-content: center;
-}
-
-#menu li {
-    margin: 10px 15px;
+    flex-wrap: wrap;
 }
 
 #menu a img {
+    display: flex;
+    flex-direction: row;
     width: 80px; /* Ajusta el tamaño de los iconos del menú */
     height: auto;
 }
@@ -131,24 +130,29 @@ footer {
 /* Responsive */
 @media (max-width: 768px) {
     #banner {
-        height: auto;
+        height: 178px;
         flex-direction: column;
         align-items: center;
     }
 
     #menu {
-        flex-direction: column;
-        width: auto;
+        display: flex;
+        flex-direction: row;
+        width: 96%;
         padding: 5px;
         bottom: 5px;
+        align-content: space-around;
+        justify-content: center;
+        height: 79%;
     }
 
     #menu li {
-        margin: 5px 0;
+        margin: -25px 0px;
     }
 
     #menu a img {
         width: 60px;
+        margin-top: 5%;
     }
 
     form {
