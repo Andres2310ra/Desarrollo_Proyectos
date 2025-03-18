@@ -13,7 +13,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 250px; /* Ajusta según diseño */
+    height: 703px; /* Ajusta según diseño */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,7 +29,7 @@ body {
 /* Menú dentro del banner */
 #menu {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverserow;
     background-color: rgba(21, 66, 73, 0.7); /* Fondo semitransparente */
     padding: 10px;
     border-radius: 10px;
@@ -39,13 +39,17 @@ body {
     transform: translateX(-50%);
     justify-content: center;
     flex-wrap: wrap;
+    width: 90%;
+    height: 34%;
+    align-content: center;
 }
 
 #menu a img {
     display: flex;
     flex-direction: row;
-    width: 80px; /* Ajusta el tamaño de los iconos del menú */
+    width: 150px; /* Ajusta el tamaño de los iconos del menú */
     height: auto;
+    margin: 0px 20px 0px 0px;
 }
 
 li {
@@ -138,12 +142,12 @@ footer {
     #menu {
         display: flex;
         flex-direction: row;
-        width: 96%;
+        width: 90%;
         padding: 5px;
         bottom: 5px;
         align-content: space-around;
         justify-content: center;
-        height: 79%;
+        height: 75%;
     }
 
     #menu li {
@@ -151,8 +155,8 @@ footer {
     }
 
     #menu a img {
-        width: 60px;
-        margin-top: 5%;
+        width: 49px;
+        margin-top: 0%;
     }
 
     form {
