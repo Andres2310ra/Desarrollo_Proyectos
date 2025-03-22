@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let btn_cal = document.getElementById('btn-cal');
     let parametros = document.getElementById('parametros');
     let btn_parametros = document.getElementById('btn-parametros');
+    let funcion_rest = document.getElementById('funcion_rest_spread');
+    let btn_rest = document.getElementById('btn-rest-spread');
     let numero = 0;
     let valor_anterior = 0;
 
@@ -19,13 +21,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         total = numero + valor_anterior;
 
-        if (total===0) {
+        if (total === 0) {
             Swal.fire({
                 title: "Al dar click en el botón se generará un número aleatorio entre 1 y 10, el cual se sumará al valor anterior",
                 text: "El proceso se repetirá hasta que la suma de todos los números sea mayor o igual a 100",
                 icon: "success",
                 draggable: true
-              });
+            });
         }
 
         numero = Math.floor(Math.random() * 10) + 1;
@@ -56,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (es_primo.length > 1) {
                 primo = false;
-            }else{
+            } else {
                 primo = true;
             }
         }
@@ -106,6 +108,70 @@ document.addEventListener('DOMContentLoaded', function () {
                     parametros.innerHTML = 'Muy bien el numero ' + calculadora(value) + ' es un número primo';
                 }
             }
+        });
+    });
+
+    function ClasificarPalabras(...palabras) {
+        const palabras_largas = palabras.filter(palabra => palabra.length > 5);
+        const palabras_cortas = palabras.filter(palabra => palabra.length <= 5);
+        return { palabras_cortas, palabras_largas };
+    }
+
+    btn_rest.addEventListener('click', function () {
+        Swal.fire({
+            title: "A continuacion ingresa las palabras que desees clasificar",
+            text: "Las palabras se clasificarán en palabras largas y palabras cortas",
+            icon: "success",
+            draggable: true
+        }).then(() => {
+            Swal.fire({
+                title: "Ingresa las palabras separadas por comas, (PARAMETRO REST)",
+                input: 'text',
+                inputAttributes: {
+                    pattern: "[A-Za-z, ]*" // Permitir letras, comas y espacios
+                },
+                icon: "success",
+                draggable: true,
+                showCancelButton: true
+            }).then(result => {
+
+                //Parametro REST
+
+                if (result.isConfirmed) {
+                    const palabras = result.value.split(',').map(palabra => palabra.trim());
+                    const clasificacion = ClasificarPalabras(...palabras);
+                    console.log(clasificacion);
+                    funcion_rest.innerHTML = `Palabras Largas: ${clasificacion.palabras_largas.join(', ')}<br>Palabras Cortas: ${clasificacion.palabras_cortas.join(', ')}`;
+
+                    Swal.fire({
+                        title: "Deseas clasificar mas palabras?, (PARAMETRO SPREAD)",
+                        input: 'text',
+                        inputAttributes: {
+                            pattern: "[A-Za-z, ]*" // Permitir letras, comas y espacios
+                        },
+                        icon: "success",
+                        draggable: true,
+                        showCancelButton: true
+                    }).then(result2 => {
+
+                        //Parametro SPREAD
+
+                        if (result2.isConfirmed) {
+                            const palabras2 = result2.value.split(',').map(palabra => palabra.trim());
+                            const clasificacion2 = ClasificarPalabras(...palabras, ...palabras2);
+                            console.log(clasificacion, clasificacion2);
+                            funcion_rest.innerHTML = `Palabras Largas: ${clasificacion2.palabras_largas.join(', ')}<br>Palabras Cortas: ${clasificacion2.palabras_cortas.join(', ')}`;
+                        }
+                    });
+
+                } else {
+                    Swal.fire({
+                        title: "Operación Cancelada",
+                        icon: "error",
+                        draggable: true
+                    });
+                }
+            });
         });
     });
 });
