@@ -6,6 +6,11 @@ document.addEventListener('DOMContentLoaded', function () {
     let btn_parametros = document.getElementById('btn-parametros');
     let funcion_rest = document.getElementById('funcion_rest_spread');
     let btn_rest = document.getElementById('btn-rest-spread');
+    let funcion_anomima_callback = document.getElementById('funcion_anomima_callback');
+    let btn_anomima_callback = document.getElementById('btn-anonima_callback');
+    let funcion_flecha = document.getElementById('funcion_flecha');
+    let funcion_flecha2 = document.getElementById('funcion_flecha2');
+    let btn_funcion_flecha = document.getElementById('btn-funcion_flecha');
     let numero = 0;
     let valor_anterior = 0;
 
@@ -174,4 +179,67 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     });
+
+    function palabra_ingresada(palabra, palabra_escrita, palabra_alreves) {
+        const escrita = palabra_escrita(palabra);
+        const alreves = palabra_alreves(palabra);
+        return `${escrita} ${alreves}`;
+    }
+
+    btn_anomima_callback.addEventListener('click', function () {
+        Swal.fire({
+            title: "Ingresa una palabra para invertirla",
+            text: "La palabra se invertirá y se mostrará en la consola",
+            input: 'text',
+            icon: "success",
+            draggable: true,
+            showCancelButton: true
+        }).then(result => {
+            if (result.isConfirmed) {
+                funcion_anomima_callback.innerHTML = palabra_ingresada(result.value,
+                    valor1 => {
+                        console.log('La palabra ingresada es: ' + valor1)
+                        return 'La palabra ingresada es: ' + valor1
+                    }, valor2 => {
+                        console.log(' y la palabra al reves es: ' + valor2.split('').reverse('').join(''))
+                        return ' y la palabra al reves es: ' + valor2.split('').reverse('').join('')
+                    })
+            }
+        });
+    });
+
+    btn_funcion_flecha.addEventListener('click', function () {
+        let valor1 = Math.floor(Math.random() * 1000) + 1;
+        let valor2 = Math.floor(Math.random() * 1000) + 1;
+
+        let suma = (a, b) => a + b;
+
+        funcion_flecha.innerHTML = `Se realizo la funcion let suma = (a, b) => a + b;, esta suma dos numeros aleatorios, la suma de ${valor1} y ${valor2} es igual a ${suma(valor1, valor2)}`
+
+        Swal.fire({
+            title: "Ingresa una palabra",
+            text: "Se mostrara cada letra impresa en la consola.",
+            input: 'text',
+            icon: "success",
+            draggable: true,
+            showCancelButton: true
+        }).then(result => {
+            if (result.isConfirmed) {
+                let palabra = result.value.split('')
+                funcion_flecha2.innerHTML='';
+                funcion_flecha2.innerHTML=`Se realizo la funcion palabra.forEach(element => {
+                    console.log(element)
+                    funcion_flecha2.innerHTML += element 
+                });, esta imprime como arreglo la palabra ingresada por linea.`
+
+                console.log(palabra)
+                palabra.forEach(element => {
+                    console.log(element)
+                    funcion_flecha2.innerHTML += '<p>' + element + '</p>' 
+                });
+
+            }
+        })
+    })
+
 });
