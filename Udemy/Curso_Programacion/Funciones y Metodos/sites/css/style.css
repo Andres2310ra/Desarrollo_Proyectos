@@ -1,61 +1,74 @@
-/* Paleta de colores */
+/* Importamos la fuente para un estilo más amigable y animado */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap');
+
 :root {
-    --color1: #18230F;
-    --color2: #27391C;
-    --color3: #255F38;
-    --color4: #1F7D53;
+    --color-primary: #05668d;
+    --color-secondary: #028090;
+    --color-accent: #00a896;
+    --color-highlight: #02c39a;
+    --color-background: #f0f3bd;
+    --color-text: #023e58;
 }
 
-/* Estilo general del cuerpo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
 body {
-    font-family: 'Press Start 2P', cursive;
-    background: linear-gradient(to bottom, var(--color1), var(--color2));
-    color: var(--color4);
+    background-color: var(--color-background);
+    color: var(--color-text);
     text-align: center;
     padding: 20px;
 }
 
-/* Estilo para los encabezados */
-h1, h2 {
-    color: var(--color3);
+h1 {
+    color: var(--color-primary);
+    font-size: 2.5em;
+    margin-bottom: 20px;
 }
 
-/* Estilo para los párrafos */
+h2 {
+    color: var(--color-secondary);
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+.section-container {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+}
+
 p {
-    background-color: var(--color2);
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.897);
-    transition: transform 0.3s, background-color 0.3s;
+    font-size: 1.2em;
+    line-height: 1.5;
 }
 
-p:hover {
-    transform: scale(1.05);
-    background-color: var(--color3);
-}
-
-/* Estilo para los botones */
 button {
-    background-color: var(--color3);
+    background-color: var(--color-accent);
     color: white;
     border: none;
     padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
     font-size: 1em;
-    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
 
 button:hover {
-    background-color: var(--color4);
-    transform: scale(1.1);
+    background-color: var(--color-highlight);
 }
 
-/* Estilo para las imágenes */
 img {
-    max-width: 100%;
+    width: 150px;
     height: auto;
+    margin-top: 10px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }

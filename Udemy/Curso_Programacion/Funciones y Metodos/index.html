@@ -15,58 +15,148 @@
 
     <h1>Introducción Funciones y Métodos</h1>
     <img src="https://art.pixilart.com/original/sr23beb1fa4e0aws3.gif" alt="Pixel Art Image">
-    <div>
+    <div class="section-container">
         <h2>Funciones</h2>
         <p>Una función es un bloque de código que se ejecuta cuando se llama a esa función. Puede pasar datos, conocidos
             como parámetros, a una función. Una función puede devolver datos como resultado.</p>
-        <div>
+        <div class="section-container">
             <p id="funcion"></p>
             <button id="btn-cal" type="submit">Calcular Función</button>
         </div>
         <img src="https://art.pixilart.com/original/sr2495e77bdacaws3.gif" alt="Pixel Art Gif">
     </div>
-    <div>
+    <div class="section-container">
         <h2>Parámetros</h2>
         <p>Los parámetros son valores que se pasan a una función cuando se llama a la función. Los parámetros se
             utilizan como variables dentro de la función.</p>
-        <div>
+        <div class="section-container">
             <p id="parametros"></p>
             <button id="btn-parametros" type="submit">Calcular Parámetros</button>
         </div>
         <img src="https://art.pixilart.com/original/sr21389901114aws3.gif" alt="Pixel Art Image">
     </div>
-    <div>
+    <div class="section-container">
         <h2>Parámetro REST y SPREAD</h2>
         <p>El parámetro rest permite a una función aceptar un número indefinido de argumentos como un array.</p>
         <p>El parámetro spread permite a una función aceptar argumentos individuales.</p>
-        <div>
+        <div class="section-container">
             <p id="funcion_rest_spread"></p>
             <button id="btn-rest-spread" type="submit">Calcular Rest</button>
         </div>
         <img src="https://art.pixilart.com/original/sr20cf7b69766aws3.gif" alt="Pixel Art Gif">
     </div>
-    <div>
+    <div class="section-container">
         <h2>Funciones Anónimas y CallBacks</h2>
         <p>Una función anónima es una función que no tiene un nombre. Se puede utilizar como un valor.</p>
         <p>Un callback es una función que se pasa a otra función como un argumento, que luego se invoca dentro de la
-            función externa para completar algún tipo de rutina o acción.</p>    
-        <div>
+            función externa para completar algún tipo de rutina o acción.</p>
+        <div class="section-container">
             <p id="funcion_anomima_callback"></p>
             <button id="btn-anonima_callback" type="submit">Calcular Función Anónima</button>
         </div>
         <img src="https://art.pixilart.com/original/sr5z6fd653edf9aws3.gif" alt="Pixel Art Gif">
     </div>
-    <div>
+    <div class="section-container">
         <h2>Funciones Flecha</h2>
-        <p>Las funciones flecha, o arrow functions, son una forma compacta y moderna de definir funciones en JavaScript introducida en ES6 (ECMAScript 2015). Se caracterizan por su sintaxis más concisa y por no vincular su propio , lo que las hace útiles en ciertos contextos, como en funciones de callbacks.</p>
-    <div>
-        <p id="funcion_flecha"></p>
-        <p id="funcion_flecha2"></p>
-        <button id="btn-funcion_flecha" type="submit">Calcular Funcion Flecha</button>
+        <p>Las funciones flecha, o arrow functions, son una forma compacta y moderna de definir funciones en JavaScript
+            introducida en ES6 (ECMAScript 2015). Se caracterizan por su sintaxis más concisa y por no vincular su
+            propio , lo que las hace útiles en ciertos contextos, como en funciones de callbacks.</p>
+        <div class="section-container">
+            <p id="funcion_flecha"></p>
+            <p id="funcion_flecha2"></p>
+            <button id="btn-funcion_flecha" type="submit">Calcular Funcion Flecha</button>
+        </div>
+        <img src="https://art.pixilart.com/original/sr29093b66d4caws3.gif" alt="Pixel">
     </div>
-    <img src="https://art.pixilart.com/original/sr29093b66d4caws3.gif" alt="Pixel">
+    <div class="section-container">
+        <h2>Metodos de Busqueda</h2>
+        <p>En JavaScript, los métodos de búsqueda son funciones que se utilizan para localizar elementos en estructuras
+            de datos como cadenas de texto o arreglos. Aquí te explico algunos de los más comunes</p>
+        <div>
+            <div class="section-container">
+                <div class="section-container">
+                    <h3>Funciones Busqueda para Array</h3>
+                    <div class="section-container">
+                        <p>indexOf(): Encuentra el índice del primer elemento que coincide con el valor dado. Si no lo
+                            encuentra, devuelve -1.
+                        </p>
+                        <p id="a_funcion_indexOf"></p>
+                    </div>
+                    <div class="section-container">
+                        <p>lastIndexOf(): Igual que indexOf(), pero empieza a buscar desde el final del array.</p>
+                        <p id="a_funcion_lastIndexOf"></p>
+                    </div>
+                    <div class="section-container">
+                        <p>find(): Devuelve el primer elemento que cumple con una condición especificada en un callback.
+                        </p>
+                        <p id="a_funcion_find"></p>
+                    </div>
+                    <div class="section-container">
+                        <p>findIndex(): Similar a find(), pero devuelve el índice del primer elemento que cumple la
+                            condición.
+                        </p>
+                        <p id="a_funcion_finIndex"></p>
+                    </div>
+                    <div class="section-container">
+                        <p>includes(): Verifica si un valor existe en el array. Devuelve true o false.
+                        </p>
+                        <p id="a_funcion_includes"></p>
+                    </div>
+                    <div class="section-container">
+                        <p>some(): Comprueba si al menos un elemento del array cumple una condición.
+                        </p>
+                        <p id="a_funcion_some"></p>
+                    </div>
+                    <div class="section-container">
+                        <p>every(): Verifica si todos los elementos cumplen una condición.
+                        </p>
+                        <p id="a_funcion_every"></p>
+                    </div>
+                    <div class="section-container">
+                        <h3>Funciones Busquesta para String</h3>
+                        <div class="section-container">
+                            <p>indexOf(): Busca un substring y devuelve el índice de su primera aparición. </p>
+                            <p id="s_funcion_indexOf"></p>
+                        </div>
+                        <div class="section-container">
+                            <p>lastIndexOf(): Busca un substring desde el final del string.
+                            </p>
+                            <p id="s_funcion_lastIndexOf"></p>
+                        </div>
+                        <div class="section-container">
+                            <p>includes(): Determina si el string contiene un substring. Devuelve true o false.</p>
+                            <p id="s_funcion_includes"></p>
+                        </div>
+                        <div class="section-container">
+                            <p>startsWith(): Verifica si el string comienza con un substring.
+                            </p>
+                            <p id="s_funcion_starsWith"></p>
+                        </div>
+                        <div class="section-container">
+                            <p>endsWith(): Verifica si el string termina con un substring.
+                            </p>
+                            <p id="s_funcion_endsWith"></p>
+                        </div>
+                        <div class="section-container">
+                            <p>match(): Busca coincidencias con una expresión regular y devuelve un array con los
+                                resultados.
+                            </p>
+                            <p id="s_funcion_match"></p>
+                        </div>
+                        <div class="section-container">
+                            <p>search(): Encuentra el índice de la primera coincidencia con una expresión regular.
+                            </p>
+                            <p id="s_funcion_search"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="btn-metodos_busqueda" type="submit">Realizaer busqueda</button>
+        </div>
+        <img src="https://art.pixilart.com/original/sr29093b66d4caws3.gif" alt="Pixel">
     </div>
 
+    </div>
 </body>
 
 </html>
