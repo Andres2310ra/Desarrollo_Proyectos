@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let s_funcion_match = document.getElementById('s_funcion_match');
     let s_funcion_search = document.getElementById('s_funcion_search');
     let btn_metodos_busqueda = document.getElementById('btn-metodos_busqueda');
+    let arrays_0 = document.getElementById('array');
+    let btn_array = document.getElementById('btn-array');
     let numero = 0;
     let valor_anterior = 0;
 
@@ -282,27 +284,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
             a_funcion_finIndex.innerHTML = `<br> <b>El indice de la frase leida es: ${frases.findIndex(frase => frase == fraseAleatoria)}</b>`
 
-            a_funcion_includes.innerHTML=`<b> <br>La frase leida se encuetra en el array: ${frases.includes(fraseAleatoria)}</b>`
+            a_funcion_includes.innerHTML = `<b> <br>La frase leida se encuetra en el array: ${frases.includes(fraseAleatoria)}</b>`
 
-            a_funcion_some.innerHTML=`<b> <br> La frase "La ballena de prueba" no se encutra en el array: ${frases.some(frase => frase == "La ballena de prueba")}</b>`
+            a_funcion_some.innerHTML = `<b> <br> La frase "La ballena de prueba" no se encutra en el array: ${frases.some(frase => frase == "La ballena de prueba")}</b>`
 
-            a_funcion_every.innerHTML=`<b> <br>La palabra "${frase}" se encuentra en todas las frases: ${frases.every(palabra=> palabra.includes(frase))}</br>`
+            a_funcion_every.innerHTML = `<b> <br>La palabra "${frase}" se encuentra en todas las frases: ${frases.every(palabra => palabra.includes(frase))}</br>`
 
             //String
 
-            s_funcion_indexOf.innerHTML=`<b> <br>El indece de la palabra "${frase}" es el numero: ${fraseAleatoria.indexOf(frase)}</b>`
+            s_funcion_indexOf.innerHTML = `<b> <br>El indece de la palabra "${frase}" es el numero: ${fraseAleatoria.indexOf(frase)}</b>`
 
-            s_funcion_lastIndexOf.innerHTML=`<b> <br>El indece de la palabra "${frase}" es el numero: ${fraseAleatoria.lastIndexOf(frase)}</b>`
+            s_funcion_lastIndexOf.innerHTML = `<b> <br>El indece de la palabra "${frase}" es el numero: ${fraseAleatoria.lastIndexOf(frase)}</b>`
 
-            s_funcion_includes.innerHTML=`<b> <br>La palabra "${frase}" se encuentra en la frase leida: ${fraseAleatoria.includes(frase)}</b>`
+            s_funcion_includes.innerHTML = `<b> <br>La palabra "${frase}" se encuentra en la frase leida: ${fraseAleatoria.includes(frase)}</b>`
 
-            s_funcion_starsWith.innerHTML=`<b> <br>La frase leida empieza con la palabra "${frase}": ${fraseAleatoria.startsWith(frase)}</b>`
+            s_funcion_starsWith.innerHTML = `<b> <br>La frase leida empieza con la palabra "${frase}": ${fraseAleatoria.startsWith(frase)}</b>`
 
-            s_funcion_endsWith.innerHTML=`<b> <br>La frase leida termina con la palabra "${frase}": ${fraseAleatoria.endsWith(frase)}</b>`
+            s_funcion_endsWith.innerHTML = `<b> <br>La frase leida termina con la palabra "${frase}": ${fraseAleatoria.endsWith(frase)}</b>`
 
-            s_funcion_match.innerHTML=`<b> <br>La frase leida tiene la palabra "${frase}": ${fraseAleatoria.match(frase)}</b>`
+            s_funcion_match.innerHTML = `<b> <br>La frase leida tiene la palabra "${frase}": ${fraseAleatoria.match(frase)}</b>`
 
-            s_funcion_search.innerHTML=`<b> <br>La frase leida tiene la palabra "${frase}": ${fraseAleatoria.search(frase)}</b>`
+            s_funcion_search.innerHTML = `<b> <br>La frase leida tiene la palabra "${frase}": ${fraseAleatoria.search(frase)}</b>`
         }
 
         Swal.fire({
@@ -323,6 +325,94 @@ document.addEventListener('DOMContentLoaded', function () {
             })
 
         })
+
+    })
+
+    btn_array.addEventListener('click', function () {
+
+        let numeros = []
+
+        function eliminar_numeros() {
+            Swal.fire({
+                title: "Quieres eliminar uno de los numeros guardados?",
+                text: "Ingresa el numero que quieres eliminar: " + numeros.join(', '),
+                input: 'number',
+                inputAttributes: {
+                    pattern: "[0-9/]*"
+                },
+                preConfirm: (value) => {
+                    if (!value || isNaN(value)) {
+                        Swal.showValidationMessage('Por favor, ingresa un número válido.');
+                        return false;
+                    }
+                },
+                icon: "question",
+                draggable: true,
+                showCancelButton: true,
+                confirmButtonText: "Guardar",
+                cancelButtonText: "Terminas"
+            }).then(result => {
+                if (result.isConfirmed) {
+                    if (numeros.indexOf(result.value) === -1) {
+                        Swal.showValidationMessage('El numero no se encuentra en el array');
+                        eliminar_numeros()
+                        return false;
+                    } else {
+                        numeros.splice(numeros.indexOf(result.value), 1)
+                        console.log("Numero eliminado: " + numeros)
+                        eliminar_numeros()
+                    }
+                } else {
+                    arrays_0.innerHTML = `<b>Los numeros guardados en el array son: ${numeros.join(', ')} <br> <b>`
+                    console.log("Numeros guardados en el array: " + numeros)
+                }
+            })
+        }
+
+        function array_numero() {
+
+            Swal.fire({
+                title: "Guarda una serie de numeros en un array para que despues se realice una operacion con ellos",
+                text: "Ingresa un numero seguio de enter o del boton guardar",
+                input: 'number',
+                inputAttributes: {
+                    pattern: "[0-9/]*"
+                },
+                preConfirm: (value) => {
+                    if (!value || isNaN(value)) {
+                        Swal.showValidationMessage('Por favor, ingresa un número válido.');
+                        return false;
+                    }
+                },
+                icon: "success",
+                draggable: true,
+                showCancelButton: true,
+                confirmButtonText: "Guardar",
+                cancelButtonText: "Terminar"
+            }).then(result => {
+
+                if (result.isConfirmed) {
+
+                    const numero = result.value;
+
+                    if (!isNaN(numero)) {
+                        numeros.push(numero)
+                        console.log("Numero ingresado: " + numeros)
+                        array_numero()
+                    } else {
+                        Swal.fire({
+                            title: "Entrada inválida",
+                            text: "Por favor, ingresa un número válido.",
+                            icon: "error"
+                        }).then(() => array_numero());
+                    }
+                } else {
+                    eliminar_numeros()
+                }
+            })
+        }
+
+        array_numero()
 
     })
 
