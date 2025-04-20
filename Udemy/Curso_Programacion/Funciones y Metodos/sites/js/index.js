@@ -471,12 +471,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     resultado = resultadoFinal.reduce((a, b) => a * b, 1);
                     break;
             }
-    
             operation_1.innerHTML = `<b>El resultado de la ${operation.toLowerCase()} es: ${resultado}</b>`;
         });
     });
-    
-
-
-
 });
