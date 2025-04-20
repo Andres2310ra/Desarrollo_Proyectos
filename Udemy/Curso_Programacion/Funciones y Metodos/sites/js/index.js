@@ -27,7 +27,10 @@ document.addEventListener('DOMContentLoaded', function () {
     let s_funcion_search = document.getElementById('s_funcion_search');
     let btn_metodos_busqueda = document.getElementById('btn-metodos_busqueda');
     let arrays_0 = document.getElementById('array');
+    let operation_1 = document.getElementById('count');
+    let count_2 = document.getElementById('count_2');
     let btn_array = document.getElementById('btn-array');
+    let btn_operation = document.getElementById('btn-operation');
     let numero = 0;
     let valor_anterior = 0;
 
@@ -328,94 +331,152 @@ document.addEventListener('DOMContentLoaded', function () {
 
     })
 
-    let numeros = []
+    let numeros = [];
 
     function eliminar_numeros() {
-        Swal.fire({
-            title: "Quieres eliminar uno de los numeros guardados?",
-            text: "Ingresa el numero que quieres eliminar: " + numeros.join(', '),
-            input: 'number',
-            inputAttributes: {
-                pattern: "[0-9/]*"
-            },
-            preConfirm: (value) => {
-                if (!value || isNaN(value)) {
-                    Swal.showValidationMessage('Por favor, ingresa un número válido.');
-                    return false;
-                }
-            },
-            icon: "question",
-            draggable: true,
-            showCancelButton: true,
-            confirmButtonText: "Guardar",
-            cancelButtonText: "Terminas"
-        }).then(result => {
-            if (result.isConfirmed) {
-                if (numeros.indexOf(result.value) === -1) {
-                    Swal.showValidationMessage('El numero no se encuentra en el array');
-                    eliminar_numeros()
-                    return false;
-                } else {
-                    numeros.splice(numeros.indexOf(result.value), 1)
-                    console.log("Numero eliminado: " + numeros)
-                    eliminar_numeros()
-                }
-            } else {
-                arrays_0.innerHTML = `<b>Los numeros guardados en el array son: ${numeros.join(', ')} <br> <b>`
-                console.log("Numeros guardados en el array: " + numeros)
-            }
-        })
+        return new Promise((resolve) => {
+            const eliminar = () => {
+                Swal.fire({
+                    title: "¿Quieres eliminar uno de los números guardados?",
+                    text: "Ingresa el número que quieres eliminar: " + numeros.join(', '),
+                    input: 'number',
+                    inputAttributes: {
+                        pattern: "[0-9/]*"
+                    },
+                    preConfirm: (value) => {
+                        if (!value || isNaN(value)) {
+                            Swal.showValidationMessage('Por favor, ingresa un número válido.');
+                            return false;
+                        }
+                    },
+                    icon: "question",
+                    showCancelButton: true,
+                    confirmButtonText: "Eliminar",
+                    cancelButtonText: "Terminar"
+                }).then(result => {
+                    if (result.isConfirmed) {
+                        const value = Number(result.value);
+                        const index = numeros.indexOf(value);
+                        if (index === -1) {
+                            Swal.fire({
+                                title: "Número no encontrado",
+                                text: "El número no está en la lista.",
+                                icon: "error"
+                            }).then(() => eliminar());
+                        } else {
+                            numeros.splice(index, 1);
+                            console.log("Número eliminado: " + numeros);
+                            eliminar();
+                        }
+                    } else {
+                        arrays_0.innerHTML = `<b>Los números guardados en el array son: ${numeros.join(', ')}<br></b>`;
+                        console.log("Números finales en el array: " + numeros);
+                        resolve(numeros);
+                    }
+                });
+            };
+
+            eliminar();
+        });
     }
 
     function array_numero() {
+        return new Promise((resolve) => {
+            const ingresar = () => {
+                Swal.fire({
+                    title: "Guarda una serie de números",
+                    text: "Ingresa un número, luego presiona guardar o terminar",
+                    input: 'number',
+                    inputAttributes: {
+                        pattern: "[0-9/]*"
+                    },
+                    preConfirm: (value) => {
+                        if (!value || isNaN(value)) {
+                            Swal.showValidationMessage('Por favor, ingresa un número válido.');
+                            return false;
+                        }
+                    },
+                    icon: "success",
+                    showCancelButton: true,
+                    confirmButtonText: "Guardar",
+                    cancelButtonText: "Terminar"
+                }).then(result => {
+                    if (result.isConfirmed) {
+                        const numero = Number(result.value);
+                        numeros.push(numero);
+                        console.log("Número ingresado: " + numeros);
+                        ingresar();
+                    } else {
+                        eliminar_numeros().then(resolve); // resolve con el array final
+                    }
+                });
+            };
 
-        Swal.fire({
-            title: "Guarda una serie de numeros en un array para que despues se realice una operacion con ellos",
-            text: "Ingresa un numero seguio de enter o del boton guardar",
-            input: 'number',
-            inputAttributes: {
-                pattern: "[0-9/]*"
-            },
-            preConfirm: (value) => {
-                if (!value || isNaN(value)) {
-                    Swal.showValidationMessage('Por favor, ingresa un número válido.');
-                    return false;
-                }
-            },
-            icon: "success",
-            draggable: true,
-            showCancelButton: true,
-            confirmButtonText: "Guardar",
-            cancelButtonText: "Terminar"
-        }).then(result => {
-
-            if (result.isConfirmed) {
-
-                const numero = result.value;
-
-                if (!isNaN(numero)) {
-                    numeros.push(numero)
-                    console.log("Numero ingresado: " + numeros)
-                    array_numero()
-                } else {
-                    Swal.fire({
-                        title: "Entrada inválida",
-                        text: "Por favor, ingresa un número válido.",
-                        icon: "error"
-                    }).then(() => array_numero());
-                }
-            } else {
-                eliminar_numeros()
-            }
-        })
-        return numeros
+            ingresar();
+        });
     }
 
     btn_array.addEventListener('click', async function () {
-        const resultadoFinal = await array_numero();
-        console.log("Resultado final:", resultadoFinal);
-        console.log("Pruba: " + resultadoFinal.length)
+        const resultadoFinal = await array_numero(); // Espera que el usuario termine
+    
+        // ✅ Contar las repeticiones
+        let conteo = {};
+        for (let numero of resultadoFinal) {
+            conteo[numero] = (conteo[numero] || 0) + 1;
+        }
+    
+        // ✅ Mostrar resultados
+        let mensajeConteo = "";
+        for (let numero in conteo) {
+            mensajeConteo += `El número ${numero} está ${conteo[numero]} ${conteo[numero] === 1 ? 'vez' : 'veces'}<br>`;
+        }
+        count_2.innerHTML = mensajeConteo;
+    
+        // ✅ Operaciones
+        btn_operation.addEventListener('click', async function () {
+            const { value: operation } = await Swal.fire({
+                title: "Seleccione la operación que desea realizar",
+                input: "select",
+                inputOptions: {
+                    operaciones: {
+                        Suma: "Sumar",
+                        Resta: "Restar",
+                        Division: "Dividir",
+                        Multiplicacion: "Multiplicar"
+                    }
+                },
+                inputPlaceholder: "Seleccione una operación",
+                showCancelButton: true
+            });
+    
+            if (!operation) {
+                Swal.fire("Selecciona una operación");
+                return;
+            }
+    
+            Swal.fire(`Seleccionaste: ${operation}`);
+    
+            let resultado;
+            switch (operation) {
+                case "Suma":
+                    resultado = resultadoFinal.reduce((a, b) => a + b, 0);
+                    break;
+                case "Resta":
+                    resultado = resultadoFinal.reduce((a, b) => a - b);
+                    break;
+                case "Division":
+                    resultado = resultadoFinal.slice(1).reduce((a, b) => a / b, resultadoFinal[0]);
+                    break;
+                case "Multiplicacion":
+                    resultado = resultadoFinal.reduce((a, b) => a * b, 1);
+                    break;
+            }
+    
+            operation_1.innerHTML = `<b>El resultado de la ${operation.toLowerCase()} es: ${resultado}</b>`;
+        });
     });
     
-    
+
+
+
 });
