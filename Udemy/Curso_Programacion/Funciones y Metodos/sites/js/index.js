@@ -332,6 +332,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
     let numeros = [];
+    
 
     function eliminar_numeros() {
         return new Promise((resolve) => {
