@@ -102,16 +102,16 @@ df = zoho_to_df(WORKSPACE, VIEW)
 
 df
 
-# if __name__ == "__main__":
-#     print("🔄 Descargando datos desde Zoho Analytics…")
-#     df = zoho_to_df(WORKSPACE, VIEW)
+if __name__ == "__main__":
+    print("🔄 Descargando datos desde Zoho Analytics…")
+    df = zoho_to_df(WORKSPACE, VIEW)
 
-#     print(f"✅ Descarga completada. Filas: {len(df)}")
+    print(f"✅ Descarga completada. Filas: {len(df)}")
 
-#     # Ejemplo de conversión de fecha si existe esa columna
-#     if "Created_Time" in df.columns:
-#         df["Created_Time"] = pd.to_datetime(df["Created_Time"], errors="coerce", dayfirst=True)
+    # Ejemplo de conversión de fecha si existe esa columna
+    if "Created_Time" in df.columns:
+        df["Created_Time"] = pd.to_datetime(df["Created_Time"], errors="coerce", dayfirst=True)
 
-#     output_file = f"{VIEW} {pd.Timestamp.now().strftime('%Y%m%d_%H%M%S')}.xlsx"
-#     df.to_excel(output_file, index=False)
-#     print(f"📁 Datos guardados en {output_file}")
+    output_file = f"{VIEW} {pd.Timestamp.now().strftime('%Y%m%d_%H%M%S')}.xlsx"
+    df.to_excel(output_file, index=False)
+    print(f"📁 Datos guardados en {output_file}")
